@@ -1,8 +1,9 @@
+#include <cstdlib>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <KAboutData>
 #include <KLocalizedString>
-#include <KMessageBox>
+#include "mainwindow.h"
 
 int main (int argc, char *argv[]) {
     // Must create QApplication object first, and only once
@@ -44,22 +45,10 @@ int main (int argc, char *argv[]) {
     parser.process(app);
     aboutData.processCommandLine(&parser);
     
-    // Pop-up box with custom buttons
-    /* KGuiItem is an object constructor: 
-     * the first arg is the text on the button, 
-     * the second is whether to add an icon (empty),
-     * the third is the tooltip given when hovering over the button,
-     * the fourth is a help text provided by right-clicking */
-    KGuiItem yesButton(i18n("Hello"), QString(),
-                       i18n("This is a tooltip"),
-                       i18n("This is a WhatsThis help text."));
-    
-    // Create message box with a yes and no button
-    /* Arguments:
-     * second argument is the tect that will appear above the buttons
-     * third is the caption the window will have
-     * finally we set the KGuiItem for the "Yes" button to the KGuiItem yesButton we created*/
-    return KMessageBox::questionYesNo(0, i18n("Hello World"), i18n("Hello"), yesButton) == KMessageBox::Yes? EXIT_SUCCESS : EXIT_FAILURE;
+   MainWindow *window = new MainWindow();
+   window->show();
+   
+   return app.exec();
 }
 
 // All user-visible text is passed through the i18n() function, necessary for the UI to be translatable.
