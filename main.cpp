@@ -29,7 +29,7 @@ int main (int argc, char *argv[]) {
         // Program homepage
         QStringLiteral("https://github.com/elChupaCambra/Qt-DayCountdown"),
         // Bug report email address
-        QStringLiteral("claudio.cambra@gmail.com"),
+        QStringLiteral("claudio.cambra@gmail.com")
                );
     
     aboutData.addAuthor(i18n("Claudio Cambra"), i18n("Task"), QStringLiteral("claudio.cambra@gmail.com"), QStringLiteral("https://github.com/elChupaCambra/"));
@@ -40,7 +40,7 @@ int main (int argc, char *argv[]) {
     // Class used to specify command line switches, i.e. to open up app with specific file
     // Here it just opens the app
     QCommandLineParser parser;
-    aboutData.sewtupCommandLine(&parser);
+    aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
     
