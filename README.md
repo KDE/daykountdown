@@ -1,4 +1,4 @@
-# GTK-DayCountdown
-A simple countdown app written in Vala.
+# Qt-DayCountdown
+A simple countdown app written in C++ and Qt.
 
 ***Under Construction!***
