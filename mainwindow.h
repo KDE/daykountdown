@@ -7,6 +7,7 @@
 class KTextEdit;
 
 // Subclassing KXmlGuiWindow
+// Derived class : Base class
 class MainWindow : public KXmlGuiWindow {
     public: 
         // Declaring constructor
@@ -15,6 +16,7 @@ class MainWindow : public KXmlGuiWindow {
     private:
         // Pointer to the object
         KTextEdit *textArea;
+        void setupActions();
 };
 
 #endif // MAINWINDOW_H
