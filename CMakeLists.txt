@@ -42,3 +42,4 @@ target_link_libraries(daykountdown
 )
 
 install(TARGETS daykountdown ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(FILES mainview.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/mainview)
