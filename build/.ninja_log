@@ -1,0 +1,6 @@
+# ninja log v5
+0	22	1610537280885330301	daykountdown_autogen/timestamp	154e652c1e15ab31
+22	33	1610537280895330254	CMakeFiles/daykountdown.dir/daykountdown_autogen/mocs_compilation.cpp.o	8c11055b54230713
+0	150	1610537433524670708	build.ninja	6fe8c2d259d517a8
+1	12	1610537433548003949	daykountdown_autogen/timestamp	154e652c1e15ab31
+12	24	1610537433558003910	CMakeFiles/daykountdown.dir/daykountdown_autogen/mocs_compilation.cpp.o	8c11055b54230713
