@@ -1,8 +1,7 @@
-import QtQuick 2.1
-import QtQuick.Layouts 1.1
-import org.kde.kirigami 2.0 as Kirigami
-import QtQuick.Controls 2.4 
-
+import QtQuick 2.6
+import QtQuick.Controls 2.0 as Controls
+import QtQuick.Layouts 1.2
+import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.ApplicationWindow {
     id: root
@@ -50,18 +49,18 @@ Kirigami.ApplicationWindow {
                 Text { text: type + ", " + age }
             }
             
-            ListView {
-                id: listView
+            Kirigami.CardsListView {
+                id: layout
                 model: kountdownModel
                 delegate: kountdownDelegate
                 
-                Kirigami.Label {
+                Kirigami.Heading {
                     anchors.centerIn: parent
-                    visible: listView.count === 0
+                    visible: layout.count === 0
                     text: i18n("Add some kountdowns!")
+                    level: 2
                 }
             }
         }
     }
 }
-
