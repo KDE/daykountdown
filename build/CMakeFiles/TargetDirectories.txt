@@ -1,0 +1,11 @@
+/home/claucambra/Downloads/GitHub/DayKountdown/build/CMakeFiles/rebuild_cache.dir
+/home/claucambra/Downloads/GitHub/DayKountdown/build/CMakeFiles/edit_cache.dir
+/home/claucambra/Downloads/GitHub/DayKountdown/build/CMakeFiles/test.dir
+/home/claucambra/Downloads/GitHub/DayKountdown/build/CMakeFiles/fetch-translations.dir
+/home/claucambra/Downloads/GitHub/DayKountdown/build/CMakeFiles/uninstall.dir
+/home/claucambra/Downloads/GitHub/DayKountdown/build/src/CMakeFiles/rebuild_cache.dir
+/home/claucambra/Downloads/GitHub/DayKountdown/build/src/CMakeFiles/edit_cache.dir
+/home/claucambra/Downloads/GitHub/DayKountdown/build/src/CMakeFiles/test.dir
+/home/claucambra/Downloads/GitHub/DayKountdown/build/src/CMakeFiles/daykountdown.dir
+/home/claucambra/Downloads/GitHub/DayKountdown/build/src/CMakeFiles/daykountdown_autogen_timestamp_deps.dir
+/home/claucambra/Downloads/GitHub/DayKountdown/build/src/CMakeFiles/daykountdown_autogen.dir
