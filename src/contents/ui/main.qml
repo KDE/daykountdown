@@ -7,20 +7,11 @@ Kirigami.ApplicationWindow {
     id: root
 
     title: "Day Kountdown"
+    
     ListModel {
         id: kountdownModel
         ListElement { type: "Dog"; age: 8 }
         ListElement { type: "Cat"; age: 5 }
-    }
-
-    Component {
-        id: kountdownDelegate
-        Kirigami.AbstractCard { 
-            headerOrientation: Qt.Horizontal
-            contentItem: Controls.Label {
-            text: type + ", " + age 
-            }
-        }
     }
 
     pageStack.initialPage: mainPageComponent
@@ -39,10 +30,35 @@ Kirigami.ApplicationWindow {
             }
             
             
-            Kirigami.CardsListView {      
+            Kirigami.CardsListView {
                 id: layout
                 model: kountdownModel
-                delegate: kountdownDelegate
+                delegate: Kirigami.AbstractCard {
+                    contentItem: Item {
+                        implicitWidth: delegateLayout.implicitWidth
+                        implicitHeight: delegateLayout.implicitHeight
+                        GridLayout {
+							id: delegateLayout
+                            anchors {
+                                left: parent.left
+                                top: parent.top
+                                right: parent.right
+                            }
+                            rowSpacing: Kirigami.Units.largeSpacing
+                            columnSpacing: Kirigami.Units.largeSpacing 
+                            columns: width > Kirigami.Units.gridUnit * 20 ? 4 : 2
+                            Kirigami.Heading {
+                                level: 2
+                                text: type
+                            }
+                            Controls.Button {
+                                Layout.alignment: Qt.AlignRight
+                                Layout.columnSpan: 2 
+                                text: "button"
+                            }
+                        }
+                    }
+                }
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 
