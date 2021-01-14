@@ -7,6 +7,21 @@ Kirigami.ApplicationWindow {
     id: root
 
     title: "Day Kountdown"
+    ListModel {
+        id: kountdownModel
+        ListElement { type: "Dog"; age: 8 }
+        ListElement { type: "Cat"; age: 5 }
+    }
+
+    Component {
+        id: kountdownDelegate
+        Kirigami.AbstractCard { 
+            headerOrientation: Qt.Horizontal
+            contentItem: Controls.Label {
+            text: type + ", " + age 
+            }
+        }
+    }
 
     pageStack.initialPage: mainPageComponent
 
@@ -23,36 +38,26 @@ Kirigami.ApplicationWindow {
                 onTriggered: kountdownModel.append({"type": "potato", "age": 100})
             }
             
-            ColumnLayout {
-                width: parent.width
+            
+            Kirigami.CardsListView {      
+                id: layout
+                model: kountdownModel
+                delegate: kountdownDelegate
+                Layout.fillWidth: true
+                Layout.fillHeight: true
                 
-                Kirigami.Heading {
-                    Layout.topMargin: Kirigami.Units.smallSpacing
-                    Layout.bottomMargin: Kirigami.Units.smallSpacing
-                    Layout.fillWidth: true
+                header: Kirigami.Heading {
+                    padding: {
+                        top: 20
+                    }
+                    width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     property var date: new Date()
                     text: `${i18n("Today is")} ${date.toLocaleDateString()}`
                     level: 1
                     wrapMode: Text.Wrap
                 }
-            }
-            
-            ListModel {
-                id: kountdownModel
-                ListElement { type: "Dog"; age: 8 }
-                ListElement { type: "Cat"; age: 5 }
-            }
-
-            Component {
-                id: kountdownDelegate
-                Text { text: type + ", " + age }
-            }
-            
-            Kirigami.CardsListView {
-                id: layout
-                model: kountdownModel
-                delegate: kountdownDelegate
+                headerPositioning: ListView.PullBackHeader
                 
                 Kirigami.Heading {
                     anchors.centerIn: parent
