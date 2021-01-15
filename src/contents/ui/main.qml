@@ -47,20 +47,36 @@ Kirigami.ApplicationWindow {
                             rowSpacing: Kirigami.Units.largeSpacing
                             columnSpacing: Kirigami.Units.largeSpacing 
                             columns: width > Kirigami.Units.gridUnit * 20 ? 4 : 2
+                            
                             Kirigami.Heading {
-                                level: 2
-                                text: type
-                            }
+								Layout.fillHeight: true
+								Layout.preferredWidth: height
+								level: 1
+								text: "100"
+							}
+                            
+							ColumnLayout {
+								Kirigami.Heading {
+									level: 2
+									text: type
+								}
+								Kirigami.Separator {
+									Layout.fillWidth: true
+								}
+								Controls.Label {
+									Layout.fillWidth: true
+									wrapMode: Text.WordWrap
+									text: qsTr("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id risus id augue euismod accumsan.")
+								}
+							}
                             Controls.Button {
                                 Layout.alignment: Qt.AlignRight
                                 Layout.columnSpan: 2 
-                                text: "button"
+                                text: "More"
                             }
                         }
                     }
                 }
-                Layout.fillWidth: true
-                Layout.fillHeight: true
                 
                 header: Kirigami.Heading {
                     padding: {
