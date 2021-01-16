@@ -44,6 +44,7 @@ Kirigami.ApplicationWindow {
                     });
                     // clear value
                     nameField.text = "";
+					datePicker.selectedDate = nowDate
                     addSheet.close();
                 }
             }
