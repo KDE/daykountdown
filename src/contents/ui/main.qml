@@ -23,22 +23,25 @@ Kirigami.ApplicationWindow {
                 Kirigami.FormData.label: i18nc("@label:textbox", "Name:")
                 onAccepted: dateField.forceActiveFocus()
             }
-            Controls.TextField {
+            /* Controls.TextField {
                 id: dateField
                 Kirigami.FormData.label: i18nc("@label:textbox", "Date:")
                 onAccepted: addButton.forceActiveFocus()
-            }
+            } */
+            DatePicker {
+				id: datePicker
+			}
             Controls.Button {
                 id: addButton
+                Layout.fillWidth: true
                 text: i18nc("@action:button", "Add")
                 onClicked: {
                     kountdownModel.append({
                         "name": nameField.text,
-                        "date": dateField.text
+                        "date": datePicker.selectedDate
                     });
                     // clear value
                     nameField.text = "";
-                    dateField.text = "";
                     addSheet.close();
                 }
             }
@@ -49,8 +52,6 @@ Kirigami.ApplicationWindow {
     ListModel {
         id: kountdownModel
         // Each ListElement is an element on the list, containing information
-        ListElement { name: "Dog"; date: 8 }
-        ListElement { name: "Cat"; date: 5 }
     }
 
     // Initial page to be loaded on app load
