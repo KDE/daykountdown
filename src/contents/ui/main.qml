@@ -19,13 +19,28 @@ Kirigami.ApplicationWindow {
         }
         Kirigami.FormLayout {
             Controls.TextField {
+                id: typeField
                 Kirigami.FormData.label: i18nc("@label:textbox", "Type:")
+                onAccepted: ageField.forceActiveFocus()
             }
             Controls.TextField {
+                id: ageField
                 Kirigami.FormData.label: i18nc("@label:textbox", "Age:")
+                onAccepted: addButton.forceActiveFocus()
             }
             Controls.Button {
+                id: addButton
                 text: i18nc("@action:button", "Add")
+                onClicked: {
+                    kountdownModel.append({
+                        "type": typeField.text,
+                        "age": ageField.text
+                    });
+                    // clear value
+                    typeField.text = "";
+                    ageField.text = "";
+                    addSheet.close();
+                }
             }
         }
     }
