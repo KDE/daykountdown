@@ -14,16 +14,24 @@ Kirigami.ApplicationWindow {
 	
 	property var nowDate: new Date()	
 
+	// Overlay sheets appear over a part of the window
     Kirigami.OverlaySheet {
         id: addSheet
         header: Kirigami.Heading {
+			// i18nc is useful for addding context for translators
             text: i18nc("@title:window", "Add kountdown")
         }
+        // Form layouts help align and structure a layout with several inputs
         Kirigami.FormLayout {
+			// Textfields let you input text in a thin textbox
             Controls.TextField {
                 id: nameField
+                // Provides label attached to the textfield
                 Kirigami.FormData.label: i18nc("@label:textbox", "Name:")
-				placeholderText: i18n("Enter your event's name")
+				// Placeholder text is visible before you enter anything
+				placeholderText: i18n("Event name (required)")
+				// What to do after input is accepted (i.e. pressed enter)
+				// In this case, it moves the focus to the next field
                 onAccepted: descriptionField.forceActiveFocus()
             }
             Controls.TextField {
@@ -32,20 +40,26 @@ Kirigami.ApplicationWindow {
 				placeholderText: i18n("Optional")
                 onAccepted: datePicker.forceActiveFocus()
             }
+            // This singleton is bringing in a component defined in DatePicker.qml
             DatePicker {
 				id: datePicker
 			}
+			// This is a button.
             Controls.Button {
                 id: addButton
                 Layout.fillWidth: true
                 text: i18nc("@action:button", "Add")
+				// Button is only enabled if the user has entered something into the nameField
+				enabled: nameField.text.length > 0
                 onClicked: {
+					// Add a listelement to the kountdownModel ListModel
                     kountdownModel.append({
+						// Each of the properties and what to set them to
                         "name": nameField.text,
 						"description": descriptionField.text,
                         "date": datePicker.selectedDate
                     });
-                    // clear value
+                    // Clear values from the input sheet
                     nameField.text = "";
 					descriptionField.text = "";
 					datePicker.selectedDate = nowDate
