@@ -132,7 +132,7 @@ Kirigami.ApplicationWindow {
                     // We create a new date object
                     property var date: new Date()
                     // Use toLocaleDateString ,method to convert to string
-                    text: `${i18n("Today is")} ${date.toLocaleDateString()}`
+                    text: i18n("Today is %1", date.toLocaleDateString())
                     level: 1
                     wrapMode: Text.Wrap
                 }
