@@ -2,7 +2,7 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.0 as Controls
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.13 as Kirigami
 
 // Base element, provides basic features needed for all kirigami applications
 Kirigami.ApplicationWindow {
@@ -68,6 +68,7 @@ Kirigami.ApplicationWindow {
 
             // Kirigami.Action encapsulates a UI action. Inherits from QQC2 Action
             actions.main: Kirigami.Action {
+                id: addAction
                 // Name of icon associated with the action
                 icon.name: "list-add"
                 // Action text, i18n function returns translated string
@@ -154,13 +155,14 @@ Kirigami.ApplicationWindow {
                 // Different types of header positioning, this one gets covered up when you scroll
                 headerPositioning: ListView.PullBackHeader
 
-                Kirigami.Heading {
+                Kirigami.PlaceholderMessage {
                     // Center element, horizontally and vertically
                     anchors.centerIn: parent
+                    width: parent.width - (Kirigami.Units.largeSpacing * 4)
                     // Hide this if there are list elements to display
                     visible: layout.count === 0
                     text: i18n("Add some kountdowns!")
-                    level: 2
+                    helpfulAction: addAction
                 }
             }
         }
