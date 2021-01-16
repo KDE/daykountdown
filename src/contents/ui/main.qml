@@ -23,13 +23,15 @@ Kirigami.ApplicationWindow {
             Controls.TextField {
                 id: nameField
                 Kirigami.FormData.label: i18nc("@label:textbox", "Name:")
-                onAccepted: dateField.forceActiveFocus()
+				placeholderText: i18n("Enter your event's name")
+                onAccepted: descriptionField.forceActiveFocus()
             }
-            /* Controls.TextField {
-                id: dateField
-                Kirigami.FormData.label: i18nc("@label:textbox", "Date:")
-                onAccepted: addButton.forceActiveFocus()
-            } */
+            Controls.TextField {
+                id: descriptionField
+                Kirigami.FormData.label: i18nc("@label:textbox", "Description:")
+				placeholderText: i18n("Optional")
+                onAccepted: datePicker.forceActiveFocus()
+            }
             DatePicker {
 				id: datePicker
 			}
@@ -40,10 +42,12 @@ Kirigami.ApplicationWindow {
                 onClicked: {
                     kountdownModel.append({
                         "name": nameField.text,
+						"description": descriptionField.text,
                         "date": datePicker.selectedDate
                     });
                     // clear value
                     nameField.text = "";
+					descriptionField.text = "";
 					datePicker.selectedDate = nowDate
                     addSheet.close();
                 }
@@ -118,20 +122,23 @@ Kirigami.ApplicationWindow {
                             // Kayout for positioning elements vertically
                             ColumnLayout {
                                 Kirigami.Heading {
+									Layout.fillWidth: true
                                     level: 2
                                     text: name
                                 }
-                                // Horizontal rule
-                                Kirigami.Separator {
-                                    Layout.fillWidth: true
-                                }
-                                // Labels contain text
-                                Controls.Label {
-                                    Layout.fillWidth: true
-                                    // Word wrap makes text stay within box and shift with size
-                                    wrapMode: Text.WordWrap
-                                    text: i18n("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id risus id augue euismod accumsan.")
-                                }
+								// Horizontal rule
+								Kirigami.Separator {
+									Layout.fillWidth: true
+									visible: description.length > 0
+								}
+								// Labels contain text
+								Controls.Label {
+									Layout.fillWidth: true
+									// Word wrap makes text stay within box and shift with size
+									wrapMode: Text.WordWrap
+									text: description
+									visible: description.length > 0
+								}
                             }
                             Controls.Button {
                                 Layout.alignment: Qt.AlignRight
