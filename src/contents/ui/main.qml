@@ -19,13 +19,13 @@ Kirigami.ApplicationWindow {
         }
         Kirigami.FormLayout {
             Controls.TextField {
-                id: typeField
-                Kirigami.FormData.label: i18nc("@label:textbox", "Type:")
-                onAccepted: ageField.forceActiveFocus()
+                id: nameField
+                Kirigami.FormData.label: i18nc("@label:textbox", "Name:")
+                onAccepted: dateField.forceActiveFocus()
             }
             Controls.TextField {
-                id: ageField
-                Kirigami.FormData.label: i18nc("@label:textbox", "Age:")
+                id: dateField
+                Kirigami.FormData.label: i18nc("@label:textbox", "Date:")
                 onAccepted: addButton.forceActiveFocus()
             }
             Controls.Button {
@@ -33,12 +33,12 @@ Kirigami.ApplicationWindow {
                 text: i18nc("@action:button", "Add")
                 onClicked: {
                     kountdownModel.append({
-                        "type": typeField.text,
-                        "age": ageField.text
+                        "name": nameField.text,
+                        "date": dateField.text
                     });
                     // clear value
-                    typeField.text = "";
-                    ageField.text = "";
+                    nameField.text = "";
+                    dateField.text = "";
                     addSheet.close();
                 }
             }
@@ -49,8 +49,8 @@ Kirigami.ApplicationWindow {
     ListModel {
         id: kountdownModel
         // Each ListElement is an element on the list, containing information
-        ListElement { type: "Dog"; age: 8 }
-        ListElement { type: "Cat"; age: 5 }
+        ListElement { name: "Dog"; date: 8 }
+        ListElement { name: "Cat"; date: 5 }
     }
 
     // Initial page to be loaded on app load
@@ -107,14 +107,14 @@ Kirigami.ApplicationWindow {
                                 Layout.fillHeight: true
                                 // Level determines the size of the heading
                                 level: 1
-                                text: "100"
+                                text: date
                             }
 
                             // Kayout for positioning elements vertically
                             ColumnLayout {
                                 Kirigami.Heading {
                                     level: 2
-                                    text: type
+                                    text: name
                                 }
                                 // Horizontal rule
                                 Kirigami.Separator {
