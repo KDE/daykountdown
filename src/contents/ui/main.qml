@@ -11,6 +11,8 @@ Kirigami.ApplicationWindow {
 
     // Window title
     title: i18nc("@title:window", "Day Kountdown")
+	
+	property var nowDate: new Date()	
 
     Kirigami.OverlaySheet {
         id: addSheet
@@ -52,6 +54,7 @@ Kirigami.ApplicationWindow {
     ListModel {
         id: kountdownModel
         // Each ListElement is an element on the list, containing information
+        // ListElement { name: "Dog"; date: 8 }
     }
 
     // Initial page to be loaded on app load
@@ -108,7 +111,7 @@ Kirigami.ApplicationWindow {
                                 Layout.fillHeight: true
                                 // Level determines the size of the heading
                                 level: 1
-                                text: date
+                                text: i18n("%1 days", Math.round((date.getTime()-nowDate.getTime())/86400000))
                             }
 
                             // Kayout for positioning elements vertically
@@ -146,10 +149,8 @@ Kirigami.ApplicationWindow {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     // Javascript variables must be prefixed with 'property'
-                    // We create a new date object
-                    property var date: new Date()
-                    // Use toLocaleDateString ,method to convert to string
-                    text: i18n("Today is %1", date.toLocaleDateString())
+                    // Use toLocaleDateString, method to convert date object to string
+                    text: i18n("Today is %1", nowDate.toLocaleDateString())
                     level: 1
                     wrapMode: Text.Wrap
                 }
