@@ -12,6 +12,10 @@ Kirigami.ApplicationWindow {
 	// Window title
     title: "Day Kountdown"
     
+	Kirigami.OverlaySheet {
+		id: addSheet
+	}
+	
 	// ListModel needed for ListView, contains elements to be displayed
     ListModel {
         id: kountdownModel
@@ -19,7 +23,7 @@ Kirigami.ApplicationWindow {
         ListElement { type: "Dog"; age: 8 }
         ListElement { type: "Cat"; age: 5 }
     }
-
+    
     // Initial page to be loaded on app load
     pageStack.initialPage: mainPageComponent
 
@@ -40,8 +44,7 @@ Kirigami.ApplicationWindow {
 				// Action text, i18n function returns translated string
                 text: i18n("Add kountdown")
 				// What to do when triggering the action
-                //onTriggered: pageStack.push(Qt.resolvedUrl("addPage.qml"))
-                onTriggered: kountdownModel.append({"type": "potato", "age": 100})
+                onTriggered: addSheet.open()
             }
             
             // List view for card elements
