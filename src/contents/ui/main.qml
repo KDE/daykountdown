@@ -85,9 +85,6 @@ Kirigami.ApplicationWindow {
 			// i18nc is useful for adding context for translators
             text: i18nc("@title:window", "Edit kountdown")
         }
-        
-        
-        
         Kirigami.FormLayout {
             Controls.TextField {
                 id: editNameField
@@ -113,14 +110,18 @@ Kirigami.ApplicationWindow {
                 text: i18nc("@action:button", "Done")
 				enabled: editNameField.text.length > 0
                 onClicked: {
-                    kountdownModel.append({
-                        "name": editNameField.text,
-						"description": editDescriptionField.text,
-                        "date": editDatePicker.selectedDate
-                    });
-                    editNameField.text = "";
-					editDescriptionField.text = "";
-					editDatePicker.selectedDate = nowDate
+					for (let i = 0; i < kountdownModel.count; i++) {
+						if(kountdownModel.get(i).name == editingName) {
+							kountdownModel.set(i, {
+								"name": editNameField.text, 
+								"description": editDescriptionField.text,
+								"date": editDatePicker.selectedDate
+							})
+						}
+					}
+                    editingName = ""
+					editingDesc = ""
+					editingDate = nowDate
                     editSheet.close();
                 }
             }
