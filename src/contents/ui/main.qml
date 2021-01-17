@@ -18,31 +18,31 @@ Kirigami.ApplicationWindow {
     Kirigami.OverlaySheet {
         id: addSheet
         header: Kirigami.Heading {
-			// i18nc is useful for addding context for translators
+			// i18nc is useful for adding context for translators
             text: i18nc("@title:window", "Add kountdown")
         }
         // Form layouts help align and structure a layout with several inputs
         Kirigami.FormLayout {
 			// Textfields let you input text in a thin textbox
             Controls.TextField {
-                id: nameField
+                id: addNameField
                 // Provides label attached to the textfield
                 Kirigami.FormData.label: i18nc("@label:textbox", "Name:")
 				// Placeholder text is visible before you enter anything
 				placeholderText: i18n("Event name (required)")
 				// What to do after input is accepted (i.e. pressed enter)
 				// In this case, it moves the focus to the next field
-                onAccepted: descriptionField.forceActiveFocus()
+                onAccepted: addDescriptionField.forceActiveFocus()
             }
             Controls.TextField {
-                id: descriptionField
+                id: addDescriptionField
                 Kirigami.FormData.label: i18nc("@label:textbox", "Description:")
 				placeholderText: i18n("Optional")
-                onAccepted: datePicker.forceActiveFocus()
+                onAccepted: addDatePicker.forceActiveFocus()
             }
             // This singleton is bringing in a component defined in DatePicker.qml
             DatePicker {
-				id: datePicker
+				id: addDatePicker
 			}
 			// This is a button.
             Controls.Button {
@@ -50,20 +50,78 @@ Kirigami.ApplicationWindow {
                 Layout.fillWidth: true
                 text: i18nc("@action:button", "Add")
 				// Button is only enabled if the user has entered something into the nameField
-				enabled: nameField.text.length > 0
+				enabled: addNameField.text.length > 0
                 onClicked: {
 					// Add a listelement to the kountdownModel ListModel
                     kountdownModel.append({
 						// Each of the properties and what to set them to
-                        "name": nameField.text,
-						"description": descriptionField.text,
-                        "date": datePicker.selectedDate
+                        "name": addNameField.text,
+						"description": addDescriptionField.text,
+                        "date": addDatePicker.selectedDate
                     });
                     // Clear values from the input sheet
-                    nameField.text = "";
-					descriptionField.text = "";
-					datePicker.selectedDate = nowDate
+                    addNameField.text = "";
+					addDescriptionField.text = "";
+					addDatePicker.selectedDate = nowDate
                     addSheet.close();
+                }
+            }
+        }
+    }
+    
+    property var editingName
+    property var editingDesc
+    property var editingDate
+    function openPopulateEditSheet (listName, listDesc, listDate) {
+		editingName = listName
+		editingDesc = listDesc
+		editingDate = listDate
+		editSheet.open()
+	}
+		
+    Kirigami.OverlaySheet {
+        id: editSheet
+        header: Kirigami.Heading {
+			// i18nc is useful for adding context for translators
+            text: i18nc("@title:window", "Edit kountdown")
+        }
+        
+        
+        
+        Kirigami.FormLayout {
+            Controls.TextField {
+                id: editNameField
+                Kirigami.FormData.label: i18nc("@label:textbox", "Name:")
+				placeholderText: i18n("Event name (required)")
+				text: editingName
+                onAccepted: editDescriptionField.forceActiveFocus()
+            }
+            Controls.TextField {
+                id: editDescriptionField
+                Kirigami.FormData.label: i18nc("@label:textbox", "Description:")
+				placeholderText: i18n("Optional")
+				text: editingDesc
+                onAccepted: editDatePicker.forceActiveFocus()
+            }
+            DatePicker {
+				id: editDatePicker
+				selectedDate: editingDate
+			}
+            Controls.Button {
+                id: editButton
+                Layout.fillWidth: true
+                text: i18nc("@action:button", "Done")
+				enabled: editNameField.text.length > 0
+                onClicked: {
+                    kountdownModel.append({
+                        "name": editNameField.text,
+						"description": editDescriptionField.text,
+                        "date": editDatePicker.selectedDate
+                    });
+                    editNameField.text = "";
+					editDescriptionField.text = "";
+					editDatePicker.selectedDate = nowDate
+                    editSheet.close();
                 }
             }
         }
@@ -159,6 +217,7 @@ Kirigami.ApplicationWindow {
                                 // Column spanning within grid layout (vertically in this case)
                                 Layout.columnSpan: 2
                                 text: i18n("More")
+								onClicked: openPopulateEditSheet(name, description, date)
                             }
                         }
                     }
