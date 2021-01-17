@@ -110,13 +110,17 @@ Kirigami.ApplicationWindow {
                 text: i18nc("@action:button", "Done")
 				enabled: editNameField.text.length > 0
                 onClicked: {
-					for (let i = 0; i < kountdownModel.count; i++) {
-						if(kountdownModel.get(i).name == editingName) {
-							kountdownModel.set(i, {
-								"name": editNameField.text, 
-								"description": editDescriptionField.text,
-								"date": editDatePicker.selectedDate
-							})
+					if (editNameField.text != editingName || 
+						editDescriptionField.text != editingDesc || 
+						editDatePicker.selectedDate != editingDate) {
+						for (let i = 0; i < kountdownModel.count; i++) {
+							if(kountdownModel.get(i).name == editingName) {
+								kountdownModel.set(i, {
+									"name": editNameField.text, 
+									"description": editDescriptionField.text,
+									"date": editDatePicker.selectedDate
+								})
+							}
 						}
 					}
                     editingName = ""
