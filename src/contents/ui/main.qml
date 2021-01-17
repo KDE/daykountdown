@@ -239,7 +239,7 @@ Kirigami.ApplicationWindow {
                                 Layout.alignment: Qt.AlignRight
                                 // Column spanning within grid layout (vertically in this case)
                                 Layout.columnSpan: 2
-                                text: i18n("More")
+                                text: i18n("Edit")
 								onClicked: openPopulateEditSheet(name, description, date)
                             }
                         }
