@@ -87,16 +87,19 @@ Kirigami.ApplicationWindow {
         }
     }
     
+    // Setting variables in AppWindow scope so they are accessible to editSheet
     property var editingName
     property var editingDesc
     property var editingDate
+    // Function called by 'edit' button on card
     function openPopulateEditSheet (listName, listDesc, listDate) {
 		editingName = listName
 		editingDesc = listDesc
 		editingDate = listDate
 		editSheet.open()
 	}
-		
+	
+	// Mirrors addSheet
     Kirigami.OverlaySheet {
         id: editSheet
         header: Kirigami.Heading {
