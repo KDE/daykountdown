@@ -12,6 +12,24 @@ Kirigami.ApplicationWindow {
     // Window title
     title: i18nc("@title:window", "Day Kountdown")
 	
+	globalDrawer: Kirigami.GlobalDrawer {
+		isMenu: true
+		actions: [
+			Kirigami.Action {
+                text: i18n("Settings")
+                icon.name: "settings-configure"
+                //onTriggered: Settings page with exporting kountdowns
+                shortcut: StandardKey.Preferences
+            },
+			Kirigami.Action {
+					text: i18n("Quit")
+					icon.name: "gtk-quit"
+					shortcut: StandardKey.Quit
+					onTriggered: Qt.quit()
+				}
+		]
+	}
+	
 	property var nowDate: new Date()	
 
 	// Overlay sheets appear over a part of the window
