@@ -1,5 +1,10 @@
 #include "backend.h"
 
+Backend::Backend(QObject *parent) : QObject(parent)
+{
+
+}
+
 QByteArray loadJson() {
 	QFile inFile("contents/kountdowns.json");
 	inFile.open(QIODevice::ReadOnly | QIODevice::Text);
