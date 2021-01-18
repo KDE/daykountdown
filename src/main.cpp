@@ -4,19 +4,28 @@
 #include <QtQml>
 #include <QUrl>
 
-struct kountdown {
-		Q_GADGET
-		QString _name;
-		QString _description;
-		QDateTime _date;
-		Q_PROPERTY(QString name MEMBER _name)
-		Q_PROPERTY(QString description MEMBER _description)
-		Q_PROPERTY(QDateTime date MEMBER _date)
-};
+QByteArray loadJson() {
+	QFile inFile("contents/kountdowns.json");
+	inFile.open(QIODevice::ReadOnly | QIODevice::Text);
+	QByteArray data = inFile.readAll();
+	inFile.close();
 	
-void setupKountdowns() {
-	
+	return data;
 }
+
+QJsonArray fetchKountdowns() {
+	QByteArray data = loadJson();
+	
+	QJsonParseError errorPtr;
+	QJsonDocument kountdownsDoc = QJsonDocument::fromJson(data, &errorPtr);
+	if(kountdownsDoc.isNull())
+		qDebug() << "Parse failed";
+	QJsonObject rootObj = kountdownsDoc.object();
+	QJsonArray kountdownsArray = rootObj.value("kountdowns").toArray();
+	return kountdownsArray;
+}
+
+
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
@@ -34,7 +43,5 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         return -1;
     }
 
-    setupKountdowns();
-    
     return app.exec();
 }
