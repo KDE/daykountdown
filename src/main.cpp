@@ -3,6 +3,10 @@
 #include <QtQml>
 #include <QUrl>
 
+void setupKountdowns() {
+	
+}
+
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -19,5 +23,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         return -1;
     }
 
+    setupKountdowns();
+    
     return app.exec();
 }
