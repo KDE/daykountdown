@@ -12,6 +12,24 @@ Kirigami.ApplicationWindow {
     // Window title
     title: i18nc("@title:window", "Day Kountdown")
 	
+	// ListModel needed for ListView, contains elements to be displayed
+    ListModel {
+        id: kountdownModel
+        // Each ListElement is an element on the list, containing information
+        // ListElement { name: "Dog"; date: 8 }
+    }
+    
+	function populateModel(array) {
+		for(kountdown of array) {
+			kountdownModel.append({
+				"name": kountdown.name,
+				"description": kountdown.description,
+				"date": kountdown.date
+			})
+		}
+	}
+    
+	
 	globalDrawer: Kirigami.GlobalDrawer {
 		isMenu: true
 		actions: [
@@ -153,13 +171,6 @@ Kirigami.ApplicationWindow {
                 }
             }
         }
-    }
-
-    // ListModel needed for ListView, contains elements to be displayed
-    ListModel {
-        id: kountdownModel
-        // Each ListElement is an element on the list, containing information
-        // ListElement { name: "Dog"; date: 8 }
     }
 
     // Initial page to be loaded on app load
