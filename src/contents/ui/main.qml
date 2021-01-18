@@ -19,13 +19,15 @@ Kirigami.ApplicationWindow {
         // ListElement { name: "Dog"; date: 8 }
     }
     
-	function populateModel(array) {
-		for(kountdown of array) {
-			kountdownModel.append({
-				"name": kountdown.name,
-				"description": kountdown.description,
-				"date": kountdown.date
-			})
+    Item {
+		function populateModel(array) {
+			for(kountdown of array) {
+				kountdownModel.append({
+					"name": kountdown.name,
+					"description": kountdown.description,
+					"date": kountdown.date
+				})
+			}
 		}
 	}
     

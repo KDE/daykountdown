@@ -1,8 +1,19 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQuickView>
 #include <QtQml>
 #include <QUrl>
 
+struct kountdown {
+		Q_GADGET
+		QString _name;
+		QString _description;
+		QDateTime _date;
+		Q_PROPERTY(QString name MEMBER _name)
+		Q_PROPERTY(QString description MEMBER _description)
+		Q_PROPERTY(QDateTime date MEMBER _date)
+};
+	
 void setupKountdowns() {
 	
 }
