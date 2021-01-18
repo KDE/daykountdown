@@ -131,9 +131,11 @@ Kirigami.ApplicationWindow {
                 text: i18nc("@action:button", "Done")
 				enabled: editNameField.text.length > 0
                 onClicked: {
+					// Checks if kountdown properties have been changed
 					if (editNameField.text != editingName || 
 						editDescriptionField.text != editingDesc || 
 						editDatePicker.selectedDate != editingDate) {
+						// Loop through entries in kountdownModel for correct one
 						for (let i = 0; i < kountdownModel.count; i++) {
 							if(kountdownModel.get(i).name == editingName) {
 								kountdownModel.set(i, {
