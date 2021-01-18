@@ -4,6 +4,8 @@ import QtQuick.Controls 2.0 as Controls
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.13 as Kirigami
 
+import org.kde.backend 1.0
+
 // Base element, provides basic features needed for all kirigami applications
 Kirigami.ApplicationWindow {
 	// ID provides unique identifier to reference this element
@@ -18,19 +20,6 @@ Kirigami.ApplicationWindow {
 		// Each ListElement is an element on the list, containing information
 		// ListElement { name: "Dog"; date: 8 }
 	}
-	
-	Item {
-		function populateModel(array) {
-			for(kountdown of array) {
-				kountdownModel.append({
-					"name": kountdown.name,
-					"description": kountdown.description,
-					"date": kountdown.date
-				})
-			}
-		}
-	}
-	
 	
 	globalDrawer: Kirigami.GlobalDrawer {
 		isMenu: true

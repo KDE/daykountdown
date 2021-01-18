@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QtQml>
 #include <QUrl>
+#include "backend.h"
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
@@ -12,6 +13,9 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("DayKountdown");
 
     QQmlApplicationEngine engine;
+	
+	Backend backend;
+	qmlRegisterSingletonInstance<Backend>("org.kde.backend", 1, 0, "Backend", &backend);
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 
