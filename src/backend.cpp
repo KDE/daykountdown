@@ -7,7 +7,7 @@ Backend::Backend(QObject *parent) : QObject(parent)
 
 void Backend::_fetchKountdowns() {
 	_kountdownArray.clear();
-	QFile inFile("kountdowns.json");
+	QFile inFile(":/kountdowns.json");
 	if(inFile.exists()) {
 		qDebug() << "Found kountdowns.json";
 		inFile.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -42,7 +42,7 @@ void Backend::_fetchKountdowns() {
 			currKountdown.name = kountdownJson.toObject().value("name").toString();
 			currKountdown.description = kountdownJson.toObject().value("description").toString();
 			currKountdown.date = kountdownJson.toObject().value("date").toString();
-			_kountdownArray[i] = currKountdown;
+			_kountdownArray.append(currKountdown);
 			i++;
 		}
 	}
