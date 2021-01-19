@@ -1,8 +1,10 @@
 /*
- * SPDX-FileCopyrightText: (C) 2020 Carl Schwan <carl@carlschwan.eu>
+ * SPDX-FileCopyrightText: (C) 2021 Carl Schwan <carl@carlschwan.eu>
+ * SPDX-FileCopyrightText: (C) 2021 Claudio Cambra <claudio.cambra@gmail.com>
  * 
  * SPDX-LicenseRef: GPL-3.0-or-later
  */
+
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QQmlApplicationEngine>
@@ -29,7 +31,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
                          i18nc("@title", "A countdown application"),
                          KAboutLicense::GPL_V3);
 
-    aboutData.addAuthor(i18nc("@info:credit", "Clau Cambra"), i18nc("@info:credit", "Creator"));
+    aboutData.addAuthor(i18nc("@info:credit", "Claudio Cambra"), i18nc("@info:credit", "Creator"));
+	aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"), i18nc("@info:credit", "SQLite pro and code review"));
 
     KAboutData::setApplicationData(aboutData);
     QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.daykountdown")));
