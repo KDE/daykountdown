@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file alias="main.qml">contents/ui/main.qml</file>
 		<file alias="DatePicker.qml">contents/ui/DatePicker.qml</file>
+		<file alias="kountdowns.json">contents/kountdowns.json</file>
     </qresource>
 </RCC>

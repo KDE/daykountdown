@@ -4,8 +4,6 @@ import QtQuick.Controls 2.0 as Controls
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.13 as Kirigami
 
-import org.kde.backend 1.0
-
 // Base element, provides basic features needed for all kirigami applications
 Kirigami.ApplicationWindow {
 	// ID provides unique identifier to reference this element
@@ -13,6 +11,12 @@ Kirigami.ApplicationWindow {
 
 	// Window title
 	title: i18nc("@title:window", "Day Kountdown")
+	
+	Component.onCompleted: {
+		for(var i in backend.Kountdowns) {
+			console.log(backend.Kountdowns[i]);
+		}
+	}
 	
 	// ListModel needed for ListView, contains elements to be displayed
 	ListModel {

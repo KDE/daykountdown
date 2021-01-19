@@ -15,7 +15,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 	
 	Backend backend;
-	qmlRegisterSingletonInstance<Backend>("org.kde.backend", 1, 0, "Backend", &backend);
+	engine.rootContext()->setContextProperty("backend", &backend);
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 

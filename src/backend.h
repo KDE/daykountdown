@@ -31,6 +31,5 @@ public:
 private:	
 	QVector<kountdown> _kountdownArray;
 	
-	QByteArray _loadJson();
 	void _fetchKountdowns();
 };
