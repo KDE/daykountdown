@@ -20,9 +20,8 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 
 ################# Find dependencies #################
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui QuickControls2 Svg)
-find_package(KF5Kirigami2 ${KF5_MIN_VERSION})
-find_package(KF5I18n ${KF5_MIN_VERSION})
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui QuickControls2 Svg Sql)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 I18n CoreAddons)
 
 ################# Enable C++11 features for clang and gcc #################
 
