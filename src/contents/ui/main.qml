@@ -10,6 +10,7 @@ import QtQuick 2.6
 import QtQuick.Controls 2.0 as Controls
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.13 as Kirigami
+import org.kde.daykountdown.private 1.0
 
 // Base element, provides basic features needed for all kirigami applications
 Kirigami.ApplicationWindow {
@@ -78,12 +79,7 @@ Kirigami.ApplicationWindow {
 				enabled: addNameField.text.length > 0
 				onClicked: {
 					// Add a listelement to the kountdownModel ListModel
-					kountdownModel.append({
-						// Each of the properties and what to set them to
-						"name": addNameField.text,
-						"description": addDescriptionField.text,
-						"date": addDatePicker.selectedDate
-					});
+					KountdownModel.addKountdown(addNameField.text, addDescriptionField.text, addDatePicker.selectedDate);
 					// Clear values from the input sheet
 					addNameField.text = "";
 					addDescriptionField.text = "";
@@ -99,16 +95,18 @@ Kirigami.ApplicationWindow {
 	property var editingDesc
 	property var editingDate
 	// Function called by 'edit' button on card
-	function openPopulateEditSheet (listName, listDesc, listDate) {
+	function openPopulateEditSheet(index, listName, listDesc, listDate) {
 		editingName = listName
 		editingDesc = listDesc
 		editingDate = listDate
+        editSheet.index = index;
 		editSheet.open()
 	}
 	
 	// Mirrors addSheet
 	Kirigami.OverlaySheet {
-		id: editSheet
+        id: editSheet
+        property int index;
 		header: Kirigami.Heading {
 			// i18nc is useful for adding context for translators
 			text: i18nc("@title:window", "Edit kountdown")
@@ -142,16 +140,8 @@ Kirigami.ApplicationWindow {
 					if (editNameField.text != editingName || 
 						editDescriptionField.text != editingDesc || 
 						editDatePicker.selectedDate != editingDate) {
-						// Loop through entries in kountdownModel for correct one
-						for (let i = 0; i < kountdownModel.count; i++) {
-							if(kountdownModel.get(i).name == editingName) {
-								kountdownModel.set(i, {
-									"name": editNameField.text, 
-									"description": editDescriptionField.text,
-									"date": editDatePicker.selectedDate
-								})
-							}
-						}
+                        KountdownModel.editKountdown(editSheet.index, editNameField.text,
+                            editDescriptionField.text, editDatePicker.selectedDate);
 					}
 					editingName = ""
 					editingDesc = ""
@@ -245,7 +235,7 @@ Kirigami.ApplicationWindow {
 								// Column spanning within grid layout (vertically in this case)
 								Layout.columnSpan: 2
 								text: i18n("Edit")
-								onClicked: openPopulateEditSheet(name, description, date)
+								onClicked: openPopulateEditSheet(index, name, description, date)
 							}
 						}
 					}
