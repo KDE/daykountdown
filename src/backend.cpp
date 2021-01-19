@@ -45,6 +45,7 @@ void Backend::_fetchKountdowns() {
 			_kountdownArray[i] = currKountdown;
 			i++;
 		}
+	}
 	else {
 		qDebug() << "Didn't find kountdowns.json";
 	}
