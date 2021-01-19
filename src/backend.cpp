@@ -7,7 +7,8 @@ Backend::Backend(QObject *parent) : QObject(parent)
 
 void Backend::_fetchKountdowns() {
 	_kountdownArray.clear();
-	QFile inFile(":/kountdowns.json");
+	QString jsonFilePath = QDir::homePath() + "/.local/share/DayKountdown/kountdowns.json";
+	QFile inFile(jsonFilePath);
 	if(inFile.exists()) {
 		qDebug() << "Found kountdowns.json";
 		inFile.open(QIODevice::ReadOnly | QIODevice::Text);
