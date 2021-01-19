@@ -1,27 +1,59 @@
+/*
+ * SPDX-FileCopyrightText: (C) 2020 Carl Schwan <carl@carlschwan.eu>
+ * 
+ * SPDX-LicenseRef: GPL-3.0-or-later
+ */
 #include <QApplication>
+#include <QCommandLineParser>
 #include <QQmlApplicationEngine>
 #include <QtQml>
-#include <KLocalizedContext>
-#include <KLocalizedString>
 #include <QUrl>
-#include "backend.h"
+#include <QIcon>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <KLocalizedContext>
+#include <KAboutData>
+#include <KLocalizedString>
+#include "kountdownmodel.h"
+
+const QString DRIVER(QStringLiteral("QSQLITE"));
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    KLocalizedString::setApplicationDomain("daykountdown");
     QApplication app(argc, argv);
-    QCoreApplication::setOrganizationName("KDE");
-    QCoreApplication::setOrganizationDomain("kde.org");
-    QCoreApplication::setApplicationName("DayKountdown");
+    KLocalizedString::setApplicationDomain("daykountdown");
+
+    KAboutData aboutData(QStringLiteral("daykountdown"), i18nc("@title", "DayKountdown"), QStringLiteral("0.1"),
+                         i18nc("@title", "A countdown application"),
+                         KAboutLicense::GPL_V3);
+
+    aboutData.addAuthor(i18nc("@info:credit", "Clau Cambra"), i18nc("@info:credit", "Creator"));
+
+    KAboutData::setApplicationData(aboutData);
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.daykountdown")));
+
+    Q_ASSERT(QSqlDatabase::isDriverAvailable(DRIVER));
+    Q_ASSERT(QDir().mkpath(QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::DataLocation))));
+    QSqlDatabase db = QSqlDatabase::addDatabase(DRIVER);
+    const auto path = QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QStringLiteral("/") + qApp->applicationName());
+    db.setDatabaseName(path);
+    if (!db.open()) {
+        qCritical() << db.lastError() << "while opening database at" << path;
+    }
+
+    QCommandLineParser parser;
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
     QQmlApplicationEngine engine;
-	
-	Backend backend;
-	engine.rootContext()->setContextProperty("backend", &backend);
 
-    engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
+    qmlRegisterSingletonInstance("org.kde.kontrast.private", 1, 0, "ColorStore", new KountdownModel(qApp));
+
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 
     if (engine.rootObjects().isEmpty()) {
         return -1;

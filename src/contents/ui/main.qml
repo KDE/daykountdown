@@ -12,24 +12,6 @@ Kirigami.ApplicationWindow {
 	// Window title
 	title: i18nc("@title:window", "Day Kountdown")
 	
-	// ListModel needed for ListView, contains elements to be displayed
-	ListModel {
-		id: kountdownModel
-		// Each ListElement is an element on the list, containing information
-		// ListElement { name: "Dog"; date: 8 }
-	}
-	
-	Component.onCompleted: {
-		for(var i in backend.Kountdowns) {
-			kountdownModel.append({
-				// Each of the properties and what to set them to
-				"name": backend.Kountdowns[i].name,
-				"description": backend.Kountdowns[i].description,
-				"date": new Date(backend.Kountdowns[i].date)
-			});
-		}
-	}
-	
 	globalDrawer: Kirigami.GlobalDrawer {
 		isMenu: true
 		actions: [
@@ -201,7 +183,7 @@ Kirigami.ApplicationWindow {
 			Kirigami.CardsListView {
 				id: layout
 				// Model contains info to be displayed
-				model: kountdownModel
+				model: KountdownModel
 				// Delegate is how the information will be presented in the ListView
 				delegate: Kirigami.AbstractCard {
 					// contentItem property includes the content to be displayed on the card
