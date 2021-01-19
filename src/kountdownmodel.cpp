@@ -19,10 +19,10 @@ KountdownModel::KountdownModel(QObject *parent)
     if (!QSqlDatabase::database().tables().contains(QStringLiteral("KountdownModel"))) {
         const auto statement = QStringLiteral(R"RJIENRLWEY(
             CREATE TABLE IF NOT EXISTS KountdownModel (
-                ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                Name TEXT NOT NULL,
-                Description TEXT NOT NULL,
-                Date TEXT NOT NULL,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                description TEXT NOT NULL,
+                date TEXT NOT NULL
             )
         )RJIENRLWEY");
         auto query = QSqlQuery(statement);
@@ -74,6 +74,17 @@ bool KountdownModel::addKountdown(const QString& name, const QString& descriptio
     newRecord.setValue(QStringLiteral("Date"), date.toString(Qt::ISODate));
 
     bool result = insertRecord(rowCount(), newRecord);
+    result &= submitAll();
+    return result;
+}
+
+bool KountdownModel::editKountdown(int index, const QString& name, const QString& description, const QDateTime& date)
+{
+    QSqlRecord record = this->record();
+    record.setValue(QStringLiteral("Name"), name);
+    record.setValue(QStringLiteral("Description"), description);
+    record.setValue(QStringLiteral("Date"), date.toString(Qt::ISODate));
+    bool result = setRecord(index, record);
     result &= submitAll();
     return result;
 }
