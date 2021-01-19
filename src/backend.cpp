@@ -2,7 +2,7 @@
 
 Backend::Backend(QObject *parent) : QObject(parent)
 {
-
+	_fetchKountdowns();
 }
 
 QByteArray Backend::_loadJson() {
@@ -14,16 +14,8 @@ QByteArray Backend::_loadJson() {
 	return data;
 }
 
-struct kountdownArray[100];
-
 void Backend::_fetchKountdowns() {
-	struct kountdown {
-		QString index;
-		QString name;
-		QString description;
-		QString date;
-	};
-	
+	_kountdownArray.clear();
 	QByteArray data = _loadJson();
 	
 	QJsonParseError errorPtr;
@@ -31,7 +23,7 @@ void Backend::_fetchKountdowns() {
 	if(kountdownsDoc.isNull())
 		qDebug() << "Parse failed";
 	QJsonObject rootObj = kountdownsDoc.object();
-	QJsonArray kountdownsArray = rootObj.value("kountdowns").toArray();
+	QJsonArray kountdownsJsonArray = rootObj.value("kountdowns").toArray();
 	
 	/*
 	 * JSON Structure should be like so:
@@ -48,13 +40,23 @@ void Backend::_fetchKountdowns() {
 	 */
 	
 	int i = 0;
-	foreach(const QJsonValue & kountdown, kountdownsArray) {
-		struct kountdown currKountdown;
+	foreach(const QJsonValue & kountdownJson, kountdownsJsonArray) {
+		kountdown currKountdown;
 		currKountdown.index = i;
-		currKountdown.name = kountdown.toObject().value("name").toString();
-		currKountdown.description = kountdown.toObject().value("description").toString();
-		currKountdown.date = kountdown.toObject().value("date").toString();
+		currKountdown.name = kountdownJson.toObject().value("name").toString();
+		currKountdown.description = kountdownJson.toObject().value("description").toString();
+		currKountdown.date = kountdownJson.toObject().value("date").toString();
+		_kountdownArray[i] = currKountdown;
 		i++;
 	}
 }
 
+QVariantList Backend::kountdownPopulator () {
+	QVariantList kountdownsList;
+	
+	for (const kountdown & k : _kountdownArray) {
+		kountdownsList << QVariant::fromValue(k);
+	}
+	
+	return kountdownsList;
+}
