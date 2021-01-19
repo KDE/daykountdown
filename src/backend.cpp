@@ -8,10 +8,10 @@ Backend::Backend(QObject *parent) : QObject(parent)
 QByteArray Backend::_loadJson() {
 	QFile inFile("contents/kountdowns.json");
 	inFile.open(QIODevice::ReadOnly | QIODevice::Text);
-	QByteArray data = inFile.readAll();
+	QByteArray jsonData = inFile.readAll();
 	inFile.close();
 	
-	return data;
+	return jsonData;
 }
 
 void Backend::_fetchKountdowns() {
@@ -54,7 +54,7 @@ void Backend::_fetchKountdowns() {
 QVariantList Backend::kountdownPopulator () {
 	QVariantList kountdownsList;
 	
-	for (const kountdown & k : _kountdownArray) {
+	for(const kountdown & k : _kountdownArray) {
 		kountdownsList << QVariant::fromValue(k);
 	}
 	
