@@ -131,6 +131,16 @@ Kirigami.ApplicationWindow {
 				selectedDate: editingDate
 			}
 			Controls.Button {
+				id: deleteButton
+				Layout.fillWidth: true
+				text: i18nc("@action:button", "Delete")
+				enabled: editNameField.text.length > 0
+				onClicked: {
+					KountdownModel.removeKountdown(editSheet.index)
+					editSheet.close();
+				}
+			}
+			Controls.Button {
 				id: editButton
 				Layout.fillWidth: true
 				text: i18nc("@action:button", "Done")
