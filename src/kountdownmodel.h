@@ -6,7 +6,6 @@
 #pragma once
 
 #include <QAbstractListModel>
-#include <QColor>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlTableModel>
@@ -19,7 +18,7 @@ class KountdownModel : public  QSqlTableModel
     Q_OBJECT
 
 public:
-    enum ColorRoles {
+    enum Roles {
         NameRole = Qt::UserRole + 1,
         DescriptionRole,
         DateRole,

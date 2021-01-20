@@ -6,7 +6,6 @@
 #include "kountdownmodel.h"
 
 #include <QCoreApplication>
-#include <QColor>
 #include <QDateTime>
 #include <QDebug>
 #include <QDir>
@@ -17,7 +16,9 @@
 KountdownModel::KountdownModel(QObject *parent)
     : QSqlTableModel(parent)
 {
+	// If database does not contain KountdownModel table, then create it
     if (!QSqlDatabase::database().tables().contains(QStringLiteral("KountdownModel"))) {
+		//Statement to be inputted into SQLite
         const auto statement = QStringLiteral(R"RJIENRLWEY(
             CREATE TABLE IF NOT EXISTS KountdownModel (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,13 +28,17 @@ KountdownModel::KountdownModel(QObject *parent)
             )
         )RJIENRLWEY");
         auto query = QSqlQuery(statement);
+		// QSqlQuery returns false if query was unsuccessful
         if (!query.exec()) {
             qCritical() << query.lastError() << "while creating table";
         }
     }
 
+	// Sets data table on which the model is going to operate
     setTable(QStringLiteral("KountdownModel"));
+	// All changed will be cached in the model until submitAll() ot revertAll() is called
     setEditStrategy(QSqlTableModel::OnManualSubmit);
+	// Populates the model with data from the table set above
     select();
 }
 
@@ -46,7 +51,7 @@ QVariant KountdownModel::data(const QModelIndex &index, int role) const
     if (role == Qt::UserRole + 0 + 1) { // ID
         parentColumn = 0;
     } else if (role == Qt::UserRole + 1 + 1) { // Name
-        parentColumn = 0;
+        parentColumn = 1;
     } else if (role == Qt::UserRole + 2 + 1) { // Description
         parentColumn = 2;
     } else { // Date
