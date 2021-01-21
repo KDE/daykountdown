@@ -1,6 +1,6 @@
 <RCC>
-    <qresource prefix="/">
-        <file alias="main.qml">contents/ui/main.qml</file>
+	<qresource prefix="/">
+		<file alias="main.qml">contents/ui/main.qml</file>
 		<file alias="DatePicker.qml">contents/ui/DatePicker.qml</file>
-    </qresource>
+	</qresource>
 </RCC>

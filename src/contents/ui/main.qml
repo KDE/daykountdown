@@ -1,9 +1,9 @@
 /*
- * SPDX-FileCopyrightText: (C) 2021 Carl Schwan <carl@carlschwan.eu>
- * SPDX-FileCopyrightText: (C) 2021 Claudio Cambra <claudio.cambra@gmail.com>
- * 
- * SPDX-LicenseRef: GPL-3.0-or-later
- */
+* SPDX-FileCopyrightText: (C) 2021 Carl Schwan <carl@carlschwan.eu>
+* SPDX-FileCopyrightText: (C) 2021 Claudio Cambra <claudio.cambra@gmail.com>
+* 
+* SPDX-LicenseRef: GPL-3.0-or-later
+*/
 
 // Includes relevant modules used by the QML
 import QtQuick 2.6
@@ -99,14 +99,14 @@ Kirigami.ApplicationWindow {
 		editingName = listName
 		editingDesc = listDesc
 		editingDate = listDate
-        editSheet.index = index;
+		editSheet.index = index;
 		editSheet.open()
 	}
 	
 	// Mirrors addSheet
 	Kirigami.OverlaySheet {
-        id: editSheet
-        property int index;
+		id: editSheet
+		property int index;
 		header: Kirigami.Heading {
 			// i18nc is useful for adding context for translators
 			text: i18nc("@title:window", "Edit kountdown")
@@ -150,8 +150,8 @@ Kirigami.ApplicationWindow {
 					if (editNameField.text != editingName || 
 						editDescriptionField.text != editingDesc || 
 						editDatePicker.selectedDate != editingDate) {
-                        KountdownModel.editKountdown(editSheet.index, editNameField.text,
-                            editDescriptionField.text, editDatePicker.selectedDate);
+						KountdownModel.editKountdown(editSheet.index, editNameField.text,
+							editDescriptionField.text, editDatePicker.selectedDate);
 					}
 					editingName = ""
 					editingDesc = ""
