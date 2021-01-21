@@ -43,6 +43,7 @@ KountdownModel::KountdownModel(QObject *parent)
 }
 
 // Returns value for the specified item and role (important when accessed by QML)
+// Roles are integers. Feeding certain integer does certain action
 QVariant KountdownModel::data(const QModelIndex &index, int role) const
 {
 	if (role == Qt::EditRole) {
@@ -75,12 +76,17 @@ QHash<int, QByteArray> KountdownModel::roleNames() const
 
 bool KountdownModel::addKountdown(const QString& name, const QString& description, const QDateTime& date)
 {
+	// Create new instance of QSqlRecord
+	// this points towards newRecord itself
+	// calls record(), which returns a QSqlRecord containing the field information
 	QSqlRecord newRecord = this->record();
+	// Set field values
 	newRecord.setValue(QStringLiteral("Name"), name);
 	newRecord.setValue(QStringLiteral("Description"), description);
 	newRecord.setValue(QStringLiteral("Date"), date.toString(Qt::ISODate));
 
 	// insertRecord returns bool
+	// inserts in last location
 	bool result = insertRecord(rowCount(), newRecord);
 	// result = result & submitAll
 	// submitAll also returns bool
@@ -88,6 +94,7 @@ bool KountdownModel::addKountdown(const QString& name, const QString& descriptio
 	return result;
 }
 
+//Similar to previous function, except result = setRecord instead of insertRecord
 bool KountdownModel::editKountdown(int index, const QString& name, const QString& description, const QDateTime& date)
 {
 	QSqlRecord record = this->record();
