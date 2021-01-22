@@ -49,6 +49,7 @@ QVariant KountdownModel::data(const QModelIndex &index, int role) const
 	if (role == Qt::EditRole) {
 		return QSqlTableModel::data(index, Qt::EditRole);
 	}
+	// ParentColumn defines the piece of data we will take from a record
 	int parentColumn = 0;
 	if (role == Qt::UserRole + 0 + 1) { // ID
 		parentColumn = 0;
@@ -58,10 +59,14 @@ QVariant KountdownModel::data(const QModelIndex &index, int role) const
 		parentColumn = 2;
 	} else { // Date
 		parentColumn = 3;
+		// QModelIndex class is used as an index into KountdownModel
+		// These indexes refer to items in the model
 		QModelIndex parentIndex = createIndex(index.row(), parentColumn);
+		// We need to do some conversions for QDateTime class objects
 		return QDateTime::fromString(QSqlTableModel::data(parentIndex, Qt::DisplayRole).toString(), Qt::ISODate);
 	}
 	QModelIndex parentIndex = createIndex(index.row(), parentColumn);
+	// We return a piece of data at index.row, parentColumn
 	return QSqlTableModel::data(parentIndex, Qt::DisplayRole);
 }
 
