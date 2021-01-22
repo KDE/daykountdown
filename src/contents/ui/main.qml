@@ -191,66 +191,8 @@ Kirigami.ApplicationWindow {
 				id: layout
 				// Model contains info to be displayed
 				model: KountdownModel
-				// Delegate is how the information will be presented in the ListView
-				delegate: Kirigami.AbstractCard {
-					// contentItem property includes the content to be displayed on the card
-					contentItem: Item {
-						// implicitWidth/Height define the natural width/height of an item if no width or height is specified
-						// The setting below defines a component's preferred size based on its content
-						implicitWidth: delegateLayout.implicitWidth
-						implicitHeight: delegateLayout.implicitHeight
-						GridLayout {
-							id: delegateLayout
-							// QtQuick anchoring system allows quick definition of anchor points for positioning
-							anchors {
-								left: parent.left
-								top: parent.top
-								right: parent.right
-							}
-							rowSpacing: Kirigami.Units.largeSpacing
-							columnSpacing: Kirigami.Units.largeSpacing
-							columns: root.wideScreen ? 4 : 2
-
-							Kirigami.Heading {
-								// Heading will be as tall as possible while respecting constraints
-								Layout.fillHeight: true
-								// Level determines the size of the heading
-								level: 1
-								text: i18n("%1 days", Math.round((date.getTime()-nowDate.getTime())/86400000))
-							}
-
-							// Kayout for positioning elements vertically
-							ColumnLayout {
-								Kirigami.Heading {
-									Layout.fillWidth: true
-									level: 2
-									text: name
-								}
-								// Horizontal rule
-								Kirigami.Separator {
-									Layout.fillWidth: true
-									visible: description.length > 0
-								}
-								// Labels contain text
-								Controls.Label {
-									Layout.fillWidth: true
-									// Word wrap makes text stay within box and shift with size
-									wrapMode: Text.WordWrap
-									text: description
-									visible: description.length > 0
-								}
-							}
-							Controls.Button {
-								Layout.alignment: Qt.AlignRight
-								// Column spanning within grid layout (vertically in this case)
-								Layout.columnSpan: 2
-								text: i18n("Edit")
-								onClicked: openPopulateEditSheet(index, name, description, date)
-							}
-						}
-					}
-				}
-
+				// Loader grabs component from different file specified in resources
+				delegate: Loader { source: "kountdownCard.qml" }
 				header: Kirigami.Heading {
 					padding: {
 						top: Kirigami.Units.largeSpacing
@@ -265,7 +207,7 @@ Kirigami.ApplicationWindow {
 				}
 				// Different types of header positioning, this one gets covered up when you scroll
 				headerPositioning: ListView.PullBackHeader
-
+				
 				Kirigami.PlaceholderMessage {
 					// Center element, horizontally and vertically
 					anchors.centerIn: parent
