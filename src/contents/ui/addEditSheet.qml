@@ -44,7 +44,7 @@ Kirigami.OverlaySheet {
 		// This singleton is bringing in a component defined in DatePicker.qml
 		DatePicker {
 			id: datePicker
-			selectedDate: sheetMode == "add" ? nowDate : editingDate
+			selectedDate: sheetMode == "add" ? nowDate :editingDate
 		}
 		// This is a button.
 		Controls.Button {
@@ -67,9 +67,6 @@ Kirigami.OverlaySheet {
 				// Add a listelement to the kountdownModel ListModel
 				if(sheetMode == "add") {
 					KountdownModel.addKountdown(nameField.text, descriptionField.text, datePicker.selectedDate);
-					nameField.text = "";
-					descriptionField.text = "";
-					datePicker.selectedDate = nowDate
 				}
 				// Checks if kountdown properties have been changed
 				else if ((sheetMode == "edit") && (nameField.text != editingName || 
@@ -78,11 +75,14 @@ Kirigami.OverlaySheet {
 					KountdownModel.editKountdown(addEditSheet.index, nameField.text,
 												 descriptionField.text, datePicker.selectedDate);
 				}
-				else if (sheetMode == "edit") {
+				if (sheetMode == "edit") {
 					editingName = ""
 					editingDesc = ""
 					editingDate = nowDate
 				}
+				nameField.text = "";
+				descriptionField.text = "";
+				datePicker.selectedDate = nowDate
 				addEditSheet.close();
 			}
 		}

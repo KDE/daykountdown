@@ -40,25 +40,20 @@ Kirigami.ApplicationWindow {
 	
 	property var nowDate: new Date()	
 	
+	// Loader fetches item from addEditSheet.qml
 	Loader { 
 		id: addEditSheetLoader
 		source: "addEditSheet.qml" 
 	}
-	
+	// This is read by addEditSheet to change functionality
 	property var sheetMode
-	
-	function openAddSheet() {
-		sheetMode = "add"
-		addEditSheetLoader.item.open()
-	}
-	
-	// Setting variables in AppWindow scope so they are accessible to editSheet
+	// Setting variables in AppWindow scope so they are accessible to addEditSheet in edit mode
 	property var editingName
 	property var editingDesc
 	property var editingDate
 	// Function called by 'edit' button on card
-	function openPopulateEditSheet(index, listName, listDesc, listDate) {
-		sheetMode = "edit"
+	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "") {
+		sheetMode = mode
 		editingName = listName
 		editingDesc = listDesc
 		editingDate = listDate
@@ -87,7 +82,7 @@ Kirigami.ApplicationWindow {
 				// Action text, i18n function returns translated string
 				text: i18nc("@action:button", "Add kountdown")
 				// What to do when triggering the action
-				onTriggered: openAddSheet()
+				onTriggered: openPopulateSheet("add")
 			}
 
 			// List view for card elements

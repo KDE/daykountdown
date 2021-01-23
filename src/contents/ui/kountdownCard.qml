@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: (C) 2021 Claudio Cambra <claudio.cambra@gmail.com>
+* 
+* SPDX-LicenseRef: GPL-3.0-or-later
+*/
+
 import QtQuick 2.6
 import QtQuick.Controls 2.0 as Controls
 import QtQuick.Layouts 1.2
@@ -58,7 +64,7 @@ Kirigami.AbstractCard {
 				// Column spanning within grid layout (vertically in this case)
 				Layout.columnSpan: 2
 				text: i18n("Edit")
-				onClicked: openPopulateEditSheet(index, name, description, date)
+				onClicked: openPopulateSheet("edit", index, name, description, date)
 			}
 		}
 	}
