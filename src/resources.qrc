@@ -2,6 +2,7 @@
 	<qresource prefix="/">
 		<file alias="main.qml">contents/ui/main.qml</file>
 		<file alias="kountdownCard.qml">contents/ui/kountdownCard.qml</file>
+		<file alias="addEditSheet.qml">contents/ui/addEditSheet.qml</file>
 		<file alias="DatePicker.qml">contents/ui/DatePicker.qml</file>
 	</qresource>
 </RCC>
