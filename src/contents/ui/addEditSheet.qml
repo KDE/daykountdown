@@ -80,9 +80,7 @@ Kirigami.OverlaySheet {
 					editingDesc = ""
 					editingDate = nowDate
 				}
-				nameField.text = "";
-				descriptionField.text = "";
-				datePicker.selectedDate = nowDate
+
 				addEditSheet.close();
 			}
 		}

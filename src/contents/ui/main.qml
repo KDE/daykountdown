@@ -51,13 +51,16 @@ Kirigami.ApplicationWindow {
 	property var editingName
 	property var editingDesc
 	property var editingDate
+	
 	// Function called by 'edit' button on card
 	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "") {
 		sheetMode = mode
-		editingName = listName
-		editingDesc = listDesc
-		editingDate = listDate
-		addEditSheetLoader.item.index = index;
+		
+		if(mode == "edit")
+			addEditSheetLoader.item.index = index;
+			editingName = listName
+			editingDesc = listDesc
+			editingDate = listDate
 		addEditSheetLoader.item.open()
 	}
 
