@@ -3,6 +3,6 @@ A simple countdown app written in QML/Kirigami and C++, for use with KDE Plasma 
 
 ![](screenshots/Screenshot1.png)
 
-![](screenshots/Screenshot2.png)
+The app counts the days towards a date of your choice.
 
-***Under Construction!***
+![](screenshots/Screenshot2.png)
