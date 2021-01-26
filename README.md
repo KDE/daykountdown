@@ -10,3 +10,23 @@ The app counts the days towards a date of your choice.
 It allows you to pick a date, provide a name, and a short description for your countdowns.
 
 It is written in Kirigami, so it is also convergent!
+
+## Compiling
+
+First, clone this repository by doing:
+
+`git clone https://github.com/elChupaCambra/DayKountdown.git`
+
+Then enter the cloned repo directory and create a new folder called `build`. Then, enter this folder:
+
+`mkdir build && cd build`
+
+Once that's done just run `cmake`, pointing it at the root repository directory:
+
+`cmake ..`
+
+Finally, all we need to do is run make:
+
+`make`
+
+Our binary will be located in `build/src/daykountdown`.
