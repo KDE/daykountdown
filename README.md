@@ -11,13 +11,22 @@ It allows you to pick a date, provide a name, and a short description for your c
 
 It is written in Kirigami, so it is also convergent!
 
+## Prerequisites
+
+- A Linux install
+- Qt5 packages from your distribution's repositories
+- KDE packages (including Kirigami)
+- CMake
+
 ## Compiling
 
-First, clone this repository by doing:
+First, clone this repository through the terminal by running:
 
 `git clone https://github.com/elChupaCambra/DayKountdown.git`
 
-Then enter the cloned repo directory and create a new folder called `build`. Then, enter this folder:
+Then enter the cloned repo directory and create a new folder called `build`. 
+
+Then, enter this folder:
 
 `mkdir build && cd build`
 
