@@ -1,6 +1,7 @@
 set(daykountdown_SRCS
     main.cpp
     kountdownmodel.cpp
+    importexport.cpp
     )
 
 qt5_add_resources(RESOURCES resources.qrc)
