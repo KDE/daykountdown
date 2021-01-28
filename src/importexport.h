@@ -1,5 +1,7 @@
 #pragma once
 
+#include <QSaveFile>
+#include <QFileDialog>
 #include <QQmlApplicationEngine>
 #include <QtQml>
 #include <QUrl>
@@ -25,6 +27,7 @@ class ImportExport : public QObject
 
 public:
     explicit ImportExport(QObject *parent = nullptr);
+	QString filePath;
 	QVariantList Kountdowns;
 	QVariantList kountdownPopulator();
 	

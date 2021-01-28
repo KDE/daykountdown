@@ -24,6 +24,12 @@ Kirigami.ApplicationWindow {
 		isMenu: true
 		actions: [
 			Kirigami.Action {
+					text: i18n("Import")
+					//icon.name: "gtk-quit"
+					//shortcut: StandardKey.Quit
+					//onTriggered: Qt.quit()
+				},
+			Kirigami.Action {
 				text: i18n("Settings")
 				icon.name: "settings-configure"
 				//onTriggered: Settings page with exporting kountdowns

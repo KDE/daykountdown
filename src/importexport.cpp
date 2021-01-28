@@ -7,7 +7,7 @@ ImportExport::ImportExport(QObject *parent) : QObject(parent)
 
 void ImportExport::_fetchKountdowns() {
 	_kountdownArray.clear();
-	QFile inFile(":/kountdowns.json");
+	QFile inFile(filePath);
 	if(inFile.exists()) {
 		qDebug() << "Found kountdowns.json";
 		inFile.open(QIODevice::ReadOnly | QIODevice::Text);
