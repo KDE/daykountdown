@@ -24,15 +24,24 @@ Kirigami.ApplicationWindow {
 		isMenu: true
 		actions: [
 			Kirigami.Action {
-					text: i18n("Import")
-					//icon.name: "gtk-quit"
-					//shortcut: StandardKey.Quit
-					//onTriggered: Qt.quit()
-				},
+				text: i18n("Import")
+				//icon.name: "gtk-quit"
+				//shortcut: StandardKey.Quit
+				onTriggered: {
+					ImportExport.fetchKountdowns();
+					for(var i in ImportExport.Kountdowns) {
+						KountdownModel.addKountdown(
+							ImportExport.Kountdowns[i].name,
+							ImportExport.Kountdowns[i].description,
+							new Date(ImportExport.Kountdowns[i].date)
+						);
+					}
+				}
+			},
 			Kirigami.Action {
 				text: i18n("Settings")
 				icon.name: "settings-configure"
-				//onTriggered: Settings page with exporting kountdowns
+				//onTriggered: ImportExport.fetchKountdowns()
 				shortcut: StandardKey.Preferences
 			},
 			Kirigami.Action {

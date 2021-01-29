@@ -30,15 +30,13 @@ class ImportExport : public QObject
 
 public:
     explicit ImportExport(QObject *parent = nullptr);
-	QString filePath;
 	QVariantList Kountdowns;
 	QVariantList kountdownPopulator();
+	Q_INVOKABLE void fetchKountdowns();
 	
 private Q_SLOTS:
 	void exportFile();
 	
 private:	
 	QVector<kountdown> _kountdownArray;
-	
-	void _fetchKountdowns();
 };

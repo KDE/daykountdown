@@ -18,6 +18,7 @@
 #include <KAboutData>
 #include <KLocalizedString>
 #include "kountdownmodel.h"
+#include "importexport.h"
 
 // Define the database driver in a string
 const QString DRIVER(QStringLiteral("QSQLITE"));
@@ -71,13 +72,14 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	aboutData.processCommandLine(&parser);
 
 	QQmlApplicationEngine engine;
-
+	
 	// Lets you import the KountdownModel class into QML code
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "KountdownModel", new KountdownModel(qApp));
+	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "ImportExport", new ImportExport());
 
 	// Set up localisation functionality
 	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-	// Load main.qml
+		// Load main.qml
 	engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
 	// Stop function if QML is empty

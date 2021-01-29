@@ -2,7 +2,7 @@
 
 ImportExport::ImportExport(QObject *parent) : QObject(parent)
 {
-	_fetchKountdowns();
+
 }
 
 void ImportExport::exportFile() {
@@ -18,8 +18,8 @@ void ImportExport::exportFile() {
 	file.commit();
 }
 
-void ImportExport::_fetchKountdowns() {
-	_kountdownArray.clear();
+void ImportExport::fetchKountdowns() {
+	//_kountdownArray.clear();
 	
 	QUrl filePath = QFileDialog::getOpenFileUrl(NULL, i18n("Import file"));
 	filePath = filePath.toLocalFile();
