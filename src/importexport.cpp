@@ -20,7 +20,11 @@ void ImportExport::exportFile() {
 
 void ImportExport::_fetchKountdowns() {
 	_kountdownArray.clear();
-	QFile inFile(filePath);
+	
+	QUrl filePath = QFileDialog::getOpenFileUrl(NULL, i18n("Import file"));
+	filePath = filePath.toLocalFile();
+	
+	QFile inFile(filePath.toString());
 	if(inFile.exists()) {
 		qDebug() << "Found kountdowns.json";
 		inFile.open(QIODevice::ReadOnly | QIODevice::Text);
