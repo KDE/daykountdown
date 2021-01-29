@@ -19,14 +19,14 @@ KountdownModel::KountdownModel(QObject *parent)
 	// If database does not contain KountdownModel table, then create it
 	if (!QSqlDatabase::database().tables().contains(QStringLiteral("KountdownModel"))) {
 		//Statement to be inputted into SQLite
-		const auto statement = QStringLiteral(R"RJIENRLWEY(
+		const auto statement = QStringLiteral(R"RAWSTRING(
 			CREATE TABLE IF NOT EXISTS KountdownModel (
 				id INTEGER PRIMARY KEY AUTOINCREMENT,
 				name TEXT NOT NULL,
 				description TEXT NOT NULL,
 				date TEXT NOT NULL
 			)
-		)RJIENRLWEY");
+		)RAWSTRING");
 		auto query = QSqlQuery(statement);
 		// QSqlQuery returns false if query was unsuccessful
 		if (!query.exec()) {

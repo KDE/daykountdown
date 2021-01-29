@@ -1,5 +1,8 @@
 #pragma once
 
+#include <KIO/Job>
+#include <KMessageBox>
+#include <KLocalizedString>
 #include <QSaveFile>
 #include <QFileDialog>
 #include <QQmlApplicationEngine>
@@ -30,6 +33,9 @@ public:
 	QString filePath;
 	QVariantList Kountdowns;
 	QVariantList kountdownPopulator();
+	
+private Q_SLOTS:
+	void exportFile();
 	
 private:	
 	QVector<kountdown> _kountdownArray;

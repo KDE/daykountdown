@@ -5,6 +5,19 @@ ImportExport::ImportExport(QObject *parent) : QObject(parent)
 	_fetchKountdowns();
 }
 
+void ImportExport::exportFile() {
+	QString fileName = QFileDialog::getSaveFileName(NULL, i18n("Save File As"), NULL, "JSON (*.json)");
+	// JSON writer func here
+	QSaveFile file(fileName);
+	file.open(QIODevice::WriteOnly);
+	
+	QByteArray outputByteArray;
+	//outputByteArray.append(); Whatever JSON writer returns
+	
+	file.write(outputByteArray);
+	file.commit();
+}
+
 void ImportExport::_fetchKountdowns() {
 	_kountdownArray.clear();
 	QFile inFile(filePath);
