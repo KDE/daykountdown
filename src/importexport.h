@@ -39,4 +39,5 @@ private Q_SLOTS:
 	
 private:	
 	QVector<kountdown> _kountdownArray;
+	QJsonDocument _createJson();
 };

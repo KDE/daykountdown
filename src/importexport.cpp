@@ -1,25 +1,42 @@
 #include "importexport.h"
+#include "kountdownmodel.h"
 
 ImportExport::ImportExport(QObject *parent) : QObject(parent)
 {
 
 }
 
+QJsonDocument ImportExport::_createJson() {
+	QJsonArray kountdownsJsonArr;
+	
+	QSqlQuery query("SELECT * FROM KountdownModel");
+	while(query.next()) {
+		QJsonObject kountdownToAdd {
+			{"name", query.value(1).toString()},
+			{"description", query.value(2).toString()},
+			{"date", query.value(3).toString()}
+		};
+		kountdownsJsonArr.append(kountdownToAdd);
+	}
+	QJsonDocument exportingDoc({"kountdowns", kountdownsJsonArr});
+	return exportingDoc;
+}
+
 void ImportExport::exportFile() {
 	QString fileName = QFileDialog::getSaveFileName(NULL, i18n("Save File As"), NULL, "JSON (*.json)");
-	// JSON writer func here
+	//QJsonDocument jsonDoc = _createJson();
 	QSaveFile file(fileName);
 	file.open(QIODevice::WriteOnly);
 	
 	QByteArray outputByteArray;
-	//outputByteArray.append(); Whatever JSON writer returns
+	//outputByteArray.append();
 	
 	file.write(outputByteArray);
 	file.commit();
 }
 
 void ImportExport::fetchKountdowns() {
-	//_kountdownArray.clear();
+	_kountdownArray.clear();
 	
 	QUrl filePath = QFileDialog::getOpenFileUrl(NULL, i18n("Import file"));
 	filePath = filePath.toLocalFile();
