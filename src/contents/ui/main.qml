@@ -39,6 +39,12 @@ Kirigami.ApplicationWindow {
 				}
 			},
 			Kirigami.Action {
+				text: i18n("Export")
+				//icon.name: "settings-configure"
+				//shortcut: StandardKey.Preferences
+				onTriggered: ImportExport.exportFile()
+			},
+			Kirigami.Action {
 				text: i18n("Settings")
 				icon.name: "settings-configure"
 				//onTriggered: ImportExport.fetchKountdowns()

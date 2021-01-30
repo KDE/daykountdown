@@ -33,9 +33,7 @@ public:
 	QVariantList Kountdowns;
 	QVariantList kountdownPopulator();
 	Q_INVOKABLE void fetchKountdowns();
-	
-private Q_SLOTS:
-	void exportFile();
+	Q_INVOKABLE void exportFile();
 	
 private:	
 	QVector<kountdown> _kountdownArray;
