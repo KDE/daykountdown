@@ -18,12 +18,13 @@ QJsonDocument ImportExport::_createJson() {
 		};
 		kountdownsJsonArr.append(kountdownToAdd);
 	}
-	QJsonDocument exportingDoc({"kountdowns", kountdownsJsonArr});
+	QJsonObject mainObj {{"kountdowns", kountdownsJsonArr}};
+	QJsonDocument exportingDoc(mainObj);
 	return exportingDoc;
 }
 
 void ImportExport::exportFile() {
-	QString fileName = QFileDialog::getSaveFileName(NULL, i18n("Save File As"), NULL, "JSON (*.json)");
+	QString fileName = QFileDialog::getSaveFileName(NULL, i18n("Save File As"), "exported_kountdowns.json", "JSON (*.json)");
 	QJsonDocument jsonDoc = _createJson();
 	QSaveFile file(fileName);
 	file.open(QIODevice::WriteOnly);
