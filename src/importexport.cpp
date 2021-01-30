@@ -24,14 +24,10 @@ QJsonDocument ImportExport::_createJson() {
 
 void ImportExport::exportFile() {
 	QString fileName = QFileDialog::getSaveFileName(NULL, i18n("Save File As"), NULL, "JSON (*.json)");
-	//QJsonDocument jsonDoc = _createJson();
+	QJsonDocument jsonDoc = _createJson();
 	QSaveFile file(fileName);
 	file.open(QIODevice::WriteOnly);
-	
-	QByteArray outputByteArray;
-	//outputByteArray.append();
-	
-	file.write(outputByteArray);
+	file.write(jsonDoc.toJson());
 	file.commit();
 }
 
