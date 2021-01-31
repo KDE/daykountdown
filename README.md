@@ -16,6 +16,7 @@ It is written in Kirigami, so it is also convergent!
 - Adding and removing countdowns
 - Compatibility with both desktop and mobile form factors
 - Import and export countdowns from .JSON files
+- Sorting by date, name, and creation time
 
 ## Prerequisites
 
