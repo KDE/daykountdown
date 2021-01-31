@@ -22,6 +22,7 @@ public:
 		NameRole = Qt::UserRole + 1,
 		DescriptionRole,
 		DateRole,
+		DateInMsRole,
 	};
 	
 	enum SortTypes {

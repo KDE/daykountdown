@@ -24,7 +24,8 @@ KountdownModel::KountdownModel(QObject *parent)
 				id INTEGER PRIMARY KEY AUTOINCREMENT,
 				name TEXT NOT NULL,
 				description TEXT NOT NULL,
-				date TEXT NOT NULL
+				date TEXT NOT NULL,
+				dateInMs INTEGER
 			)
 		)RAWSTRING");
 		auto query = QSqlQuery(statement);
@@ -57,13 +58,15 @@ QVariant KountdownModel::data(const QModelIndex &index, int role) const
 		parentColumn = 1;
 	} else if (role == Qt::UserRole + 2 + 1) { // Description
 		parentColumn = 2;
-	} else { // Date
+	} else if (role == Qt::UserRole + 3 + 1) { // Date
 		parentColumn = 3;
 		// QModelIndex class is used as an index into KountdownModel
 		// These indexes refer to items in the model
 		QModelIndex parentIndex = createIndex(index.row(), parentColumn);
 		// We need to do some conversions for QDateTime class objects
 		return QDateTime::fromString(QSqlTableModel::data(parentIndex, Qt::DisplayRole).toString(), Qt::ISODate);
+	} else {
+		parentColumn = 4;
 	}
 	QModelIndex parentIndex = createIndex(index.row(), parentColumn);
 	// We return a piece of data at index.row, parentColumn
@@ -89,6 +92,7 @@ bool KountdownModel::addKountdown(const QString& name, const QString& descriptio
 	newRecord.setValue(QStringLiteral("Name"), name);
 	newRecord.setValue(QStringLiteral("Description"), description);
 	newRecord.setValue(QStringLiteral("Date"), date.toString(Qt::ISODate));
+	newRecord.setValue(QStringLiteral("DateInMS"), date.toMSecsSinceEpoch());
 
 	// insertRecord returns bool
 	// inserts in last location
@@ -106,6 +110,7 @@ bool KountdownModel::editKountdown(int index, const QString& name, const QString
 	record.setValue(QStringLiteral("Name"), name);
 	record.setValue(QStringLiteral("Description"), description);
 	record.setValue(QStringLiteral("Date"), date.toString(Qt::ISODate));
+	record.setValue(QStringLiteral("DateInMS"), date.toMSecsSinceEpoch());
 	bool result = setRecord(index, record);
 	result &= submitAll();
 	return result;
@@ -127,10 +132,10 @@ void KountdownModel::sortModel(int sort_by) {
 			this->setSort(1, Qt::DescendingOrder);
 			break;
 		case (DateAsc):
-			this->setSort(2, Qt::AscendingOrder);
+			this->setSort(3, Qt::AscendingOrder);
 			break;
 		case (DateDesc):
-			this->setSort(2, Qt::DescendingOrder);
+			this->setSort(3, Qt::DescendingOrder);
 			break;
 		case (CreationDesc):
 			this->setSort(0, Qt::DescendingOrder);
