@@ -20,7 +20,9 @@ Kirigami.ApplicationWindow {
 	// Window title
 	title: i18nc("@title:window", "Day Kountdown")
 	
+	// Global drawer element with app-wide actions
 	globalDrawer: Kirigami.GlobalDrawer {
+		// Makes drawer a small menu rather than sliding pane
 		isMenu: true
 		actions: [
 			Kirigami.Action {
@@ -51,11 +53,11 @@ Kirigami.ApplicationWindow {
 				shortcut: StandardKey.Preferences
 			},
 			Kirigami.Action {
-					text: i18n("Quit")
-					icon.name: "gtk-quit"
-					shortcut: StandardKey.Quit
-					onTriggered: Qt.quit()
-				}
+				text: i18n("Quit")
+				icon.name: "gtk-quit"
+				shortcut: StandardKey.Quit
+				onTriggered: Qt.quit()
+			}
 		]
 	}
 	
@@ -99,15 +101,46 @@ Kirigami.ApplicationWindow {
 			title: i18nc("@title", "Kountdown")
 
 			// Kirigami.Action encapsulates a UI action. Inherits from QQC2 Action
-			actions.main: Kirigami.Action {
-				id: addAction
-				// Name of icon associated with the action
-				icon.name: "list-add"
-				// Action text, i18n function returns translated string
-				text: i18nc("@action:button", "Add kountdown")
-				// What to do when triggering the action
-				onTriggered: openPopulateSheet("add")
+			actions { 
+				main: Kirigami.Action {
+					id: addAction
+					// Name of icon associated with the action
+					icon.name: "list-add"
+					// Action text, i18n function returns translated string
+					text: i18nc("@action:button", "Add kountdown")
+					// What to do when triggering the action
+					onTriggered: openPopulateSheet("add")
+				}
+				left: Kirigami.Action {
+					id: sortList
+					text: i18nc("@action:button", "Sort")
+					Kirigami.Action {
+						text: i18nc("@action:button", "Creation (ascending)")
+						onTriggered: KountdownModel.sortModel(KountdownModel.CreationAsc)
+					}
+					Kirigami.Action {
+						text: i18nc("@action:button", "Creation (descending)")
+						onTriggered: KountdownModel.sortModel(KountdownModel.CreationDesc)
+					}
+					Kirigami.Action {
+						text: i18nc("@action:button", "Date (ascending)")
+						onTriggered: KountdownModel.sortModel(KountdownModel.DateAsc)
+					}
+					Kirigami.Action {
+						text: i18nc("@action:button", "Date (descending)")
+						onTriggered: KountdownModel.sortModel(KountdownModel.DateDesc)
+					}
+					Kirigami.Action {
+						text: i18nc("@action:button", "Alphabetical (ascending)")
+						onTriggered: KountdownModel.sortModel(KountdownModel.AlphabeticalAsc)
+					}
+					Kirigami.Action {
+						text: i18nc("@action:button", "Alphabetical (descending)")
+						onTriggered: KountdownModel.sortModel(KountdownModel.AlphabeticalDesc)
+					}
+				}
 			}
+			
 
 			// List view for card elements
 			Kirigami.CardsListView {
