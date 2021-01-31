@@ -11,6 +11,12 @@ It allows you to pick a date, provide a name, and a short description for your c
 
 It is written in Kirigami, so it is also convergent!
 
+## Features
+
+- Adding and removing countdowns
+- Compatibility with both desktop and mobile form factors
+- Import and export countdowns from .JSON files
+
 ## Prerequisites
 
 - A Linux install
