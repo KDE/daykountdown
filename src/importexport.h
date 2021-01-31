@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: (C) 2021 Claudio Cambra <claudio.cambra@gmail.com>
+* 
+* SPDX-LicenseRef: GPL-3.0-or-later
+*/
+
 #pragma once
 
 #include <KIO/Job>
