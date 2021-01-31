@@ -117,3 +117,28 @@ bool KountdownModel::removeKountdown(int index)
 	result &= submitAll();
 	return result;
 }
+
+void KountdownModel::sortModel(int sort_by) {
+	switch(sort_by) {
+		case (AlphabeticalAsc):
+			this->setSort(1, Qt::AscendingOrder);
+			break;
+		case (AlphabeticalDesc):
+			this->setSort(1, Qt::DescendingOrder);
+			break;
+		case (DateAsc):
+			this->setSort(2, Qt::AscendingOrder);
+			break;
+		case (DateDesc):
+			this->setSort(2, Qt::DescendingOrder);
+			break;
+		case (CreationDesc):
+			this->setSort(0, Qt::DescendingOrder);
+			break;
+		case (CreationAsc):
+		default:
+			this->setSort(0, Qt::AscendingOrder);
+			break;
+	}
+	select();
+}
