@@ -18,7 +18,8 @@ KountdownModel::KountdownModel(QObject *parent)
 {
 	// If database does not contain KountdownModel table, then create it
 	if (!QSqlDatabase::database().tables().contains(QStringLiteral("KountdownModel"))) {
-		//Statement to be inputted into SQLite
+		// Statement to be inputted into SQLite
+		// This is a rawstring
 		const auto statement = QStringLiteral(R"RAWSTRING(
 			CREATE TABLE IF NOT EXISTS KountdownModel (
 				id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -124,8 +125,10 @@ bool KountdownModel::removeKountdown(int index)
 }
 
 void KountdownModel::sortModel(int sort_by) {
+	// Switch based on enum defined in kountdownmodel.h
 	switch(sort_by) {
 		case (AlphabeticalAsc):
+			// This points to KountdownModel
 			this->setSort(1, Qt::AscendingOrder);
 			break;
 		case (AlphabeticalDesc):
@@ -145,5 +148,6 @@ void KountdownModel::sortModel(int sort_by) {
 			this->setSort(0, Qt::AscendingOrder);
 			break;
 	}
+	// Required to update model
 	select();
 }
