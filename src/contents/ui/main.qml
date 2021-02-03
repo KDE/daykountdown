@@ -27,8 +27,8 @@ Kirigami.ApplicationWindow {
 		actions: [
 			Kirigami.Action {
 				text: i18n("Import")
-				//icon.name: "gtk-quit"
-				//shortcut: StandardKey.Quit
+				icon.name: "document-open"
+				shortcut: StandardKey.Open
 				onTriggered: {
 					ImportExport.fetchKountdowns();
 					for(var i in ImportExport.Kountdowns) {
@@ -42,19 +42,19 @@ Kirigami.ApplicationWindow {
 			},
 			Kirigami.Action {
 				text: i18n("Export")
-				//icon.name: "settings-configure"
-				//shortcut: StandardKey.Preferences
+				icon.name: "document-save"
+				shortcut: StandardKey.Save
 				onTriggered: ImportExport.exportFile()
 			},
-			Kirigami.Action {
+			/*Kirigami.Action {
 				text: i18n("Settings")
 				icon.name: "settings-configure"
 				//onTriggered: ImportExport.fetchKountdowns()
 				shortcut: StandardKey.Preferences
-			},
+			},*/
 			Kirigami.Action {
 				text: i18n("Quit")
-				icon.name: "gtk-quit"
+				icon.name: "application-exit"
 				shortcut: StandardKey.Quit
 				onTriggered: Qt.quit()
 			}
