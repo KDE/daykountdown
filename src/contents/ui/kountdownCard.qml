@@ -30,15 +30,21 @@ Kirigami.AbstractCard {
 			columnSpacing: Kirigami.Units.largeSpacing
 			columns: root.wideScreen ? 4 : 2
 			
-			Kirigami.Heading {
-				// Heading will be as tall as possible while respecting constraints
-				Layout.fillHeight: true
-				// Level determines the size of the heading
-				level: 1
-				property var daysLeft: Math.round((date.getTime()-nowDate.getTime())/86400000)
-				property var daysWord: daysLeft <= -2 || daysLeft >= 2 ? "days" : "day"
-				text: daysLeft < 0 ? 
-					i18n("%1 " + daysWord + " ago", daysLeft*-1) : i18n("%1 " + daysWord, daysLeft)
+			RowLayout {
+				Kirigami.Separator {
+					Layout.fillHeight: true
+					width: 20
+				}
+				Kirigami.Heading {
+					// Heading will be as tall as possible while respecting constraints
+					Layout.fillHeight: true
+					// Level determines the size of the heading
+					level: 1
+					property var daysLeft: Math.round((date.getTime()-nowDate.getTime())/86400000)
+					property var daysWord: daysLeft <= -2 || daysLeft >= 2 ? "days" : "day"
+					text: daysLeft < 0 ? 
+						i18n("%1 " + daysWord + " ago", daysLeft*-1) : i18n("%1 " + daysWord, daysLeft)
+				}
 			}
 			
 			// Kayout for positioning elements vertically

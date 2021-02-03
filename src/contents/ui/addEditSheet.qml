@@ -6,8 +6,9 @@
 
 // Includes relevant modules used by the QML
 import QtQuick 2.6
-import QtQuick.Controls 2.0 as Controls
+import QtQuick.Controls 2.3 as Controls
 import QtQuick.Layouts 1.2
+import QtQuick.Dialogs 1.3
 import org.kde.kirigami 2.13 as Kirigami
 import org.kde.daykountdown.private 1.0
 
@@ -15,6 +16,7 @@ import org.kde.daykountdown.private 1.0
 Kirigami.OverlaySheet {
 	id: addEditSheet
 	property int index;
+	property var colour;
 	header: Kirigami.Heading {
 		// i18nc is useful for adding context for translators
 		text: sheetMode == "add" ? i18nc("@title:window", "Add kountdown") : 
@@ -41,10 +43,76 @@ Kirigami.OverlaySheet {
 			text: sheetMode == "add" ? "" : editingDesc
 			onAccepted: datePicker.forceActiveFocus()
 		}
+		ColorDialog {
+			id: colorDialog
+			title: i18n("Kountdown Colour")
+			onAccepted: {
+				colour = colorDialog.color;
+			}
+		}
+		RowLayout {
+			Layout.fillWidth: true
+			Kirigami.FormData.label: i18n("Colour:")
+			Controls.RoundButton {
+				contentItem: Text {
+					text: "\u2B24"
+					color: "crimson"
+					horizontalAlignment: Text.AlignHCenter
+					verticalAlignment: Text.AlignVCenter
+				}
+			}
+			Controls.RoundButton {
+				contentItem: Text {
+					text: "\u2B24"
+					color: "coral"
+					horizontalAlignment: Text.AlignHCenter
+					verticalAlignment: Text.AlignVCenter
+				}
+			}
+			Controls.RoundButton {
+				contentItem: Text {
+					text: "\u2B24"
+					color: "gold"
+					horizontalAlignment: Text.AlignHCenter
+					verticalAlignment: Text.AlignVCenter
+				}
+			}
+			Controls.RoundButton {
+				contentItem: Text {
+					text: "\u2B24"
+					color: "lightgreen"
+					horizontalAlignment: Text.AlignHCenter
+					verticalAlignment: Text.AlignVCenter
+				}
+			}
+			Controls.RoundButton {
+				contentItem: Text {
+					text: "\u2B24"
+					color: "lightblue"
+					horizontalAlignment: Text.AlignHCenter
+					verticalAlignment: Text.AlignVCenter
+				}
+			}
+			Controls.RoundButton {
+				contentItem: Text {
+					text: "\u2B24"
+					color: "lightpink"
+					horizontalAlignment: Text.AlignHCenter
+					verticalAlignment: Text.AlignVCenter
+				}
+			}
+			Controls.Button {
+				id: openColourDialog
+				onClicked: colorDialog.open()
+				text: "More"
+				Layout.fillWidth: true
+			}
+		}
 		// This singleton is bringing in a component defined in DatePicker.qml
 		DatePicker {
 			id: datePicker
 			selectedDate: sheetMode == "add" ? nowDate :editingDate
+			Layout.fillWidth: true
 		}
 		// This is a button.
 		Controls.Button {

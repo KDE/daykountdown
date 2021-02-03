@@ -8,6 +8,7 @@
 import QtQml 2.14
 import QtQuick 2.4
 import QtQuick.Controls 1.2
+import QtQuick.Layouts 1.2
 
 /**
  * A large date picker
@@ -20,6 +21,7 @@ FocusScope {
 
     implicitWidth: calendar.implicitWidth
     implicitHeight: calendar.implicitHeight
+    Layout.fillWidth: true
 
     Calendar {
         id: calendar
@@ -29,6 +31,7 @@ FocusScope {
 
         focus: true
         //style stuff here?
+        width: parent.width
     }
 }
 
