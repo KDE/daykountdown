@@ -30,8 +30,14 @@ Kirigami.AbstractCard {
 			columnSpacing: Kirigami.Units.largeSpacing
 			columns: root.wideScreen ? 4 : 2
 			RowLayout {
-				Kirigami.Separator {
+				Rectangle {
 					Layout.fillHeight: true
+					width: 5
+					Component.onCompleted: {
+						if(colour != "default") {
+							this.color = colour
+						}
+					}
 				}
 				Kirigami.Heading {
 					// Heading will be as tall as possible while respecting constraints
@@ -42,7 +48,11 @@ Kirigami.AbstractCard {
 					property var daysWord: daysLeft <= -2 || daysLeft >= 2 ? "days" : "day"
 					text: daysLeft < 0 ? 
 						i18n("%1 " + daysWord + " ago", daysLeft*-1) : i18n("%1 " + daysWord, daysLeft)
-					color: typeof colour == "undefined" || colour != "default" ? colour : "slategray"
+					Component.onCompleted: {
+						if(colour != "default") {
+							this.color = colour
+						}
+					}
 				}
 			}
 			

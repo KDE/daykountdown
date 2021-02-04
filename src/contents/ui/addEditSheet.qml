@@ -74,38 +74,38 @@ Kirigami.OverlaySheet {
 			Controls.RoundButton {
 				contentItem: Text {
 					text: "\u2B24"
-					color: "gold"
+					color: "goldenrod"
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 				}
-				onClicked: addEditSheet.colour = "gold"
+				onClicked: addEditSheet.colour = "goldenrod"
 			}
 			Controls.RoundButton {
 				contentItem: Text {
 					text: "\u2B24"
-					color: "lightgreen"
+					color: "lightseagreen"
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 				}
-				onClicked: addEditSheet.colour = "lightgreen"
+				onClicked: addEditSheet.colour = "lightseagreen"
 			}
 			Controls.RoundButton {
 				contentItem: Text {
 					text: "\u2B24"
-					color: "lightblue"
+					color: "deepskyblue"
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 				}
-				onClicked: addEditSheet.colour = "lightblue"
+				onClicked: addEditSheet.colour = "deepskyblue"
 			}
 			Controls.RoundButton {
 				contentItem: Text {
 					text: "\u2B24"
-					color: "lightpink"
+					color: "hotpink"
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 				}
-				onClicked: addEditSheet.colour = "lightpink"
+				onClicked: addEditSheet.colour = "hotpink"
 			}
 			Controls.Button {
 				id: openColourDialog
@@ -115,7 +115,7 @@ Kirigami.OverlaySheet {
 			}
 		}
 		Rectangle {
-			color: addEditSheet.colour == "default" ? "slategray" : addEditSheet.colour
+			color: addEditSheet.colour != "default" ? colour : "white"
 			Layout.fillWidth: true
 			height: 20
 		}
