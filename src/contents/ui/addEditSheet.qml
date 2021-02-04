@@ -153,6 +153,7 @@ Kirigami.OverlaySheet {
 					editingDesc = ""
 					editingDate = nowDate
 				}
+				console.log(addEditSheet.colour);
 				addEditSheet.close();
 			}
 		}
