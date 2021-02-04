@@ -20,7 +20,8 @@ QJsonDocument ImportExport::_createJson() {
 		QJsonObject kountdownToAdd {
 			{"name", query.value(1).toString()},
 			{"description", query.value(2).toString()},
-			{"date", query.value(3).toString()}
+			{"date", query.value(3).toString()},
+			{"colour", query.value(5).toString()}
 		};
 		kountdownsJsonArr.append(kountdownToAdd);
 	}
@@ -65,7 +66,8 @@ void ImportExport::fetchKountdowns() {
 		* 			{
 		* 				"name": "kountdown1",
 		* 				"description": "kountdown number one",
-		* 				"date": QDateTime object
+		* 				"date": date string,
+		* 				"colour": "red"
 		* 			}
 		* 		]
 		* }
@@ -79,6 +81,10 @@ void ImportExport::fetchKountdowns() {
 			currKountdown.name = kountdownJson.toObject().value("name").toString();
 			currKountdown.description = kountdownJson.toObject().value("description").toString();
 			currKountdown.date = kountdownJson.toObject().value("date").toString();
+			if(kountdownJson.toObject().contains("colour"))
+				currKountdown.colour = kountdownJson.toObject().value("colour").toString();
+			else
+				currKountdown.colour = "default";
 			_kountdownArray.append(currKountdown);
 			i++;
 		}

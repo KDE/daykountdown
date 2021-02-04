@@ -15,7 +15,7 @@ import org.kde.daykountdown.private 1.0
 // Overlay sheets appear over a part of the window
 Kirigami.OverlaySheet {
 	id: addEditSheet
-	property var colourPicked;
+	property var colour;
 	property int index;
 	header: Kirigami.Heading {
 		// i18nc is useful for adding context for translators
@@ -47,7 +47,7 @@ Kirigami.OverlaySheet {
 			id: colorDialog
 			title: i18n("Kountdown Colour")
 			onAccepted: {
-				addEditSheet.colourPicked = colorDialog.color;
+				addEditSheet.colour = colorDialog.color;
 			}
 		}
 		RowLayout {
@@ -60,7 +60,7 @@ Kirigami.OverlaySheet {
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 				}
-				onClicked: addEditSheet.colourPicked = "crimson"
+				onClicked: addEditSheet.colour = "crimson"
 			}
 			Controls.RoundButton {
 				contentItem: Text {
@@ -69,7 +69,7 @@ Kirigami.OverlaySheet {
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 				}
-				onClicked: addEditSheet.colourPicked = "coral"
+				onClicked: addEditSheet.colour = "coral"
 			}
 			Controls.RoundButton {
 				contentItem: Text {
@@ -78,7 +78,7 @@ Kirigami.OverlaySheet {
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 				}
-				onClicked: addEditSheet.colourPicked = "gold"
+				onClicked: addEditSheet.colour = "gold"
 			}
 			Controls.RoundButton {
 				contentItem: Text {
@@ -87,7 +87,7 @@ Kirigami.OverlaySheet {
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 				}
-				onClicked: addEditSheet.colourPicked = "lightgreen"
+				onClicked: addEditSheet.colour = "lightgreen"
 			}
 			Controls.RoundButton {
 				contentItem: Text {
@@ -96,7 +96,7 @@ Kirigami.OverlaySheet {
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 				}
-				onClicked: addEditSheet.colourPicked = "lightblue"
+				onClicked: addEditSheet.colour = "lightblue"
 			}
 			Controls.RoundButton {
 				contentItem: Text {
@@ -105,7 +105,7 @@ Kirigami.OverlaySheet {
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 				}
-				onClicked: addEditSheet.colourPicked = "lightpink"
+				onClicked: addEditSheet.colour = "lightpink"
 			}
 			Controls.Button {
 				id: openColourDialog
@@ -139,26 +139,23 @@ Kirigami.OverlaySheet {
 			enabled: nameField.text.length > 0
 			onClicked: {
 				// Add a listelement to the kountdownModel ListModel
-				console.log(addEditSheet.colourPicked)
 				if(sheetMode == "add") {
-					KountdownModel.addKountdown(nameField.text, descriptionField.text, datePicker.selectedDate, addEditSheet.colourPicked);
+					KountdownModel.addKountdown(nameField.text, descriptionField.text, datePicker.selectedDate, addEditSheet.colour);
 				}
 				// Checks if kountdown properties have been changed
 				else if ((sheetMode == "edit") && (nameField.text != editingName || 
 					descriptionField.text != editingDesc || 
 					datePicker.selectedDate != editingDate ||
-					addEditSheet.colourPicked != editingColour)) {
+					addEditSheet.colour != editingColour)) {
 					KountdownModel.editKountdown(addEditSheet.index, nameField.text,
 												 descriptionField.text, datePicker.selectedDate,
-												 addEditSheet.colourPicked);
+												 addEditSheet.colour);
 				}
 				if (sheetMode == "edit") {
 					editingName = ""
 					editingDesc = ""
 					editingDate = nowDate
-					editingColour = ""
 				}
-
 				addEditSheet.close();
 			}
 		}

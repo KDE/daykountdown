@@ -21,12 +21,14 @@ typedef struct kountdown {
 	Q_PROPERTY(QString name MEMBER name);
 	Q_PROPERTY(QString description MEMBER description);
 	Q_PROPERTY(QString date MEMBER date);
+	Q_PROPERTY(QString colour MEMBER colour);
 	
 	public:
 		int index;
 		QString name;
 		QString description;
 		QString date;
+		QString colour;
 } kountdown;
 
 class ImportExport : public QObject

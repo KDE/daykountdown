@@ -35,7 +35,8 @@ Kirigami.ApplicationWindow {
 						KountdownModel.addKountdown(
 							ImportExport.Kountdowns[i].name,
 							ImportExport.Kountdowns[i].description,
-							new Date(ImportExport.Kountdowns[i].date)
+							new Date(ImportExport.Kountdowns[i].date),
+							ImportExport.Kountdowns[i].colour
 						);
 					}
 				}
@@ -76,12 +77,12 @@ Kirigami.ApplicationWindow {
 	property var editingDate
 	
 	// Function called by 'edit' button on card
-	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "", colourPicked = "default") {
+	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "", colour = "default") {
 		sheetMode = mode
 		
 		if(mode == "edit")
 			addEditSheetLoader.item.index = index;
-			addEditSheetLoader.item.colourPicked = colourPicked;
+			addEditSheetLoader.item.colour = colour;
 			editingName = listName
 			editingDesc = listDesc
 			editingDate = listDate

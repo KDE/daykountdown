@@ -29,7 +29,6 @@ Kirigami.AbstractCard {
 			rowSpacing: Kirigami.Units.largeSpacing
 			columnSpacing: Kirigami.Units.largeSpacing
 			columns: root.wideScreen ? 4 : 2
-			Component.onCompleted: console.log(colourPicked)
 			RowLayout {
 				Kirigami.Separator {
 					Layout.fillHeight: true
@@ -43,7 +42,7 @@ Kirigami.AbstractCard {
 					property var daysWord: daysLeft <= -2 || daysLeft >= 2 ? "days" : "day"
 					text: daysLeft < 0 ? 
 						i18n("%1 " + daysWord + " ago", daysLeft*-1) : i18n("%1 " + daysWord, daysLeft)
-					color: typeof colourPicked == "undefined" || colourPicked != "default" ? colourPicked : "lightgrey"
+					color: typeof colour == "undefined" || colour != "default" ? colour : "slategray"
 				}
 			}
 			
@@ -73,7 +72,7 @@ Kirigami.AbstractCard {
 				// Column spanning within grid layout (vertically in this case)
 				Layout.columnSpan: 2
 				text: i18n("Edit")
-				onClicked: openPopulateSheet("edit", index, name, description, date, colourPicked)
+				onClicked: openPopulateSheet("edit", index, name, description, date, colour)
 			}
 		}
 	}
