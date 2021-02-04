@@ -43,6 +43,7 @@ Kirigami.OverlaySheet {
 			text: sheetMode == "add" ? "" : editingDesc
 			onAccepted: datePicker.forceActiveFocus()
 		}
+		// Advanced colourpicker widget
 		ColorDialog {
 			id: colorDialog
 			title: i18n("Kountdown Colour")
@@ -50,6 +51,7 @@ Kirigami.OverlaySheet {
 				addEditSheet.colour = colorDialog.color;
 			}
 		}
+		// Horizontally display kountdown colour buttons
 		RowLayout {
 			Layout.fillWidth: true
 			Kirigami.FormData.label: i18n("Colour:")
