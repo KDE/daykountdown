@@ -26,7 +26,8 @@ KountdownModel::KountdownModel(QObject *parent)
 				name TEXT NOT NULL,
 				description TEXT NOT NULL,
 				date TEXT NOT NULL,
-				dateInMs INTEGER
+				dateInMs INTEGER NOT NULL,
+				colourPicked TEXT NOT NULL
 			)
 		)RAWSTRING");
 		auto query = QSqlQuery(statement);
@@ -66,8 +67,10 @@ QVariant KountdownModel::data(const QModelIndex &index, int role) const
 		QModelIndex parentIndex = createIndex(index.row(), parentColumn);
 		// We need to do some conversions for QDateTime class objects
 		return QDateTime::fromString(QSqlTableModel::data(parentIndex, Qt::DisplayRole).toString(), Qt::ISODate);
-	} else {
+	} else if (role == Qt::UserRole + 4 + 1) { //DateInMs
 		parentColumn = 4;
+	} else { // ColourPicked
+		parentColumn = 5;
 	}
 	QModelIndex parentIndex = createIndex(index.row(), parentColumn);
 	// We return a piece of data at index.row, parentColumn
@@ -83,7 +86,7 @@ QHash<int, QByteArray> KountdownModel::roleNames() const
 	return roles;
 }
 
-bool KountdownModel::addKountdown(const QString& name, const QString& description, const QDateTime& date)
+bool KountdownModel::addKountdown(const QString& name, const QString& description, const QDateTime& date, QString colourPicked)
 {
 	// Create new instance of QSqlRecord
 	// this points towards newRecord itself
@@ -94,7 +97,8 @@ bool KountdownModel::addKountdown(const QString& name, const QString& descriptio
 	newRecord.setValue(QStringLiteral("Description"), description);
 	newRecord.setValue(QStringLiteral("Date"), date.toString(Qt::ISODate));
 	newRecord.setValue(QStringLiteral("DateInMS"), date.toMSecsSinceEpoch());
-
+	newRecord.setValue(QStringLiteral("ColourPicked"), colourPicked);
+	
 	// insertRecord returns bool
 	// inserts in last location
 	bool result = insertRecord(rowCount(), newRecord);
@@ -105,13 +109,14 @@ bool KountdownModel::addKountdown(const QString& name, const QString& descriptio
 }
 
 //Similar to previous function, except result = setRecord instead of insertRecord
-bool KountdownModel::editKountdown(int index, const QString& name, const QString& description, const QDateTime& date)
+bool KountdownModel::editKountdown(int index, const QString& name, const QString& description, const QDateTime& date, QString colourPicked)
 {
 	QSqlRecord record = this->record();
 	record.setValue(QStringLiteral("Name"), name);
 	record.setValue(QStringLiteral("Description"), description);
 	record.setValue(QStringLiteral("Date"), date.toString(Qt::ISODate));
 	record.setValue(QStringLiteral("DateInMS"), date.toMSecsSinceEpoch());
+	record.setValue(QStringLiteral("Colour"), colourPicked);
 	bool result = setRecord(index, record);
 	result &= submitAll();
 	return result;

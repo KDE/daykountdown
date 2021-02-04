@@ -24,6 +24,7 @@ public:
 		DescriptionRole,
 		DateRole,
 		DateInMsRole,
+		ColourPickedRole,
 	};
 	
 	// Used for more semantic arguments to model sorting function
@@ -48,8 +49,8 @@ public:
 	QVariant data(const QModelIndex &index, int role) const override;
 
 	// Q_INVOKABLE methods can be called within the QML
-	Q_INVOKABLE bool addKountdown(const QString& name, const QString& description, const QDateTime& date);
-	Q_INVOKABLE bool editKountdown(int index, const QString& name, const QString& description, const QDateTime& date);
+	Q_INVOKABLE bool addKountdown(const QString& name, const QString& description, const QDateTime& date, QString colourPicked);
+	Q_INVOKABLE bool editKountdown(int index, const QString& name, const QString& description, const QDateTime& date, QString colourPicked);
 	Q_INVOKABLE bool removeKountdown(int index);
 	Q_INVOKABLE void sortModel(int sort_by);
 

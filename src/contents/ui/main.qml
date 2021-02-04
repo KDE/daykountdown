@@ -76,11 +76,12 @@ Kirigami.ApplicationWindow {
 	property var editingDate
 	
 	// Function called by 'edit' button on card
-	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "") {
+	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "", colourPicked = "default") {
 		sheetMode = mode
 		
 		if(mode == "edit")
 			addEditSheetLoader.item.index = index;
+			addEditSheetLoader.item.colourPicked = colourPicked;
 			editingName = listName
 			editingDesc = listDesc
 			editingDate = listDate
@@ -111,6 +112,7 @@ Kirigami.ApplicationWindow {
 					// What to do when triggering the action
 					onTriggered: openPopulateSheet("add")
 				}
+				// Kirigami.Actions can have nested actions.
 				left: Kirigami.Action {
 					id: sortList
 					text: i18nc("@action:button", "Sort")
