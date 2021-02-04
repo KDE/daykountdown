@@ -114,6 +114,11 @@ Kirigami.OverlaySheet {
 				Layout.fillWidth: true
 			}
 		}
+		Rectangle {
+			color: addEditSheet.colour == "default" ? "slategray" : addEditSheet.colour
+			Layout.fillWidth: true
+			height: 20
+		}
 		// This singleton is bringing in a component defined in DatePicker.qml
 		DatePicker {
 			id: datePicker
