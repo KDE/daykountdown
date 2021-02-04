@@ -37,6 +37,8 @@ KountdownModel::KountdownModel(QObject *parent)
 		}
 	}
 	
+	//QSqlQuery("DROP TABLE KountdownModel");
+	
 	// Sets data table on which the model is going to operate
 	setTable(QStringLiteral("KountdownModel"));
 	// All changed will be cached in the model until submitAll() ot revertAll() is called
@@ -69,7 +71,7 @@ QVariant KountdownModel::data(const QModelIndex &index, int role) const
 		return QDateTime::fromString(QSqlTableModel::data(parentIndex, Qt::DisplayRole).toString(), Qt::ISODate);
 	} else if (role == Qt::UserRole + 4 + 1) { //DateInMs
 		parentColumn = 4;
-	} else { // Colour
+	} else if (role == Qt::UserRole + 5 + 1) { // Colour
 		parentColumn = 5;
 	}
 	QModelIndex parentIndex = createIndex(index.row(), parentColumn);
@@ -96,7 +98,7 @@ bool KountdownModel::addKountdown(const QString& name, const QString& descriptio
 	newRecord.setValue(QStringLiteral("Name"), name);
 	newRecord.setValue(QStringLiteral("Description"), description);
 	newRecord.setValue(QStringLiteral("Date"), date.toString(Qt::ISODate));
-	newRecord.setValue(QStringLiteral("DateInMS"), date.toMSecsSinceEpoch());
+	newRecord.setValue(QStringLiteral("DateInMs"), date.toMSecsSinceEpoch());
 	newRecord.setValue(QStringLiteral("Colour"), colour);
 	
 	// insertRecord returns bool
@@ -112,13 +114,18 @@ bool KountdownModel::addKountdown(const QString& name, const QString& descriptio
 bool KountdownModel::editKountdown(int index, const QString& name, const QString& description, const QDateTime& date, QString colour)
 {
 	QSqlRecord record = this->record();
+	record.setValue(QStringLiteral("ID"), index);
 	record.setValue(QStringLiteral("Name"), name);
 	record.setValue(QStringLiteral("Description"), description);
 	record.setValue(QStringLiteral("Date"), date.toString(Qt::ISODate));
-	record.setValue(QStringLiteral("DateInMS"), date.toMSecsSinceEpoch());
+	record.setValue(QStringLiteral("DateInMs"), date.toMSecsSinceEpoch());
 	record.setValue(QStringLiteral("Colour"), colour);
+	qDebug() << record;
 	bool result = setRecord(index, record);
+	qDebug() << result;
 	result &= submitAll();
+	qDebug() << result;
+	qDebug() << KountdownModel::lastError();
 	return result;
 }
 

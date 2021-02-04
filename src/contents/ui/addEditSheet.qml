@@ -142,16 +142,8 @@ Kirigami.OverlaySheet {
 				if(sheetMode == "add") {
 					KountdownModel.addKountdown(nameField.text, descriptionField.text, datePicker.selectedDate, addEditSheet.colour);
 				}
-				// Checks if kountdown properties have been changed
-				else if ((sheetMode == "edit") && (nameField.text != editingName || 
-					descriptionField.text != editingDesc || 
-					datePicker.selectedDate != editingDate ||
-					addEditSheet.colour != editingColour)) {
-					KountdownModel.editKountdown(addEditSheet.index, nameField.text,
-												 descriptionField.text, datePicker.selectedDate,
-												 addEditSheet.colour);
-				}
-				if (sheetMode == "edit") {
+				else {
+					KountdownModel.editKountdown(addEditSheet.index, nameField.text, descriptionField.text, datePicker.selectedDate, addEditSheet.colour);
 					editingName = ""
 					editingDesc = ""
 					editingDate = nowDate
