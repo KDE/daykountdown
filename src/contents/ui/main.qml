@@ -62,7 +62,13 @@ Kirigami.ApplicationWindow {
 		]
 	}
 	
-	property var nowDate: new Date()	
+	property var nowDate: new Date()
+	Timer {
+		interval: 60000
+		running: true
+		repeat: true
+		onTriggered: root.nowDate = new Date()
+	}
 	
 	// Loader fetches item from addEditSheet.qml
 	Loader { 
