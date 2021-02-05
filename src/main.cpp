@@ -17,8 +17,10 @@
 #include <KLocalizedContext>
 #include <KAboutData>
 #include <KLocalizedString>
+
 #include "kountdownmodel.h"
 #include "importexport.h"
+#include "aboutdatapasser.h"
 
 // Define the database driver in a string
 const QString DRIVER(QStringLiteral("QSQLITE"));
@@ -32,15 +34,15 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	KLocalizedString::setApplicationDomain("daykountdown");
 
 	// KAboutData instances hold information about the application
-	KAboutData aboutData(QStringLiteral("daykountdown"), i18nc("@title", "DayKountdown"), QStringLiteral("0.1"),
+	KAboutData about(QStringLiteral("daykountdown"), i18nc("@title", "DayKountdown"), QStringLiteral("0.1"),
 						i18nc("@title", "A countdown application"),
 						KAboutLicense::GPL_V3);
 
-	aboutData.addAuthor(i18nc("@info:credit", "Claudio Cambra"), i18nc("@info:credit", "Creator"));
-	aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"), i18nc("@info:credit", "SQLite pro and code review"));
+	about.addAuthor(i18nc("@info:credit", "Claudio Cambra"), i18nc("@info:credit", "Creator"));
+	about.addAuthor(i18nc("@info:credit", "Carl Schwan"), i18nc("@info:credit", "SQLite pro and code review"));
 
 	// Sets the KAboutData instance
-	KAboutData::setApplicationData(aboutData);
+	KAboutData::setApplicationData(about);
 	QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.daykountdown")));
 
 	// Q_ASSERTs hald the problem if the argument is false
@@ -67,15 +69,18 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 	// Let Qt parse and remove arguments meant to affect Qt
 	QCommandLineParser parser;
-	aboutData.setupCommandLine(&parser);
+	about.setupCommandLine(&parser);
 	parser.process(app);
-	aboutData.processCommandLine(&parser);
+	about.processCommandLine(&parser);
 
 	QQmlApplicationEngine engine;
+	AboutDataPasser AboutData;
+	AboutData.setAboutData(about);
 	
 	// Lets you import the KountdownModel class into QML code
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "KountdownModel", new KountdownModel(qApp));
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "ImportExport", new ImportExport());
+	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "AboutData", &AboutData);
 
 	// Set up localisation functionality
 	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

@@ -37,7 +37,7 @@ class ImportExport : public QObject
     Q_PROPERTY(QVariantList Kountdowns READ kountdownPopulator)
 
 public:
-    explicit ImportExport(QObject *parent = nullptr);
+	explicit ImportExport(QObject *parent = nullptr);
 	QVariantList Kountdowns;
 	QVariantList kountdownPopulator();
 	Q_INVOKABLE void fetchKountdowns();

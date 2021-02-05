@@ -54,6 +54,12 @@ Kirigami.ApplicationWindow {
 				shortcut: StandardKey.Preferences
 			},*/
 			Kirigami.Action {
+				text: i18n("About DayKountdown")
+				icon.name: "help-about"
+				onTriggered: pageStack.layers.replace(aboutPage)
+				enabled: pageStack.layers.currentItem.title !== i18n("About")
+			},
+			Kirigami.Action {
 				text: i18n("Quit")
 				icon.name: "application-exit"
 				shortcut: StandardKey.Quit
@@ -61,6 +67,13 @@ Kirigami.ApplicationWindow {
 			}
 		]
 	}
+	
+	Component {
+        id: aboutPage
+        Kirigami.AboutPage {
+            aboutData: AboutData.aboutData
+        }
+    }
 	
 	property var nowDate: new Date()
 	Timer {
@@ -73,7 +86,7 @@ Kirigami.ApplicationWindow {
 	// Loader fetches item from addEditSheet.qml
 	Loader { 
 		id: addEditSheetLoader
-		source: "addEditSheet.qml" 
+		source: "AddEditSheet.qml" 
 	}
 	// This is read by addEditSheet to change functionality
 	property var sheetMode: ""
@@ -158,7 +171,7 @@ Kirigami.ApplicationWindow {
 				// Model contains info to be displayed
 				model: KountdownModel
 				// Loader grabs component from different file specified in resources
-				delegate: Loader { source: "kountdownCard.qml" }
+				delegate: Loader { source: "KountdownCard.qml" }
 				
 				header: Kirigami.Heading {
 					padding: {
