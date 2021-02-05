@@ -38,6 +38,7 @@ class ImportExport : public QObject
 
 public:
 	explicit ImportExport(QObject *parent = nullptr);
+	virtual ~ImportExport() override = default;
 	QVariantList Kountdowns;
 	QVariantList kountdownPopulator();
 	Q_INVOKABLE void fetchKountdowns();

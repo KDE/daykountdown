@@ -15,6 +15,7 @@ class AboutDataPasser : public QObject
 	
 public:
 	explicit AboutDataPasser(QObject *parent = nullptr);
+	virtual ~AboutDataPasser() override = default;
 	void setAboutData(const KAboutData &aboutData);
 	KAboutData aboutData() const;
 
