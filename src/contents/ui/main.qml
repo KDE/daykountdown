@@ -56,7 +56,7 @@ Kirigami.ApplicationWindow {
 			Kirigami.Action {
 				text: i18n("About DayKountdown")
 				icon.name: "help-about"
-				onTriggered: pageStack.layers.replace(aboutPage)
+				onTriggered: pageStack.layers.push(aboutPage)
 				enabled: pageStack.layers.currentItem.title !== i18n("About")
 			},
 			Kirigami.Action {
