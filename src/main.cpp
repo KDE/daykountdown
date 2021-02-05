@@ -38,7 +38,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 						i18nc("@title", "A countdown application"),
 						KAboutLicense::GPL_V3);
 
-	about.addAuthor(i18nc("@info:credit", "Claudio Cambra"), i18nc("@info:credit", "Creator"));
+	about.addAuthor(i18nc("@info:credit", "Claudio Cambra"), i18nc("@info:credit", "Creator"), 
+					QStringLiteral("claudio.cambra@gmail.com"));
 	about.addAuthor(i18nc("@info:credit", "Carl Schwan"), i18nc("@info:credit", "SQLite pro and code review"));
 
 	// Sets the KAboutData instance
