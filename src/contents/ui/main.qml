@@ -76,11 +76,11 @@ Kirigami.ApplicationWindow {
 		source: "addEditSheet.qml" 
 	}
 	// This is read by addEditSheet to change functionality
-	property var sheetMode
+	property var sheetMode: ""
 	// Setting variables in AppWindow scope so they are accessible to addEditSheet in edit mode
-	property var editingName
-	property var editingDesc
-	property var editingDate
+	property var editingName: ""
+	property var editingDesc: ""
+	property var editingDate: ""
 	
 	// Function called by 'edit' button on card
 	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "", colour = "default") {

@@ -15,7 +15,7 @@ import org.kde.daykountdown.private 1.0
 // Overlay sheets appear over a part of the window
 Kirigami.OverlaySheet {
 	id: addEditSheet
-	property var colour;
+	property var colour: "default";
 	property int index;
 	header: Kirigami.Heading {
 		// i18nc is useful for adding context for translators
@@ -33,14 +33,14 @@ Kirigami.OverlaySheet {
 			placeholderText: i18n("Event name (required)")
 			// What to do after input is accepted (i.e. pressed enter)
 			// In this case, it moves the focus to the next field
-			text: sheetMode == "add" ? "" : editingName
+			text: sheetMode == "add" ? "" : root.editingName
 			onAccepted: descriptionField.forceActiveFocus()
 		}
 		Controls.TextField {
 			id: descriptionField
 			Kirigami.FormData.label: i18nc("@label:textbox", "Description:")
 			placeholderText: i18n("Optional")
-			text: sheetMode == "add" ? "" : editingDesc
+			text: sheetMode == "add" ? "" : root.editingDesc
 			onAccepted: datePicker.forceActiveFocus()
 		}
 		// Advanced colourpicker widget
@@ -124,7 +124,7 @@ Kirigami.OverlaySheet {
 		// This singleton is bringing in a component defined in DatePicker.qml
 		DatePicker {
 			id: datePicker
-			selectedDate: sheetMode == "add" ? nowDate :editingDate
+			selectedDate: sheetMode == "add" ? nowDate : root.editingDate
 			Layout.fillWidth: true
 		}
 		// This is a button.
@@ -151,9 +151,9 @@ Kirigami.OverlaySheet {
 				}
 				else {
 					KountdownModel.editKountdown(addEditSheet.index, nameField.text, descriptionField.text, datePicker.selectedDate, addEditSheet.colour);
-					editingName = ""
-					editingDesc = ""
-					editingDate = nowDate
+					root.editingName = ""
+					root.editingDesc = ""
+					root.editingDate = nowDate
 				}
 				console.log(addEditSheet.colour);
 				addEditSheet.close();
