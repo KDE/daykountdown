@@ -22,16 +22,17 @@ Kirigami.OverlaySheet {
 	property int index: -1
 	property string name: ""
 	property string description: ""
-	property var date: nowDate
-	property var colour: "default";
+	property date kdate: nowDate
+	property color colour: palette.text;
 	
 	// Signals can be read an certain actions performed when these happen
-	signal edited(int index, string name, string description, var date)
-	signal added (string name, string description, var date)
+	signal added (string name, string description, var kdate)
+	signal edited(int index, string name, string description, var kdate)
+	signal removed(int index)
 	
 	header: Kirigami.Heading {
 		// i18nc is useful for adding context for translators
-		text: mode == "add" ? i18nc("@title:window", "Add kountdown") : 
+		text: mode === "add" ? i18nc("@title:window", "Add kountdown") : 
 			i18nc("@title:window", "Edit kountdown")
 	}
 	// Form layouts help align and structure a layout with several inputs
@@ -45,14 +46,14 @@ Kirigami.OverlaySheet {
 			placeholderText: i18n("Event name (required)")
 			// What to do after input is accepted (i.e. pressed enter)
 			// In this case, it moves the focus to the next field
-			text: mode == "add" ? "" : name
+			text: mode === "add" ? "" : name
 			onAccepted: descriptionField.forceActiveFocus()
 		}
 		Controls.TextField {
 			id: descriptionField
 			Kirigami.FormData.label: i18nc("@label:textbox", "Description:")
 			placeholderText: i18n("Optional")
-			text: mode == "add" ? "" : description
+			text: mode === "add" ? "" : description
 			onAccepted: datePicker.forceActiveFocus()
 		}
 		// Advanced colourpicker widget
@@ -129,14 +130,14 @@ Kirigami.OverlaySheet {
 			}
 		}
 		Rectangle {
-			color: colour != "default" ? colour : "white"
+			color: colour
 			Layout.fillWidth: true
 			height: 20
 		}
 		// This singleton is bringing in a component defined in DatePicker.qml
 		DatePicker {
 			id: datePicker
-			selectedDate: mode == "add" ? nowDate : date
+			selectedDate: mode === "add" ? nowDate : kdate
 			Layout.fillWidth: true
 		}
 		// This is a button.
@@ -144,9 +145,9 @@ Kirigami.OverlaySheet {
 			id: deleteButton
 			Layout.fillWidth: true
 			text: i18nc("@action:button", "Delete")
-			visible: mode == "edit"
+			visible: mode === "edit"
 			onClicked: {
-				KountdownModel.removeKountdown(index)
+				addEditSheet.removed(index)
 				close();
 			}
 		}
@@ -158,8 +159,8 @@ Kirigami.OverlaySheet {
 			enabled: nameField.text.length > 0
 			onClicked: {
 				// Add a listelement to the kountdownModel ListModel
-				if(mode == "add") {
-					added(
+				if(mode === "add") {
+					addEditSheet.added(
 						nameField.text, 
 						descriptionField.text, 
 						datePicker.selectedDate, 
@@ -167,7 +168,7 @@ Kirigami.OverlaySheet {
 					);
 				}
 				else {
-					edited(
+					addEditSheet.edited(
 						index, 
 						nameField.text, 
 						descriptionField.text, 

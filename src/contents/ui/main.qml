@@ -91,26 +91,28 @@ Kirigami.ApplicationWindow {
 			index, 
 			name, 
 			description, 
-			date, 
+			kdate, 
 			colour
 		);
 		onAdded: KountdownModel.addKountdown(
 			name, 
 			description, 
-			date, 
+			kdate, 
 			colour
 		);
+		onRemoved: KountdownModel.removeKountdown(index)
 	}
 
+	SystemPalette { id: palette; colorGroup: SystemPalette.Active }
 	// Function called by 'edit' button on card
-	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "", colour = "default") {
+	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "", colour = palette.text) {
 		addEditSheet.mode = mode
 		addEditSheet.colour = colour;
-		if(mode == "edit") {
+		if(mode === "edit") {
 			addEditSheet.index = index;
 			addEditSheet.name = listName
 			addEditSheet.description = listDesc
-			addEditSheet.date = listDate
+			addEditSheet.kdate = listDate
 		}
 		addEditSheet.open()
 	}

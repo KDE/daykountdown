@@ -33,7 +33,7 @@ Kirigami.AbstractCard {
 				Rectangle {
 					Layout.fillHeight: true
 					width: 5
-					color: colour == "default" ? SystemPalette.base : colour
+					color: colour
 				}
 				Kirigami.Heading {
 					// Heading will be as tall as possible while respecting constraints
@@ -45,7 +45,7 @@ Kirigami.AbstractCard {
 					property var daysWord: daysLeft <= -2 || daysLeft >= 2 ? "days" : "day"
 					text: daysLeft < 0 ? 
 						i18n("%1 " + daysWord + " ago", daysLeft*-1) : i18n("%1 " + daysWord, daysLeft)
-					color: colour == "default" ? SystemPalette.base : colour
+					color: colour
 				}
 			}
 			
