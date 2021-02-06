@@ -16,6 +16,7 @@ import org.kde.daykountdown.private 1.0
 Kirigami.OverlaySheet {
 	id: addEditSheet
 	
+	// Sheet mode
 	property string mode: "add"
 	
 	property int index: -1
@@ -24,6 +25,7 @@ Kirigami.OverlaySheet {
 	property var date: nowDate
 	property var colour: "default";
 	
+	// Signals can be read an certain actions performed when these happen
 	signal edited(int index, string name, string description, var date)
 	signal added (string name, string description, var date)
 	
@@ -144,7 +146,7 @@ Kirigami.OverlaySheet {
 			text: i18nc("@action:button", "Delete")
 			visible: mode == "edit"
 			onClicked: {
-				KountdownModel.removeKountdown(addEditSheet.index)
+				KountdownModel.removeKountdown(index)
 				close();
 			}
 		}

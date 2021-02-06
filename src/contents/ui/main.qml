@@ -80,24 +80,24 @@ Kirigami.ApplicationWindow {
 		interval: 60000
 		running: true
 		repeat: true
-		onTriggered: root.nowDate = new Date()
+		onTriggered: nowDate = new Date()
 	}
 	
-	// Fetches item from addEditSheet.qml
+	// Fetches item from addEditSheet.qml and does action on signal
 	AddEditSheet { 
 		id: addEditSheet
 		onEdited: KountdownModel.editKountdown(
-			addEditSheet.index, 
+			index, 
 			nameField.text, 
 			descriptionField.text, 
 			datePicker.selectedDate, 
-			addEditSheet.colour
+			colour
 		);
 		onAdded: KountdownModel.addKountdown(
 			nameField.text, 
 			descriptionField.text, 
 			datePicker.selectedDate, 
-			addEditSheet.colour
+			colour
 		);
 	}
 
