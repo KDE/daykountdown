@@ -35,7 +35,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 	// KAboutData instances hold information about the application
 	KAboutData about(QStringLiteral("daykountdown"), i18nc("@title", "DayKountdown"), QStringLiteral("0.1"),
-						i18nc("@title", "A countdown application"),
+						i18nc("@title", "A day countdown application"),
 						KAboutLicense::GPL_V3);
 
 	about.addAuthor(i18nc("@info:credit", "Claudio Cambra"), i18nc("@info:credit", "Creator"), 

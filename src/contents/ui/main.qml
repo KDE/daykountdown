@@ -83,10 +83,9 @@ Kirigami.ApplicationWindow {
 		onTriggered: root.nowDate = new Date()
 	}
 	
-	// Loader fetches item from addEditSheet.qml
-	Loader { 
-		id: addEditSheetLoader
-		source: "AddEditSheet.qml" 
+	// Fetches item from addEditSheet.qml
+	AddEditSheet { 
+		id: addEditSheet
 	}
 	// This is read by addEditSheet to change functionality
 	property var sheetMode: ""
@@ -99,14 +98,14 @@ Kirigami.ApplicationWindow {
 	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "", colour = "default") {
 		sheetMode = mode
 		
-		addEditSheetLoader.item.colour = colour;
+		addEditSheet.colour = colour;
 		if(mode == "edit") {
-			addEditSheetLoader.item.index = index;
+			addEditSheet.index = index;
 			editingName = listName
 			editingDesc = listDesc
 			editingDate = listDate
 		}
-		addEditSheetLoader.item.open()
+		addEditSheet.open()
 	}
 
 	// Initial page to be loaded on app load
@@ -170,8 +169,8 @@ Kirigami.ApplicationWindow {
 				id: layout
 				// Model contains info to be displayed
 				model: KountdownModel
-				// Loader grabs component from different file specified in resources
-				delegate: Loader { source: "KountdownCard.qml" }
+				// Grabs component from different file specified in resources
+				delegate: KountdownCard {}
 				
 				header: Kirigami.Heading {
 					padding: {
