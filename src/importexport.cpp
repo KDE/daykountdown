@@ -84,7 +84,7 @@ void ImportExport::fetchKountdowns() {
 			if(kountdownJson.toObject().contains("colour"))
 				currKountdown.colour = kountdownJson.toObject().value("colour").toString();
 			else
-				currKountdown.colour = "default";
+				currKountdown.colour = "palette.text";
 			_kountdownArray.append(currKountdown);
 			i++;
 		}

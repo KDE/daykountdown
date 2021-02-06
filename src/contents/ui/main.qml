@@ -48,12 +48,6 @@ Kirigami.ApplicationWindow {
 				shortcut: StandardKey.Save
 				onTriggered: ImportExport.exportFile()
 			},
-			/*Kirigami.Action {
-				text: i18n("Settings")
-				icon.name: "settings-configure"
-				//onTriggered: ImportExport.fetchKountdowns()
-				shortcut: StandardKey.Preferences
-			},*/
 			Kirigami.Action {
 				text: i18n("Clear all kountdowns")
 				icon.name: "edit-clear"
