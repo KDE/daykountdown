@@ -84,6 +84,7 @@ Kirigami.ApplicationWindow {
     MessageDialog {
 		id: removeAllDialog
 		title: i18nc("@title:window", "Remove all kountdowns")
+		icon: StandardIcon.Warning
 		text: i18n("Are you sure you want to delete all your kountdowns?")
 		standardButtons: Dialog.Yes | Dialog.Cancel
 		onAccepted: KountdownModel.removeAllKountdowns()
