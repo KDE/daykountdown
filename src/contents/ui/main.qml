@@ -7,8 +7,9 @@
 
 // Includes relevant modules used by the QML
 import QtQuick 2.6
-import QtQuick.Controls 2.0 as Controls
+import QtQuick.Controls 2.15 as Controls
 import QtQuick.Layouts 1.2
+import QtQuick.Dialogs 1.3
 import org.kde.kirigami 2.13 as Kirigami
 import org.kde.daykountdown.private 1.0
 
@@ -56,7 +57,7 @@ Kirigami.ApplicationWindow {
 			Kirigami.Action {
 				text: i18n("Clear all kountdowns")
 				icon.name: "edit-clear"
-				onTriggered: KountdownModel.clearAll()
+				onTriggered: removeAllDialog.open()
 			},
 			Kirigami.Action {
 				text: i18n("About DayKountdown")
@@ -79,6 +80,14 @@ Kirigami.ApplicationWindow {
             aboutData: AboutData.aboutData
         }
     }
+	
+    MessageDialog {
+		id: removeAllDialog
+		title: i18nc("@title:window", "Remove all kountdowns")
+		text: i18n("Are you sure you want to delete all your kountdowns?")
+		standardButtons: Dialog.Yes | Dialog.Cancel
+		onAccepted: KountdownModel.removeAllKountdowns()
+	}
 	
 	property var nowDate: new Date()
 	Timer {
