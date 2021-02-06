@@ -136,6 +136,14 @@ bool KountdownModel::removeKountdown(int index)
 	return result;
 }
 
+bool KountdownModel:: removeAllKountdowns()
+{
+	bool result;
+	for(int i = 1; i <= KountdownModel.rowCount(); i++)
+		result &= removeRow(i);
+	return result;
+}
+
 void KountdownModel::sortModel(int sort_by) {
 	// Switch based on enum defined in kountdownmodel.h
 	switch(sort_by) {

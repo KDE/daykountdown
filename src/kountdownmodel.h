@@ -52,6 +52,7 @@ public:
 	Q_INVOKABLE bool addKountdown(const QString& name, const QString& description, const QDateTime& date, QString colour);
 	Q_INVOKABLE bool editKountdown(int index, const QString& name, const QString& description, const QDateTime& date, QString colour);
 	Q_INVOKABLE bool removeKountdown(int index);
+	Q_INVOKABLE bool removeAllKountdowns();
 	Q_INVOKABLE void sortModel(int sort_by);
 
 private:
