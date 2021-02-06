@@ -86,24 +86,30 @@ Kirigami.ApplicationWindow {
 	// Fetches item from addEditSheet.qml
 	AddEditSheet { 
 		id: addEditSheet
+		onEdited: KountdownModel.editKountdown(
+			addEditSheet.index, 
+			nameField.text, 
+			descriptionField.text, 
+			datePicker.selectedDate, 
+			addEditSheet.colour
+		);
+		onAdded: KountdownModel.addKountdown(
+			nameField.text, 
+			descriptionField.text, 
+			datePicker.selectedDate, 
+			addEditSheet.colour
+		);
 	}
-	// This is read by addEditSheet to change functionality
-	property var sheetMode: ""
-	// Setting variables in AppWindow scope so they are accessible to addEditSheet in edit mode
-	property var editingName: ""
-	property var editingDesc: ""
-	property var editingDate: ""
-	
+
 	// Function called by 'edit' button on card
 	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "", colour = "default") {
-		sheetMode = mode
-		
+		addEditSheet.mode = mode
 		addEditSheet.colour = colour;
 		if(mode == "edit") {
 			addEditSheet.index = index;
-			editingName = listName
-			editingDesc = listDesc
-			editingDate = listDate
+			addEditSheet.name = listName
+			addEditSheet.description = listDesc
+			addEditSheet.date = listDate
 		}
 		addEditSheet.open()
 	}
