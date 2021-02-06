@@ -84,19 +84,20 @@ Kirigami.ApplicationWindow {
 	}
 	
 	// Fetches item from addEditSheet.qml and does action on signal
+	// Cool thing about signals: they expose the variables defined in them to the function that is listening to them
 	AddEditSheet { 
 		id: addEditSheet
 		onEdited: KountdownModel.editKountdown(
 			index, 
-			nameField.text, 
-			descriptionField.text, 
-			datePicker.selectedDate, 
+			name, 
+			description, 
+			date, 
 			colour
 		);
 		onAdded: KountdownModel.addKountdown(
-			nameField.text, 
-			descriptionField.text, 
-			datePicker.selectedDate, 
+			name, 
+			description, 
+			date, 
 			colour
 		);
 	}
