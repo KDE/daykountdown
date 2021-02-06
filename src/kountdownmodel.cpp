@@ -136,11 +136,11 @@ bool KountdownModel::removeKountdown(int index)
 	return result;
 }
 
-bool KountdownModel:: removeAllKountdowns()
+bool KountdownModel::removeAllKountdowns()
 {
-	bool result;
-	for(int i = 1; i <= KountdownModel.rowCount(); i++)
-		result &= removeRow(i);
+	QSqlQuery query;
+	bool result = query.exec("DELETE FROM KountdownModel");
+	result &= submitAll();
 	return result;
 }
 
