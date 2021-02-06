@@ -54,6 +54,11 @@ Kirigami.ApplicationWindow {
 				shortcut: StandardKey.Preferences
 			},*/
 			Kirigami.Action {
+				text: i18n("Clear all kountdowns")
+				icon.name: "edit-clear"
+				onTriggered: KountdownModel.clearAll()
+			},
+			Kirigami.Action {
 				text: i18n("About DayKountdown")
 				icon.name: "help-about"
 				onTriggered: pageStack.layers.push(aboutPage)
