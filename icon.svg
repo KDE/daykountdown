@@ -128,14 +128,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="220.89532"
-     inkscape:cy="480.59278"
+     inkscape:zoom="0.5"
+     inkscape:cx="528.32929"
+     inkscape:cy="680.50163"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     showguides="false"
+     showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1580"
      inkscape:window-height="924"
@@ -284,13 +284,20 @@
        height="6.73981"
        x="14.956302"
        y="215.40952" />
-    <rect
-       style="fill:#cf1f1c;fill-opacity:1;fill-rule:evenodd;stroke:#a70000;stroke-width:1.22534;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect1356"
-       width="25.922382"
-       height="19.801476"
-       x="163.16364"
-       y="119.98601"
-       ry="6.4933252" />
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;fill-rule:evenodd;stroke:#ff3030;stroke-width:6.165;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path913"
+       sodipodi:cx="178.37575"
+       sodipodi:cy="204.61249"
+       sodipodi:expansion="1"
+       sodipodi:revolution="3.1774457"
+       sodipodi:radius="34.645248"
+       sodipodi:argument="-18.254963"
+       sodipodi:t0="0.63589394"
+       d="m 194.88741,219.19731 c -7.74884,10.30157 -22.8477,11.66864 -32.90107,3.96983 -11.41012,-8.73778 -12.88557,-25.57852 -4.20825,-36.74865 9.72555,-12.51948 28.31005,-14.10331 40.59625,-4.44665 13.62945,10.71243 15.32167,31.04208 4.68506,44.44383 -7.00361,8.82429 -18.28379,13.50416 -29.47426,12.50925"
+       transform="rotate(-144.64529,168.54847,206.60762)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
 </svg>
