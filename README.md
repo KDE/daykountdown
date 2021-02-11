@@ -24,6 +24,7 @@ It is written in Kirigami, so it is also convergent!
 - Qt5 packages from your distribution's repositories
 - KDE packages (including Kirigami)
 - CMake
+- Ninja
 
 ## Compiling
 
@@ -43,6 +44,10 @@ Once that's done just run `cmake`, pointing it at the root repository directory:
 
 Finally, all we need to do is run make:
 
-`make`
+`ninja`
 
-Our binary will be located in `build/src/daykountdown`.
+Our binary will be located in `build/src/daykountdown`. Alternatively, we can install daykountdown by running:
+
+`ninja install`
+
+DayKountdown should now appear in your application menu!
