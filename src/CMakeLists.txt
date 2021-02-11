@@ -3,8 +3,13 @@ set(daykountdown_SRCS
     kountdownmodel.cpp
     importexport.cpp
     aboutdatapasser.cpp
+    resources.qrc
     )
 
-qt5_add_resources(RESOURCES resources.qrc)
-add_executable(daykountdown ${daykountdown_SRCS} ${RESOURCES})
+add_executable(daykountdown ${daykountdown_SRCS})
+
+ecm_add_app_icon(DAYKOUNTDOWN_ICON ICONS ${CMAKE_SOURCE_DIR}/org.kde.daykountdown.png)
+target_sources(daykountdown PRIVATE ${DAYKOUNTDOWN_ICON})
 target_link_libraries(daykountdown Qt5::Quick Qt5::Sql Qt5::Qml Qt5::Svg Qt5::Gui Qt5::QuickControls2 KF5::Kirigami2 KF5::I18n KF5::CoreAddons KF5::KIOCore KF5::WidgetsAddons)
+
+install(TARGETS daykountdown ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
