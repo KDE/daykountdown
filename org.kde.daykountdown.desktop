@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=DayKountdown
+GenericName=Date Countdown
+Comment=A simple date countdown app
+Exec=daykountdown
+Terminal=false
+Icon=org.kde.daykountdown
+Type=Application
+Categories=Office;
