@@ -12,4 +12,15 @@ ecm_add_app_icon(DAYKOUNTDOWN_ICON ICONS ${CMAKE_SOURCE_DIR}/org.kde.daykountdow
 target_sources(daykountdown PRIVATE ${DAYKOUNTDOWN_ICON})
 target_link_libraries(daykountdown Qt5::Quick Qt5::Sql Qt5::Qml Qt5::Svg Qt5::Gui Qt5::QuickControls2 KF5::Kirigami2 KF5::I18n KF5::CoreAddons KF5::KIOCore KF5::WidgetsAddons)
 
+if(ANDROID)
+    kirigami_package_breeze_icons(ICONS
+        "help-about"
+        "document-open"
+        "document-save"
+        "edit-clear"
+        "list-add"
+        "configure"
+    )
+endif()
+
 install(TARGETS daykountdown ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
