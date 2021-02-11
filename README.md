@@ -44,10 +44,10 @@ Once that's done just run `cmake`, pointing it at the root repository directory:
 
 Finally, all we need to do is run make:
 
-`ninja`
+`make`
 
 Our binary will be located in `build/src/daykountdown`. Alternatively, we can install daykountdown by running:
 
-`ninja install`
+`make install`
 
 DayKountdown should now appear in your application menu!
