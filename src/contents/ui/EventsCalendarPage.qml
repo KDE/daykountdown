@@ -11,9 +11,9 @@ import org.kde.kirigami 2.13 as Kirigami
 
 Kirigami.ScrollablePage {
 	id: eventsCalendarPage
+	width: parent.width /3
 	
-	enabled: true
-	visible: true
+	title: i18nc("@title", "Events")
 	
 	ColumnLayout {
 		

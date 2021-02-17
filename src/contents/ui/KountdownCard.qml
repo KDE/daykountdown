@@ -10,14 +10,20 @@ import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.13 as Kirigami
 
 // Delegate is how the information will be presented in the ListView
-Kirigami.AbstractCard {
+Kirigami.Card {
 	id: kountdownDelegate
+	
+	showClickFeedback: true
+	onReleased: openPopulateSheet("edit", index, name, description, date, colour)
+	
 	// contentItem property includes the content to be displayed on the card
 	contentItem: Item {
+		id: cardContents
 		// implicitWidth/Height define the natural width/height of an item if no width or height is specified
 		// The setting below defines a component's preferred size based on its content
 		implicitWidth: delegateLayout.implicitWidth
 		implicitHeight: delegateLayout.implicitHeight
+		
 		GridLayout {
 			id: delegateLayout
 			// QtQuick anchoring system allows quick definition of anchor points for positioning
@@ -53,6 +59,7 @@ Kirigami.AbstractCard {
 			ColumnLayout {
 				Kirigami.Heading {
 					Layout.fillWidth: true
+					wrapMode: Text.Wrap
 					level: 2
 					text: name
 				}
@@ -65,17 +72,10 @@ Kirigami.AbstractCard {
 				Controls.Label {
 					Layout.fillWidth: true
 					// Word wrap makes text stay within box and shift with size
-					wrapMode: Text.WordWrap
+					wrapMode: Text.Wrap
 					text: description
 					visible: description.length > 0
 				}
-			}
-			Controls.Button {
-				Layout.alignment: Qt.AlignRight
-				// Column spanning within grid layout (vertically in this case)
-				Layout.columnSpan: 2
-				text: i18n("Edit")
-				onClicked: openPopulateSheet("edit", index, name, description, date, colour)
 			}
 		}
 	}

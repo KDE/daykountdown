@@ -21,6 +21,16 @@ Kirigami.ApplicationWindow {
 	// Window title
 	title: i18nc("@title:window", "Day Kountdown")
 	
+	property date nowDate: new Date()
+	property bool calPageOpen: false
+	
+	Timer {
+		interval: 60000
+		running: true
+		repeat: true
+		onTriggered: nowDate = new Date()
+	}
+	
 	// Global drawer element with app-wide actions
 	globalDrawer: Kirigami.GlobalDrawer {
 		// Makes drawer a small menu rather than sliding pane
@@ -90,14 +100,6 @@ Kirigami.ApplicationWindow {
 		onAccepted: KountdownModel.removeAllKountdowns()
 	}
 	
-	property var nowDate: new Date()
-	Timer {
-		interval: 60000
-		running: true
-		repeat: true
-		onTriggered: nowDate = new Date()
-	}
-	
 	// Fetches item from addEditSheet.qml and does action on signal
 	// Cool thing about signals: they expose the variables defined in them to the function that is listening to them
 	AddEditSheet { 
@@ -134,4 +136,12 @@ Kirigami.ApplicationWindow {
 
 	// Initial page to be loaded on app load
 	pageStack.initialPage: KountdownsPage {}
+	
+	function showCalendar() {
+		calPageOpen = !calPageOpen
+		if (calPageOpen == false)
+			applicationWindow().pageStack.pop()
+		else
+			root.pageStack.push(Qt.resolvedUrl("EventsCalendarPage.qml"))
+	}
 }

@@ -17,7 +17,7 @@ Kirigami.ScrollablePage {
 	id: kountdownsPage
 	
 	// Title for the current page, placed on the toolbar
-	title: i18nc("@title", "Kountdown")
+	title: i18nc("@title", "Kountdowns")
 	
 	// Kirigami.Action encapsulates a UI action. Inherits from QQC2 Action
 	actions { 
@@ -26,14 +26,15 @@ Kirigami.ScrollablePage {
 			// Name of icon associated with the action
 			icon.name: "list-add"
 			// Action text, i18n function returns translated string
-			text: i18nc("@action:button", "Add kountdown")
+			tooltip: i18nc("@action:button", "Add kountdown")
 			// What to do when triggering the action
 			onTriggered: openPopulateSheet("add")
 		}
 		// Kirigami.Actions can have nested actions.
-		left: Kirigami.Action {
+		right: Kirigami.Action {
 			id: sortList
-			text: i18nc("@action:button", "Sort")
+			tooltip: i18nc("@action:button", "Sort by")
+			icon.name: "view-sort"
 			Kirigami.Action {
 				text: i18nc("@action:button", "Creation (ascending)")
 				onTriggered: KountdownModel.sortModel(KountdownModel.CreationAsc)
@@ -59,11 +60,12 @@ Kirigami.ScrollablePage {
 				onTriggered: KountdownModel.sortModel(KountdownModel.AlphabeticalDesc)
 			}
 		}
-		/*right: Kirigami.Action {
-			text: i18n("Show calendar")
+		/*left: Kirigami.Action {
+			tooltip: i18n("Show calendar")
+			icon.name: "view-calendar"
+			onTriggered: showCalendar()
 		}*/
 	}
-	
 	
 	// List view for card elements
 	Kirigami.CardsListView {
