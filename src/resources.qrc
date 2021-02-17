@@ -1,8 +1,11 @@
 <RCC>
 	<qresource prefix="/">
 		<file alias="main.qml">contents/ui/main.qml</file>
+		<file alias="SettingsPage.qml">contents/ui/SettingsPage.qml</file>
+		<file alias="KountdownsPage.qml">contents/ui/KountdownsPage.qml</file>
 		<file alias="KountdownCard.qml">contents/ui/KountdownCard.qml</file>
 		<file alias="AddEditSheet.qml">contents/ui/AddEditSheet.qml</file>
 		<file alias="DatePicker.qml">contents/ui/DatePicker.qml</file>
+		<file alias="EventsCalendarPage.qml">contents/ui/EventsCalendarPage.qml</file>
 	</qresource>
 </RCC>
