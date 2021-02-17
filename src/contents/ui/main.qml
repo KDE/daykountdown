@@ -122,7 +122,7 @@ Kirigami.ApplicationWindow {
 
 	SystemPalette { id: palette; colorGroup: SystemPalette.Active }
 	// Function called by 'edit' button on card
-	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = "", colour = palette.text) {
+	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = nowDate, colour = palette.text) {
 		addEditSheet.mode = mode
 		addEditSheet.colour = colour;
 		if(mode === "edit") {
