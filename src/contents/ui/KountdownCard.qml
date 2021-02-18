@@ -34,7 +34,7 @@ Kirigami.Card {
 			}
 			rowSpacing: Kirigami.Units.largeSpacing
 			columnSpacing: Kirigami.Units.largeSpacing
-			columns: root.wideScreen ? 4 : 2
+			columns: 2
 			RowLayout {
 				Rectangle {
 					Layout.fillHeight: true

@@ -16,32 +16,40 @@ Kirigami.Page {
 	
 	title: i18nc("@title", "Events")
 	
-	Layout.fillWidth: true
-	
-	Component.onCompleted: {
-		console.log
+	actions {
+		left: Kirigami.Action {
+			text: i18n("Events on week")
+		}
+		main: Kirigami.Action {
+			text: i18n("All events")
+		}
+		right: Kirigami.Action {
+			text: i18n("Events on month")
+		}
 	}
 	
 	GridLayout {
 		
-		anchors {
-			left: parent.left
-			top: parent.top
-			right: parent.right
-		}
+		anchors.fill: parent
 			
 		rowSpacing: Kirigami.Units.largeSpacing
 		columnSpacing: Kirigami.Units.largeSpacing
 		columns: 2
+		rows: 2
 		
 		Controls.ScrollView {
+			Layout.column: 0
+			Layout.rowSpan: 2
+			Layout.fillWidth: true
+			Layout.fillHeight: true
 			ListView {
 			}
 		}
 		FocusScope {
-			Layout.column: 2
+			Layout.column: 1
+			Layout.row: 1
 			Layout.fillWidth: true
-			height: applicationWindow().height - Kirigami.Units.gridUnit *4
+			height: parent.height /2
 			Controls1.Calendar {
 				anchors.fill: parent
 			}

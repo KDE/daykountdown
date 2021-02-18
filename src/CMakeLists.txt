@@ -3,6 +3,7 @@ set(daykountdown_SRCS
     kountdownmodel.cpp
     importexport.cpp
     aboutdatapasser.cpp
+    pimmodule.cpp
     resources.qrc
     )
 
@@ -10,7 +11,22 @@ add_executable(daykountdown ${daykountdown_SRCS})
 
 ecm_add_app_icon(DAYKOUNTDOWN_ICON ICONS ${CMAKE_SOURCE_DIR}/org.kde.daykountdown.png)
 target_sources(daykountdown PRIVATE ${DAYKOUNTDOWN_ICON})
-target_link_libraries(daykountdown Qt5::Quick Qt5::Sql Qt5::Qml Qt5::Svg Qt5::Gui Qt5::QuickControls2 KF5::Kirigami2 KF5::I18n KF5::CoreAddons KF5::KIOCore KF5::WidgetsAddons)
+target_link_libraries(daykountdown 
+	Qt5::Quick
+	Qt5::QuickControls2
+	Qt5::Qml
+	Qt5::Gui
+	Qt5::Sql 
+	Qt5::Svg 
+	Qt5::DBus
+	KF5::Kirigami2 
+	KF5::I18n 
+	KF5::CoreAddons 
+	KF5::WidgetsAddons
+	KF5::KIOCore 
+    KF5::CalendarCore
+    KF5::CalendarSupport
+    KF5::AkonadiCalendar)
 
 if(ANDROID)
     kirigami_package_breeze_icons(ICONS

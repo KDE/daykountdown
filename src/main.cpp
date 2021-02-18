@@ -21,6 +21,7 @@
 #include "kountdownmodel.h"
 #include "importexport.h"
 #include "aboutdatapasser.h"
+#include "pimmodule.h"
 
 // Define the database driver in a string
 const QString DRIVER(QStringLiteral("QSQLITE"));
@@ -93,5 +94,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 		return -1;
 	}
 
+	PIMModule pimModule;
+	qDebug() << pimModule.getCalendarList();
 	return app.exec();
 }
