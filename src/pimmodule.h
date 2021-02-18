@@ -31,11 +31,13 @@ public:
 	Q_INVOKABLE QAbstractItemModel* accessCalendarModel();
 	
 	bool listCalendars();
+	bool listEvents();
 	
 signals:
 	void calendarModelChanged();
 	
 private:
 	Akonadi::ETMCalendar* m_calendarModel;
+	Akonadi::Collection::List m_collections;
 };
 

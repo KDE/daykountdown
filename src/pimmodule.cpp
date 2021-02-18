@@ -14,7 +14,9 @@
 #include <AkonadiCore/CollectionFetchJob>
 #include <AkonadiCore/CollectionFetchScope>
 #include <AkonadiCore/CollectionFilterProxyModel>
-#include <AkonadiCore/EntityMimeTypeFilterModel>
+#include <AkonadiCore/Item>
+#include <AkonadiCore/ItemFetchJob>
+#include <AkonadiCore/ItemFetchScope>
 
 #include <QDBusInterface>
 #include <QDBusReply>
@@ -27,7 +29,7 @@ PIMModule::PIMModule(QObject *parent) : QObject(parent)
 {
 	m_calendarModel = new Akonadi::ETMCalendar();
 	listCalendars();
-	qDebug() << m_calendarModel->model()->roleNames();
+	listEvents();
 }
 
 Akonadi::ETMCalendar* PIMModule::calendarModel() const
@@ -68,14 +70,14 @@ bool PIMModule::listCalendars()
 		return false;
 	}
 	
-	const Akonadi::Collection::List collections = job->collections();
+	m_collections = job->collections();
 	
-	if (collections.isEmpty()) {
+	if (m_collections.isEmpty()) {
 		qDebug() << i18n("There are no calendars available.");
 	} else {
 		auto mimeTypeSet = QSet<QString>(mimeTypes.begin(), mimeTypes.end());
 		
-		for (const Akonadi::Collection &collection : collections) {
+		for (const Akonadi::Collection &collection : m_collections) {
 			const QStringList contentMimeTypes = collection.contentMimeTypes();
             auto collectionMimeTypeSet = QSet<QString>(contentMimeTypes.begin(), contentMimeTypes.end());
 			qDebug() << collection.displayName();
@@ -84,5 +86,37 @@ bool PIMModule::listCalendars()
 		}
 	}
 	
+	return true;
+}
+
+bool PIMModule::listEvents()
+{
+	if (m_collections.isEmpty()) {
+		qDebug() << i18n("There are no calendars available.");
+	} else {
+		for (const Akonadi::Collection &collection : m_collections) {
+			Akonadi::ItemFetchJob *job = new Akonadi::ItemFetchJob(collection);
+			job->fetchScope().fetchFullPayload();
+			QEventLoop loop;
+			QObject::connect(job, &Akonadi::CollectionFetchJob::result, &loop, &QEventLoop::quit);
+			job->start();
+			loop.exec();
+			
+			if (job->error()) {
+				qDebug() << "Error occurred";
+				return false;
+			}
+			
+			Akonadi::Item::List items = job->items();
+			if (items.isEmpty()) {
+				qDebug() << i18n("There are no items in %1", collection.displayName());
+			} else {
+				for (const Akonadi::Item &item : items) {
+					qDebug() << "Item ID:" << item.id();
+				}
+			}
+		}
+	}
+
 	return true;
 }
