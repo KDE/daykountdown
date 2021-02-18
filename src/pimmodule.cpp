@@ -13,6 +13,8 @@
 #include <AkonadiCore/Collection>
 #include <AkonadiCore/CollectionFetchJob>
 #include <AkonadiCore/CollectionFetchScope>
+#include <AkonadiCore/CollectionFilterProxyModel>
+#include <AkonadiCore/EntityMimeTypeFilterModel>
 
 #include <QDBusInterface>
 #include <QDBusReply>
@@ -23,9 +25,33 @@
 
 PIMModule::PIMModule(QObject *parent) : QObject(parent)
 {
+	m_calendarModel = new Akonadi::ETMCalendar();
+	listCalendars();
+	qDebug() << m_calendarModel->model()->roleNames();
 }
 
-bool PIMModule::getCalendarList()
+Akonadi::ETMCalendar* PIMModule::calendarModel() const
+{
+	return m_calendarModel;
+}
+
+void PIMModule::setCalendarModel(Akonadi::ETMCalendar* inCalendar)
+{
+	m_calendarModel = inCalendar;
+	emit calendarModelChanged();
+}
+
+KCheckableProxyModel* PIMModule::accessCalendarCheckableProxyModel()
+{
+	return m_calendarModel->checkableProxyModel();
+}
+
+QAbstractItemModel* PIMModule::accessCalendarModel()
+{
+	return m_calendarModel->model();
+}
+
+bool PIMModule::listCalendars()
 {
 	Akonadi::CollectionFetchJob *job = new Akonadi::CollectionFetchJob(Akonadi::Collection::root(), Akonadi::CollectionFetchJob::Recursive);
 	const QStringList mimeTypes = QStringList() << QStringLiteral("text/calendar")
@@ -47,8 +73,14 @@ bool PIMModule::getCalendarList()
 	if (collections.isEmpty()) {
 		qDebug() << i18n("There are no calendars available.");
 	} else {
+		auto mimeTypeSet = QSet<QString>(mimeTypes.begin(), mimeTypes.end());
+		
 		for (const Akonadi::Collection &collection : collections) {
+			const QStringList contentMimeTypes = collection.contentMimeTypes();
+            auto collectionMimeTypeSet = QSet<QString>(contentMimeTypes.begin(), contentMimeTypes.end());
 			qDebug() << collection.displayName();
+			qDebug() << collectionMimeTypeSet;
+			qDebug() << collection.resource();
 		}
 	}
 	

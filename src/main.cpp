@@ -83,6 +83,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "KountdownModel", new KountdownModel(qApp));
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "ImportExport", new ImportExport());
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "AboutData", &AboutData);
+	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "PIMModule", new PIMModule());
 
 	// Set up localisation functionality
 	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
@@ -94,7 +95,5 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 		return -1;
 	}
 
-	PIMModule pimModule;
-	qDebug() << pimModule.getCalendarList();
 	return app.exec();
 }

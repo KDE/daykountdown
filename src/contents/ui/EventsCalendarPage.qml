@@ -4,17 +4,23 @@
  */
 
 import QtQuick 2.12
-import QtQuick.Controls 1.2 as Controls1
+import QtQuick.Controls 1.4 as Controls1
 import QtQuick.Controls 2.12 as Controls
 import QtQuick.Layouts 1.12
 
 import org.kde.kirigami 2.13 as Kirigami
 import org.kde.plasma.calendar 2.0 as PlasmaCalendar
 
+import org.kde.daykountdown.private 1.0
+
 Kirigami.Page {
 	id: eventsCalendarPage
 	
 	title: i18nc("@title", "Events")
+	
+	Component.onCompleted: {
+		console.log(PIMModule.accessCalendarModel())
+	}
 	
 	actions {
 		left: Kirigami.Action {
@@ -43,6 +49,7 @@ Kirigami.Page {
 			Layout.fillWidth: true
 			Layout.fillHeight: true
 			ListView {
+
 			}
 		}
 		FocusScope {
