@@ -8,12 +8,16 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QQmlApplicationEngine>
+#include <QQuickStyle>
 #include <QtQml>
+
 #include <QUrl>
 #include <QIcon>
+
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
+
 #include <KLocalizedContext>
 #include <KAboutData>
 #include <KLocalizedString>
@@ -21,16 +25,30 @@
 #include "kountdownmodel.h"
 #include "importexport.h"
 #include "aboutdatapasser.h"
+#include "daykountdownconfig.h"
 
 // Define the database driver in a string
 const QString DRIVER(QStringLiteral("QSQLITE"));
 
-Q_DECL_EXPORT int main(int argc, char *argv[])
+#ifdef Q_OS_ANDROID
+Q_DECL_EXPORT 
+#endif
+int main(int argc, char *argv[])
 {
 	// Enable HiDPI scaling
-	QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	
+#ifdef Q_OS_ANDROID
+    QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle(QStringLiteral("Material"));
+#else
 	// QApplication handles initialisation and includes extensive functionality
 	QApplication app(argc, argv);
+	if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    }
+#endif
+
 	KLocalizedString::setApplicationDomain("daykountdown");
 
 	// KAboutData instances hold information about the application

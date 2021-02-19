@@ -25,18 +25,6 @@ Kirigami.Page {
 		console.log(PlasmaCalendar.EventPluginsManager.enabledPlugins)
 	}
 	
-	actions {
-		left: Kirigami.Action {
-			text: i18n("Events on week")
-		}
-		main: Kirigami.Action {
-			text: i18n("All events")
-		}
-		right: Kirigami.Action {
-			text: i18n("Events on month")
-		}
-	}
-	
 	GridLayout {
 		
 		anchors.fill: parent

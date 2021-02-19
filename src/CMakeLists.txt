@@ -20,8 +20,11 @@ target_link_libraries(daykountdown
 	KF5::Kirigami2
 	KF5::I18n
 	KF5::CoreAddons
+	KF5::ConfigCore
+	KF5::ConfigGui
 	KF5::WidgetsAddons
 	KF5::KIOCore)
+kconfig_add_kcfg_files(daykountdown GENERATE_MOC daykountdownconfig.kcfgc)
 
 if(ANDROID)
     kirigami_package_breeze_icons(ICONS
