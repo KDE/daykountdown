@@ -63,6 +63,8 @@ int main(int argc, char *argv[])
 	// Sets the KAboutData instance
 	KAboutData::setApplicationData(about);
 	QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.daykountdown")));
+	
+	auto config = DayKountdownConfig::self();
 
 	// Q_ASSERTs hald the problem if the argument is false
 	Q_ASSERT(QSqlDatabase::isDriverAvailable(DRIVER));
@@ -100,6 +102,7 @@ int main(int argc, char *argv[])
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "KountdownModel", new KountdownModel(qApp));
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "ImportExport", new ImportExport());
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "AboutData", &AboutData);
+	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "Config", config);
 
 	// Set up localisation functionality
 	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

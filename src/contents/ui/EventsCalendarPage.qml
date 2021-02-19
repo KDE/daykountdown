@@ -1,7 +1,7 @@
 /*
- * SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
- * SPDX-LicenseRef: GPL-3.0-or-later
- */
+* SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
+* SPDX-LicenseRef: GPL-3.0-or-later
+*/
 
 import QtQuick 2.12
 import QtQuick.Controls 1.4 as Controls1
@@ -22,36 +22,41 @@ Kirigami.Page {
 	title: i18nc("@title", "Events")
 	
 	Component.onCompleted: {
+		console.log(Config.enabledCalendarPlugins)
+		PlasmaCalendar.EventPluginsManager.enabledPlugins = Config.enabledCalendarPlugins;
 		console.log(PlasmaCalendar.EventPluginsManager.enabledPlugins)
 	}
 	
-	GridLayout {
+	ColumnLayout {
 		
 		anchors.fill: parent
+		
+		spacing: Kirigami.Units.largeSpacing
+		
+		Item {
+			Layout.fillWidth: true
+			Layout.minimumHeight: Kirigami.Units.gridUnit * 22
+			Layout.minimumWidth: Kirigami.Units.gridUnit * 22
 			
-		rowSpacing: Kirigami.Units.largeSpacing
-		columnSpacing: Kirigami.Units.largeSpacing
-		columns: 2
-		rows: 2
+			PlasmaCalendar.MonthView {
+				id: monthView
+				borderOpacity: 0.25
+				today: nowDate
+				firstDayOfWeek: Qt.locale().firstDayOfWeek
+			}
+		}
 		
 		Controls.ScrollView {
-			Layout.column: 0
-			Layout.rowSpan: 2
 			Layout.fillWidth: true
 			Layout.fillHeight: true
-		}
 			
-		Item {
-            Layout.fillWidth: true
-            Layout.minimumHeight: Kirigami.Units.gridUnit * 22
-            Layout.minimumWidth: Kirigami.Units.gridUnit * 22
-
-            PlasmaCalendar.MonthView {
-                id: monthView
-                borderOpacity: 0.25
-                today: nowDate
-                firstDayOfWeek: Qt.locale().firstDayOfWeek
-            }
-        }
+			ListView {
+				model: monthView.daysModel.eventsForDate(monthView.currentDate);
+				delegate: Text {
+					id: eventItem
+					text: modelData.title
+				}
+			}
+		}
 	}
 }

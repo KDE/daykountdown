@@ -63,12 +63,12 @@ Kirigami.ApplicationWindow {
 				icon.name: "edit-clear"
 				onTriggered: removeAllDialog.open()
 			},
-			/*Kirigami.Action {
+			Kirigami.Action {
 				text: i18n("Settings")
 				icon.name: "settings-configure"
 				onTriggered: pageStack.layers.push("SettingsPage.qml")
 				enabled: pageStack.layers.currentItem.title !== i18n("Settings")
-			},*/
+			},
 			Kirigami.Action {
 				text: i18n("About DayKountdown")
 				icon.name: "help-about"
