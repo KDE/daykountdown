@@ -60,11 +60,11 @@ Kirigami.ScrollablePage {
 				onTriggered: KountdownModel.sortModel(KountdownModel.AlphabeticalDesc)
 			}
 		}
-		left: Kirigami.Action {
+		/*left: Kirigami.Action {
 			tooltip: i18n("Show calendar")
 			icon.name: "view-calendar"
 			onTriggered: showCalendar()
-		}
+		}*/
 	}
 	
 	// List view for card elements

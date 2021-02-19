@@ -9,6 +9,9 @@ import QtQuick.Controls 2.12 as Controls
 import QtQuick.Layouts 1.12
 
 import org.kde.kirigami 2.13 as Kirigami
+import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.calendar 2.0 as PlasmaCalendar
 
 import org.kde.daykountdown.private 1.0
@@ -19,7 +22,7 @@ Kirigami.Page {
 	title: i18nc("@title", "Events")
 	
 	Component.onCompleted: {
-		console.log(PIMModule.accessCalendarModel())
+		console.log(PlasmaCalendar.EventPluginsManager.enabledPlugins)
 	}
 	
 	actions {
@@ -48,18 +51,19 @@ Kirigami.Page {
 			Layout.rowSpan: 2
 			Layout.fillWidth: true
 			Layout.fillHeight: true
-			ListView {
+		}
+			
+		Item {
+            Layout.fillWidth: true
+            Layout.minimumHeight: Kirigami.Units.gridUnit * 22
+            Layout.minimumWidth: Kirigami.Units.gridUnit * 22
 
-			}
-		}
-		FocusScope {
-			Layout.column: 1
-			Layout.row: 1
-			Layout.fillWidth: true
-			height: parent.height /2
-			Controls1.Calendar {
-				anchors.fill: parent
-			}
-		}
+            PlasmaCalendar.MonthView {
+                id: monthView
+                borderOpacity: 0.25
+                today: nowDate
+                firstDayOfWeek: Qt.locale().firstDayOfWeek
+            }
+        }
 	}
 }

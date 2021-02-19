@@ -15,6 +15,8 @@
 #include <QtQml>
 #include <QUrl>
 
+// This kountdown struct eases the process of importing parsed kountdowns
+// Contains the relevant properties for QML code to read
 typedef struct kountdown {
 	Q_GADGET
 	Q_PROPERTY(int index MEMBER index);
@@ -34,6 +36,8 @@ typedef struct kountdown {
 class ImportExport : public QObject
 {
     Q_OBJECT
+    // Q_PROPERTY macro exposes this item in QML
+    // QVariantList is flexible and can convert certain types, useful when dealing with QML
     Q_PROPERTY(QVariantList Kountdowns READ kountdownPopulator)
 
 public:

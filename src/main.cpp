@@ -21,7 +21,6 @@
 #include "kountdownmodel.h"
 #include "importexport.h"
 #include "aboutdatapasser.h"
-#include "pimmodule.h"
 
 // Define the database driver in a string
 const QString DRIVER(QStringLiteral("QSQLITE"));
@@ -83,7 +82,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "KountdownModel", new KountdownModel(qApp));
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "ImportExport", new ImportExport());
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "AboutData", &AboutData);
-	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "PIMModule", new PIMModule());
 
 	// Set up localisation functionality
 	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
@@ -94,6 +92,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	if (engine.rootObjects().isEmpty()) {
 		return -1;
 	}
-
+	
 	return app.exec();
 }
