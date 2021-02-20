@@ -8,7 +8,6 @@
 	<group name="Calendar">
 		<entry name="enabledCalendarPlugins" type="StringList">
 			<label>A list of plugins where additional calendar event data can be sourced.</label>
-			<default></default>
 		</entry>
 	</group>
 	

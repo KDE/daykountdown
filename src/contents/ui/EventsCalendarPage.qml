@@ -25,6 +25,13 @@ Kirigami.Page {
 		PlasmaCalendar.EventPluginsManager.enabledPlugins = Config.enabledCalendarPlugins;
 	}
 	
+	Connections {
+		target: Config
+		function onEnabledCalendarPluginsChanged() { 
+			PlasmaCalendar.EventPluginsManager.enabledPlugins = Config.enabledCalendarPlugins
+		}
+	}
+	
 	ColumnLayout {
 		
 		anchors.fill: parent
