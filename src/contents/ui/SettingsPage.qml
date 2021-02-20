@@ -17,26 +17,59 @@ Kirigami.ScrollablePage {
 	
 	title: i18nc("@title", "Settings")
 	Component.onCompleted: {
-		console.log(PlasmaCalendar.EventPluginsManager.enabledPlugins)
-		console.log(Config.enabledCalendarPlugins)
+		PlasmaCalendar.EventPluginsManager.enabledPlugins = Config.enabledCalendarPlugins
+		
 	}
 	
-	ColumnLayout {
-		Kirigami.FormData.label: i18n("Available Plugins:")
-		Kirigami.FormData.buddyFor: children[1] // 0 is the Repeater
-		
-		Repeater {
-			id: calendarPluginsRepeater
-			model: PlasmaCalendar.EventPluginsManager.model
-			delegate: RowLayout {
-				Controls.CheckBox {
-					text: model.display
-					checked: model.checked
-					onClicked: {
-						//needed for model's setData to be called
-						model.checked = checked;
-						Config.enabledCalendarPlugins = PlasmaCalendar.EventPluginsManager.enabledPlugins;
-						Config.save()
+	function connectConfig(item) {
+		var saveConnect = Qt.createQmlObject("import QtQuick 2.12; Connections {target: " + item + ";
+			function onConfigurationChanged() { " + item.saveConfig() + "} }", settingsPage, model.display + "dynobject")
+	}
+	
+	Kirigami.FormLayout {
+		id: settingsLayout
+		ColumnLayout {
+			id: calendarSettingsLayout
+			
+			Kirigami.FormData.label: i18n("Calendar Plugins:")
+			
+			Repeater {
+				id: calendarPluginsRepeater
+				model: PlasmaCalendar.EventPluginsManager.model
+				delegate: RowLayout {
+					Controls.CheckBox {
+						text: model.display
+						checked: model.checked
+						onClicked: {
+							//needed for model's setData to be called
+							model.checked = checked;
+							Config.enabledCalendarPlugins = PlasmaCalendar.EventPluginsManager.enabledPlugins;
+							Config.save()
+						}
+					}
+				}
+			}
+			
+			Repeater {
+				id: calendarPluginsSettings
+				
+				model: PlasmaCalendar.EventPluginsManager.model
+				delegate: ColumnLayout {
+					Layout.fillWidth: true
+					Layout.fillHeight: true
+					Kirigami.Heading {
+						level: 2
+						text: model.display
+					}
+					Loader {
+						readonly property string uniqueId: model.label+uniqueID+index
+						Layout.fillWidth: true
+						Layout.minimumHeight: 500
+						source: "file:" + model.configUi
+						visible: Config.enabledCalendarPlugins.indexOf(model.pluginPath) > -1
+						onLoaded: {
+							this.item.configurationChanged.connect(this.item.saveConfig)
+						}
 					}
 				}
 			}
