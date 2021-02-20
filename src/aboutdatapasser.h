@@ -8,6 +8,7 @@
 
 #include <KAboutData>
 
+// Super simple class that holds our about data
 class AboutDataPasser : public QObject
 {
 	Q_OBJECT

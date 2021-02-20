@@ -13,7 +13,7 @@ ImportExport::ImportExport(QObject *parent) : QObject(parent)
 
 }
 
-// Function extracts koutndowns from SQLite table and converts to JSON array
+// Function extracts kountdowns from SQLite table and converts to JSON array
 QJsonDocument ImportExport::_createJson() {
 	QJsonArray kountdownsJsonArr;
 	

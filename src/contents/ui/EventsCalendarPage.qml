@@ -9,9 +9,6 @@ import QtQuick.Controls 2.12 as Controls
 import QtQuick.Layouts 1.12
 
 import org.kde.kirigami 2.13 as Kirigami
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.calendar 2.0 as PlasmaCalendar
 
 import org.kde.daykountdown.private 1.0
@@ -33,9 +30,7 @@ Kirigami.Page {
 	}
 	
 	ColumnLayout {
-		
 		anchors.fill: parent
-		
 		spacing: Kirigami.Units.largeSpacing
 		
 		Item {
@@ -142,7 +137,6 @@ Kirigami.Page {
 				Kirigami.PlaceholderMessage {
 					anchors.centerIn: parent
 					width: parent.width - (Kirigami.Units.largeSpacing * 4)
-					// Hide this if there are list elements to display
 					visible: eventsView.count === 0
 					text: i18n("No events on this day")
 					helpfulAction: addAction

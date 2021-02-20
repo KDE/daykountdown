@@ -55,7 +55,7 @@ Kirigami.Card {
 				}
 			}
 			
-			// Kayout for positioning elements vertically
+			// Layout for positioning elements vertically
 			ColumnLayout {
 				Kirigami.Heading {
 					Layout.fillWidth: true

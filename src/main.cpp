@@ -26,10 +26,16 @@
 #include "importexport.h"
 #include "aboutdatapasser.h"
 #include "daykountdownconfig.h"
+/* This last header file is auto-created by daykountdown.kcfgc
+ * It allows us to easily instantiate the config class by the name provided there.
+ */
 
 // Define the database driver in a string
 const QString DRIVER(QStringLiteral("QSQLITE"));
 
+/* #ifdefs are ifs that affect the preprocessor.
+ * We can use this to compile specific chunks of code depending on the platform!
+ */
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT 
 #endif
@@ -64,6 +70,7 @@ int main(int argc, char *argv[])
 	KAboutData::setApplicationData(about);
 	QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.daykountdown")));
 	
+	// We are instantiating the kcfg here
 	auto config = DayKountdownConfig::self();
 
 	// Q_ASSERTs hald the problem if the argument is false
@@ -95,10 +102,12 @@ int main(int argc, char *argv[])
 	about.processCommandLine(&parser);
 
 	QQmlApplicationEngine engine;
+	
+	// We instantiate the AboutDataPasser class so we can easily pass the about data to QML
 	AboutDataPasser AboutData;
 	AboutData.setAboutData(about);
 	
-	// Lets you import the KountdownModel class into QML code
+	// Lets you import instantiations of these classes into QML code
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "KountdownModel", new KountdownModel(qApp));
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "ImportExport", new ImportExport());
 	qmlRegisterSingletonInstance("org.kde.daykountdown.private", 1, 0, "AboutData", &AboutData);
@@ -106,7 +115,7 @@ int main(int argc, char *argv[])
 
 	// Set up localisation functionality
 	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-		// Load main.qml
+	// Load main.qml
 	engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
 	// Stop function if QML is empty

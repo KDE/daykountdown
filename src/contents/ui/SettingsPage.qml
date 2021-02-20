@@ -18,7 +18,6 @@ Kirigami.ScrollablePage {
 	title: i18nc("@title", "Settings")
 	Component.onCompleted: {
 		PlasmaCalendar.EventPluginsManager.enabledPlugins = Config.enabledCalendarPlugins
-		
 	}
 	
 	ColumnLayout {

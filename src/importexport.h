@@ -48,7 +48,8 @@ public:
 	Q_INVOKABLE void fetchKountdowns();
 	Q_INVOKABLE void exportFile();
 	
-private:	
+private:
+	//QVectors are dynamic arrays which can store data structures of your choosing
 	QVector<kountdown> _kountdownArray;
 	QJsonDocument _createJson();
 };
