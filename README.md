@@ -19,6 +19,7 @@ There is also [an additional Plasma desktop widget](https://github.com/elChupaCa
 - Compatibility with both desktop and mobile form factors
 - Import and export countdowns from .JSON files
 - Sorting by date, name, and creation time
+- Sync with your KDE Plasma calendars and easily add events from there into your countdowns
 
 ## Prerequisites
 
