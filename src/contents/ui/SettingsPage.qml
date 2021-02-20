@@ -21,17 +21,15 @@ Kirigami.ScrollablePage {
 		
 	}
 	
-	function connectConfig(item) {
-		var saveConnect = Qt.createQmlObject("import QtQuick 2.12; Connections {target: " + item + ";
-			function onConfigurationChanged() { " + item.saveConfig() + "} }", settingsPage, model.display + "dynobject")
-	}
-	
-	Kirigami.FormLayout {
+	ColumnLayout {
 		id: settingsLayout
 		ColumnLayout {
 			id: calendarSettingsLayout
 			
-			Kirigami.FormData.label: i18n("Calendar Plugins:")
+			Kirigami.Heading {
+				level: 1
+				text: i18n("Calendar settings")
+			}
 			
 			Repeater {
 				id: calendarPluginsRepeater
@@ -62,13 +60,17 @@ Kirigami.ScrollablePage {
 						text: model.display
 					}
 					Loader {
-						readonly property string uniqueId: model.label+uniqueID+index
 						Layout.fillWidth: true
-						Layout.minimumHeight: 500
+						Layout.minimumWidth: Kirigami.Units.gridUnit * 10
+						Layout.maximumHeight: Kirigami.Units.gridUnit * 10
 						source: "file:" + model.configUi
 						visible: Config.enabledCalendarPlugins.indexOf(model.pluginPath) > -1
 						onLoaded: {
 							this.item.configurationChanged.connect(this.item.saveConfig)
+							if(model.label = "PIM Events Plugin")
+								this.item.height = Kirigami.Units.gridUnit * 20
+							if (model.label = "Astronomical Events")
+								this.item.wideMode = false
 						}
 					}
 				}
