@@ -34,9 +34,12 @@ Kirigami.Page {
 		spacing: Kirigami.Units.largeSpacing
 		
 		Item {
-			Layout.fillWidth: true
-			Layout.minimumHeight: Kirigami.Units.gridUnit * 22
-			Layout.minimumWidth: Kirigami.Units.gridUnit * 22
+			anchors {
+				left: parent.left
+				right: parent.right
+				top: parent.top
+			}
+			Layout.minimumHeight: Kirigami.Units.gridUnit * 18
 			
 			PlasmaCalendar.MonthView {
 				id: monthView
@@ -47,14 +50,42 @@ Kirigami.Page {
 		}
 		
 		Controls.ScrollView {
-			Layout.fillWidth: true
 			Layout.fillHeight: true
+			anchors {
+				left: parent.left
+				right: parent.right
+				bottom: parent.bottom
+			}
+			Controls.ScrollBar.horizontal.policy: Controls.ScrollBar.AlwaysOff
 			
 			ListView {
+				id: eventsView
+				
+				width: parent.width - 10
+				
 				model: monthView.daysModel.eventsForDate(monthView.currentDate);
-				delegate: Text {
+				delegate: Kirigami.SwipeListItem {
 					id: eventItem
-					text: modelData.title
+					
+					actions: [
+						Kirigami.Action {
+							icon.name: "list-add"
+						}
+					]
+					
+					contentItem: RowLayout {
+						Controls.Label {
+							text: modelData.title
+						}
+					}
+				}
+				Kirigami.PlaceholderMessage {
+					anchors.centerIn: parent
+					width: parent.width - (Kirigami.Units.largeSpacing * 4)
+					// Hide this if there are list elements to display
+					visible: eventsView.count === 0
+					text: i18n("No events on this day")
+					helpfulAction: addAction
 				}
 			}
 		}
