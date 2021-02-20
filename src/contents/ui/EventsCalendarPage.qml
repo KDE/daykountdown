@@ -22,9 +22,7 @@ Kirigami.Page {
 	title: i18nc("@title", "Events")
 	
 	Component.onCompleted: {
-		console.log(Config.enabledCalendarPlugins)
 		PlasmaCalendar.EventPluginsManager.enabledPlugins = Config.enabledCalendarPlugins;
-		console.log(PlasmaCalendar.EventPluginsManager.enabledPlugins)
 	}
 	
 	ColumnLayout {
@@ -70,21 +68,67 @@ Kirigami.Page {
 					actions: [
 						Kirigami.Action {
 							icon.name: "list-add"
-							onTriggered: openPopulateSheet("add", -1, modelData.title, modelData.description, monthView.currentDate, modelData.eventColor)
+							onTriggered: openPopulateSheet("add", -1, modelData.title, modelData.description, modelData.startDateTime, modelData.eventColor)
 						}
 					]
 					
-					contentItem: RowLayout {
+					contentItem: GridLayout {
+						id: eventRowLayout
+						width: parent.width
+						
+						columns: 3
+						rows: 2
+						
 						Rectangle {
 							id: eventColor
 							
 							Layout.fillHeight: true
+							Layout.row: 0
+							Layout.rowSpan: 2
+							Layout.column: 0
+							
 							width: 5
 							color: modelData.eventColor
 							visible: modelData.eventColor !== ""
 						}
 						Controls.Label {
+							Layout.row: 0
+							Layout.column: 1
+							width: Kirigami.Units.gridUnit * 2
+							
+							text: isNaN(modelData.startDateTime) ? "N/A" : Qt.formatTime(modelData.startDateTime)
+							wrapMode: Text.Wrap
+						}
+						Controls.Label {
+							Layout.row: 1
+							Layout.column: 1
+							width: Kirigami.Units.gridUnit * 2
+							
+							text: isNaN(modelData.endDateTime) ? "N/A" : Qt.formatTime(modelData.endDateTime)
+							wrapMode: Text.Wrap
+						}
+						Controls.Label {
+							Layout.row: 0
+							Layout.rowSpan: modelData.description === "" ? 2 : 1
+							Layout.column: 2
+							Layout.fillWidth: true
+							
 							text: modelData.title
+							wrapMode: Text.Wrap
+							elide: Text.ElideRight
+							maximumLineCount: 1
+						}
+						Controls.Label {
+							Layout.row: 1
+							Layout.column: 2
+							Layout.fillWidth: true
+							
+							text: modelData.description
+							wrapMode: Text.Wrap
+							elide: Text.ElideRight
+							maximumLineCount: 1
+							opacity: 0.7
+							visible: modelData.description !== ""
 						}
 					}
 				}
