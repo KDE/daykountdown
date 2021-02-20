@@ -125,12 +125,10 @@ Kirigami.ApplicationWindow {
 	function openPopulateSheet(mode, index = -1, listName = "", listDesc = "", listDate = nowDate, colour = palette.text) {
 		addEditSheet.mode = mode
 		addEditSheet.colour = colour;
-		if(mode === "edit") {
-			addEditSheet.index = index;
-			addEditSheet.name = listName
-			addEditSheet.description = listDesc
-			addEditSheet.kdate = listDate
-		}
+		addEditSheet.index = index;
+		addEditSheet.name = listName
+		addEditSheet.description = listDesc
+		addEditSheet.kdate = listDate
 		addEditSheet.open()
 	}
 

@@ -61,14 +61,12 @@ Kirigami.ScrollablePage {
 					}
 					Loader {
 						Layout.fillWidth: true
-						Layout.minimumWidth: Kirigami.Units.gridUnit * 10
-						Layout.maximumHeight: Kirigami.Units.gridUnit * 10
 						source: "file:" + model.configUi
 						visible: Config.enabledCalendarPlugins.indexOf(model.pluginPath) > -1
 						onLoaded: {
 							this.item.configurationChanged.connect(this.item.saveConfig)
 							if(model.label = "PIM Events Plugin")
-								this.item.height = Kirigami.Units.gridUnit * 20
+								this.item.height = Kirigami.Units.gridUnit * 15
 							if (model.label = "Astronomical Events")
 								this.item.wideMode = false
 						}

@@ -70,10 +70,19 @@ Kirigami.Page {
 					actions: [
 						Kirigami.Action {
 							icon.name: "list-add"
+							onTriggered: openPopulateSheet("add", -1, modelData.title, modelData.description, monthView.currentDate, modelData.eventColor)
 						}
 					]
 					
 					contentItem: RowLayout {
+						Rectangle {
+							id: eventColor
+							
+							Layout.fillHeight: true
+							width: 5
+							color: modelData.eventColor
+							visible: modelData.eventColor !== ""
+						}
 						Controls.Label {
 							text: modelData.title
 						}

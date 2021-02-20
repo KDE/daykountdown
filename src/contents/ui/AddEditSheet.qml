@@ -46,14 +46,14 @@ Kirigami.OverlaySheet {
 			placeholderText: i18n("Event name (required)")
 			// What to do after input is accepted (i.e. pressed enter)
 			// In this case, it moves the focus to the next field
-			text: mode === "add" ? "" : name
+			text: name
 			onAccepted: descriptionField.forceActiveFocus()
 		}
 		Controls.TextField {
 			id: descriptionField
 			Kirigami.FormData.label: i18nc("@label:textbox", "Description:")
 			placeholderText: i18n("Optional")
-			text: mode === "add" ? "" : description
+			text: description
 			onAccepted: datePicker.forceActiveFocus()
 		}
 		// Advanced colourpicker widget
@@ -137,7 +137,7 @@ Kirigami.OverlaySheet {
 		// This singleton is bringing in a component defined in DatePicker.qml
 		DatePicker {
 			id: datePicker
-			selectedDate: mode === "add" ? nowDate : kdate
+			selectedDate: kdate
 			Layout.fillWidth: true
 		}
 		// This is a button.
