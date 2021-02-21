@@ -70,7 +70,7 @@ Kirigami.Page {
 					actions: [
 						Kirigami.Action {
 							icon.name: "list-add"
-							onTriggered: openPopulateSheet("add", -1, modelData.title, modelData.description, modelData.startDateTime, modelData.eventColor)
+							onTriggered: openPopulateSheet("add", -1, modelData.title, modelData.description, monthView.currentDate, modelData.eventColor)
 						}
 					]
 					
