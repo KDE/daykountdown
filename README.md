@@ -9,8 +9,6 @@ The app counts the days towards a date of your choice.
 
 It allows you to pick a date, provide a name, and a short description for your countdowns.
 
-It is written in Kirigami, so it is also convergent!
-
 There is also [an additional Plasma desktop widget](https://github.com/elChupaCambra/DayKountdown-Plasmoid) available for use with DayKountdown.
 
 ## Features
