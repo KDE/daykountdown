@@ -1,7 +1,16 @@
 [Desktop Entry]
 Name=DayKountdown
+Name[es]=DayKountdown
+Name[nl]=DayKountdown
+Name[x-test]=xxDayKountdownxx
 GenericName=Date Countdown
+GenericName[es]=Cuenta atrás de fechas
+GenericName[nl]=Datum aftellen
+GenericName[x-test]=xxDate Countdownxx
 Comment=A simple date countdown app
+Comment[es]=Sencilla aplicación de cuenta atrás de fechas
+Comment[nl]=Een eenvoudige toepassing voor aftellen van datum
+Comment[x-test]=xxA simple date countdown appxx
 Exec=daykountdown
 Terminal=false
 Icon=org.kde.daykountdown
