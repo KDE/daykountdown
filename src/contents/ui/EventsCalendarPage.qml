@@ -97,16 +97,16 @@ Kirigami.Page {
 							Layout.row: 0
 							Layout.column: 1
 							width: Kirigami.Units.gridUnit * 2
-							
-							text: isNaN(modelData.startDateTime) ? "N/A" : Qt.formatTime(modelData.startDateTime)
+
+							text: isNaN(modelData.startDateTime) ? i18n("N/A") : Qt.formatTime(modelData.startDateTime)
 							wrapMode: Text.Wrap
 						}
 						Controls.Label {
 							Layout.row: 1
 							Layout.column: 1
 							width: Kirigami.Units.gridUnit * 2
-							
-							text: isNaN(modelData.endDateTime) ? "N/A" : Qt.formatTime(modelData.endDateTime)
+
+							text: isNaN(modelData.endDateTime) ? i18n("N/A") : Qt.formatTime(modelData.endDateTime)
 							wrapMode: Text.Wrap
 						}
 						Controls.Label {
