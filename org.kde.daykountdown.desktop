@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=DayKountdown
 Name[ca]=CompteEnrere
+Name[ca@valencia]=CompteEnrere
 Name[cs]=DayKountdown
 Name[en_GB]=DayKountdown
 Name[es]=DayKountdown
@@ -14,6 +15,7 @@ Name[uk]=DayKountdown
 Name[x-test]=xxDayKountdownxx
 GenericName=Date Countdown
 GenericName[ca]=Compte enrere de la data
+GenericName[ca@valencia]=Compte arrere de la data
 GenericName[cs]=Odpočet do data
 GenericName[en_GB]=Date Countdown
 GenericName[es]=Cuenta atrás de fechas
@@ -27,6 +29,7 @@ GenericName[uk]=Відлік до дати
 GenericName[x-test]=xxDate Countdownxx
 Comment=A simple date countdown app
 Comment[ca]=Una aplicació senzilla de compte enrere de la data
+Comment[ca@valencia]=Una aplicació senzilla de compte arrere de la data
 Comment[cs]=Jednoduchá aplikace s odpočtem dní
 Comment[en_GB]=A simple date countdown app
 Comment[es]=Sencilla aplicación de cuenta atrás de fechas
