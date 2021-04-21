@@ -31,24 +31,18 @@ There is also [an additional Plasma desktop widget](https://github.com/elChupaCa
 
 First, clone this repository through the terminal by running:
 
-`git clone https://github.com/elChupaCambra/DayKountdown.git`
+`git clone https://invent.kde.org/plasma-mobile/daykountdown.git`
 
-Then enter the cloned repo directory and create a new folder called `build`. 
+Then enter the cloned repo directory and let `cmake` configure the project to use the build folder `build`. 
 
-Then, enter this folder:
+`cmake -S . -B build`
 
-`mkdir build && cd build`
+Once that's done tell `cmake` to build the project:
 
-Once that's done just run `cmake`, pointing it at the root repository directory:
-
-`cmake ..`
-
-Finally, all we need to do is run make:
-
-`make`
+`cmake --build build`
 
 Our binary will be located in `build/src/daykountdown`. Alternatively, we can install daykountdown by running:
 
-`make install`
+`cmake --build build --target install`
 
 DayKountdown should now appear in your application menu!
