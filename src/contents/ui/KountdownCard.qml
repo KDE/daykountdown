@@ -47,8 +47,10 @@ Kirigami.Card {
 					// Level determines the size of the heading
 					level: 1
 					property var daysLeft: Math.ceil((date.getTime()-nowDate.getTime())/86400000)
+					// Changes 'day' word depending on quantity of days
+					property var daysWord: daysLeft <= -2 || daysLeft >= 2 ? "days" : "day"
 					text: daysLeft < 0 ? 
-						i18np("%1 day ago", "%1 days ago", daysLeft*-1) : i18np("%1 day", "%1 days", daysLeft)
+						i18n("%1 " + daysWord + " ago", daysLeft*-1) : i18n("%1 " + daysWord, daysLeft)
 					color: colour
 				}
 			}

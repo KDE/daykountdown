@@ -10,6 +10,7 @@ import QtQuick.Controls 2.3 as Controls
 import QtQuick.Layouts 1.2
 import QtQuick.Dialogs 1.3
 import org.kde.kirigami 2.13 as Kirigami
+import org.kde.plasma.calendar 2.0 as PlasmaCalendar
 import org.kde.daykountdown.private 1.0
 
 // Overlay sheets appear over a part of the window
@@ -30,6 +31,12 @@ Kirigami.OverlaySheet {
 	signal edited(int index, string name, string description, var kdate)
 	signal removed(int index)
 	
+	onKdateChanged: {
+		datePicker.today = kdate
+		datePicker.currentDate = kdate
+		datePicker.resetToToday()
+	}
+	
 	header: Kirigami.Heading {
 		// i18nc is useful for adding context for translators
 		text: mode === "add" ? i18nc("@title:window", "Add kountdown") : 
@@ -37,6 +44,7 @@ Kirigami.OverlaySheet {
 	}
 	// Form layouts help align and structure a layout with several inputs
 	Kirigami.FormLayout {
+		id: formLayout
 		// Textfields let you input text in a thin textbox
 		Controls.TextField {
 			id: nameField
@@ -134,11 +142,24 @@ Kirigami.OverlaySheet {
 			Layout.fillWidth: true
 			height: 20
 		}
+		Kirigami.Separator {
+			// Stops the rectangle being eaten into by the PlasmaCalendar
+			visible: formLayout.wideMode
+		}
 		// This singleton is bringing in a component defined in DatePicker.qml
-		DatePicker {
-			id: datePicker
-			selectedDate: kdate
+		ColumnLayout {
 			Layout.fillWidth: true
+			
+				PlasmaCalendar.MonthView {
+					id: datePicker
+					Layout.fillWidth: true
+					Layout.minimumHeight: Kirigami.Units.gridUnit * 12
+					Layout.alignment: Qt.AlignBottom
+					borderOpacity: 0.25
+					today: kdate
+					currentDate: kdate
+					firstDayOfWeek: Qt.locale().firstDayOfWeek
+				}
 		}
 		// This is a button.
 		Controls.Button {
@@ -163,7 +184,7 @@ Kirigami.OverlaySheet {
 					addEditSheet.added(
 						nameField.text, 
 						descriptionField.text, 
-						datePicker.selectedDate, 
+						datePicker.currentDate, 
 						colour
 					);
 				}
@@ -172,7 +193,7 @@ Kirigami.OverlaySheet {
 						index, 
 						nameField.text, 
 						descriptionField.text, 
-						datePicker.selectedDate, 
+						datePicker.currentDate, 
 						colour
 					);
 				}
