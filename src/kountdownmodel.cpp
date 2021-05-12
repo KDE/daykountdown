@@ -4,6 +4,7 @@
 // SPDX-LicenseRef: GPL-3.0-or-later
 
 #include "kountdownmodel.h"
+#include "daykountdownconfig.h"
 
 #include <QCoreApplication>
 #include <QDateTime>
@@ -170,4 +171,9 @@ void KountdownModel::sortModel(int sort_by) {
 	}
 	// Required to update model
 	select();
+
+	auto config = DayKountdownConfig::self();
+    config->setCurrentGroup("KountdownSorting");
+    config->setSortMode(sort_by);
+    config->save();
 }

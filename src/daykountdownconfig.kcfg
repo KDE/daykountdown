@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
-	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	  xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
-	  http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+	http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
 	<kcfgfile name="daykountdownrc" />
 	
 	<group name="Calendar">
 		<entry name="enabledCalendarPlugins" type="StringList">
 			<label>A list of plugins where additional calendar event data can be sourced.</label>
+		</entry>
+	</group>
+
+	<group name="KountdownSorting">
+		<entry key="sortMode" type="Int">
+			<label>Sorting method for the list of kountdowns.</label>
+			<default>0</default>
 		</entry>
 	</group>
 	

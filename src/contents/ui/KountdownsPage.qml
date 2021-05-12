@@ -1,8 +1,8 @@
 /*
- * SPDX-FileCopyrightText: (C) 2021 Claudio Cambra <claudio.cambra@gmail.com>
- * 
- * SPDX-LicenseRef: GPL-3.0-or-later
- */
+* SPDX-FileCopyrightText: (C) 2021 Claudio Cambra <claudio.cambra@gmail.com>
+*
+* SPDX-LicenseRef: GPL-3.0-or-later
+*/
 
 // Includes relevant modules used by the QML
 import QtQuick 2.6
@@ -65,6 +65,10 @@ Kirigami.ScrollablePage {
 			icon.name: "view-calendar"
 			onTriggered: showCalendar()
 		}
+	}
+
+	Component.onCompleted: {
+		KountdownModel.sortModel(Config.sortMode)
 	}
 	
 	// List view for card elements
