@@ -153,7 +153,7 @@ Kirigami.OverlaySheet {
 				PlasmaCalendar.MonthView {
 					id: datePicker
 					Layout.fillWidth: true
-					Layout.minimumHeight: Kirigami.Units.gridUnit * 12
+					Layout.minimumHeight: Kirigami.Units.gridUnit * 18
 					Layout.alignment: Qt.AlignBottom
 					borderOpacity: 0.25
 					today: kdate

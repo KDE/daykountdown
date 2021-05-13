@@ -38,7 +38,7 @@ Kirigami.Page {
 				right: parent.right
 				top: parent.top
 			}
-			Layout.minimumHeight: Kirigami.Units.gridUnit * 18
+			Layout.minimumHeight: Kirigami.Units.gridUnit * 24
 			
 			PlasmaCalendar.MonthView {
 				id: monthView
