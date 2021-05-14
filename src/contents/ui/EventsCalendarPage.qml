@@ -16,9 +16,12 @@ Kirigami.Page {
 	id: eventsCalendarPage
 	
 	title: i18nc("@title", "Events")
+
+	property alias monthViewComponent: monthView
 	
 	Component.onCompleted: {
 		PlasmaCalendar.EventPluginsManager.enabledPlugins = Config.enabledCalendarPlugins;
+		console.log(Object.keys(applicationWindow().overlay))
 	}
 	
 	Connections {
@@ -27,7 +30,14 @@ Kirigami.Page {
 			PlasmaCalendar.EventPluginsManager.enabledPlugins = Config.enabledCalendarPlugins
 		}
 	}
-	
+
+	Connections { // Janky way of preventing duplicate dots for events appearing
+		target: applicationWindow().overlay
+		function onFocusChanged() {
+			monthView.resetToToday()
+		}
+	}
+
 	ColumnLayout {
 		anchors.fill: parent
 		spacing: Kirigami.Units.largeSpacing

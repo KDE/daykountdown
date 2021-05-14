@@ -25,18 +25,19 @@ Kirigami.OverlaySheet {
 	property string description: ""
 	property date kdate: nowDate
 	property color colour: palette.text;
+
+	property alias datePickerComponent: datePicker
 	
 	// Signals can be read an certain actions performed when these happen
 	signal added (string name, string description, var kdate)
 	signal edited(int index, string name, string description, var kdate)
 	signal removed(int index)
-	
+
 	onKdateChanged: {
 		datePicker.today = kdate
-		datePicker.currentDate = kdate
 		datePicker.resetToToday()
 	}
-	
+
 	header: Kirigami.Heading {
 		// i18nc is useful for adding context for translators
 		text: mode === "add" ? i18nc("@title:window", "Add kountdown") : 
@@ -148,16 +149,15 @@ Kirigami.OverlaySheet {
 		}
 		// This singleton is bringing in a component defined in DatePicker.qml
 		ColumnLayout {
-			Layout.fillWidth: true
+			Layout.minimumWidth: Kirigami.Units.gridUnit * 20
 			
 				PlasmaCalendar.MonthView {
 					id: datePicker
+
 					Layout.fillWidth: true
 					Layout.minimumHeight: Kirigami.Units.gridUnit * 18
 					Layout.alignment: Qt.AlignBottom
-					borderOpacity: 0.25
 					today: kdate
-					currentDate: kdate
 					firstDayOfWeek: Qt.locale().firstDayOfWeek
 				}
 		}
