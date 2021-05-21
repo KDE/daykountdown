@@ -145,6 +145,7 @@ Kirigami.ApplicationWindow {
 			anchors.fill: parent
 			asynchronous: true
 			active: false
+			visible: calPage.visible
 			source: Qt.resolvedUrl("EventsCalendarPage.qml")
 			onLoaded: {
 				applicationWindow().pageStack.pop() // Pop out the loadingPage
@@ -156,6 +157,7 @@ Kirigami.ApplicationWindow {
 
 	Kirigami.Page {
 		id: loadingPage
+		visible: calPageOpen
 		Controls.BusyIndicator {
 			anchors.fill: parent
 		}
