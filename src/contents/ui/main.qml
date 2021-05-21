@@ -136,11 +136,39 @@ Kirigami.ApplicationWindow {
 	// Initial page to be loaded on app load
 	pageStack.initialPage: KountdownsPage {}
 	
+	Kirigami.Page {
+		id: calPage
+		visible: false
+
+		Loader {
+			id: calPageLoader
+			anchors.fill: parent
+			asynchronous: true
+			active: false
+			source: Qt.resolvedUrl("EventsCalendarPage.qml")
+			onLoaded: {
+				applicationWindow().pageStack.pop() // Pop out the loadingPage
+				root.pageStack.push(calPage)
+				calPage.visible = true
+			}
+		}
+	}
+
+	Kirigami.Page {
+		id: loadingPage
+		Controls.BusyIndicator {
+			anchors.fill: parent
+		}
+	}
+
 	function showCalendar() {
 		calPageOpen = !calPageOpen
-		if (calPageOpen == false)
-			applicationWindow().pageStack.pop()
-		else
-			root.pageStack.push(Qt.resolvedUrl("EventsCalendarPage.qml"))
+		if (calPageOpen == false) {
+			calPageLoader.active = false
+			applicationWindow().pageStack.pop() // Pop out calPage
+		} else {
+			calPageLoader.active = true
+			root.pageStack.push(loadingPage)
+		}
 	}
 }
