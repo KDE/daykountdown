@@ -34,7 +34,8 @@ Kirigami.Page {
 	Connections { // Janky way of preventing duplicate dots for events appearing
 		target: applicationWindow().overlay
 		function onFocusChanged() {
-			monthView.resetToToday()
+			monthView.nextView();
+			monthView.previousView();
 		}
 	}
 
