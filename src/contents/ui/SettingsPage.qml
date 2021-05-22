@@ -57,6 +57,7 @@ Kirigami.ScrollablePage {
 					Kirigami.Heading {
 						level: 2
 						text: model.display
+						visible: Config.enabledCalendarPlugins.indexOf(model.pluginPath) > -1
 					}
 					Loader {
 						Layout.fillWidth: true

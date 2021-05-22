@@ -160,6 +160,7 @@ Kirigami.ApplicationWindow {
 		visible: calPageOpen
 		Controls.BusyIndicator {
 			anchors.fill: parent
+			running: loadingPage.visible
 		}
 	}
 
