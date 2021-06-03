@@ -34,8 +34,8 @@ Kirigami.OverlaySheet {
 	signal removed(int index)
 
 	onKdateChanged: {
-		datePicker.today = kdate
-		datePicker.resetToToday()
+		datePicker.selectedDate = kdate
+		datePicker.clickedDate = kdate.setHours(0,0,0,0)
 	}
 
 	header: Kirigami.Heading {
@@ -149,16 +149,13 @@ Kirigami.OverlaySheet {
 		}
 		// This singleton is bringing in a component defined in DatePicker.qml
 		ColumnLayout {
-			Layout.minimumWidth: Kirigami.Units.gridUnit * 20
+			Layout.fillWidth: true
+			height: Kirigami.Units.gridUnit * 16
 			
-				PlasmaCalendar.MonthView {
+				DatePicker {
 					id: datePicker
 
-					Layout.fillWidth: true
-					Layout.minimumHeight: Kirigami.Units.gridUnit * 18
-					Layout.alignment: Qt.AlignBottom
-					today: kdate
-					firstDayOfWeek: Qt.locale().firstDayOfWeek
+					anchors.fill: parent
 				}
 		}
 		// This is a button.
@@ -184,7 +181,7 @@ Kirigami.OverlaySheet {
 					addEditSheet.added(
 						nameField.text, 
 						descriptionField.text, 
-						datePicker.currentDate, 
+						new Date(datePicker.clickedDate),
 						colour
 					);
 				}
@@ -193,7 +190,7 @@ Kirigami.OverlaySheet {
 						index, 
 						nameField.text, 
 						descriptionField.text, 
-						datePicker.currentDate, 
+						new Date(datePicker.clickedDate),
 						colour
 					);
 				}

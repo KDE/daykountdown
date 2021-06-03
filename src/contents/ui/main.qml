@@ -130,7 +130,6 @@ Kirigami.ApplicationWindow {
 		addEditSheet.description = listDesc
 		addEditSheet.kdate = listDate
 		addEditSheet.open()
-		addEditSheet.datePickerComponent.resetToToday() // Janky way of preventing duplicate dots for events appearing
 	}
 
 	// Initial page to be loaded on app load

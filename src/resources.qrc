@@ -6,5 +6,6 @@
 		<file alias="KountdownCard.qml">contents/ui/KountdownCard.qml</file>
 		<file alias="AddEditSheet.qml">contents/ui/AddEditSheet.qml</file>
 		<file alias="EventsCalendarPage.qml">contents/ui/EventsCalendarPage.qml</file>
+		<file alias="DatePicker.qml">contents/ui/DatePicker.qml</file>
 	</qresource>
 </RCC>
