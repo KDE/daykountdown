@@ -35,7 +35,7 @@ Kirigami.OverlaySheet {
 
 	onKdateChanged: {
 		datePicker.selectedDate = kdate
-		datePicker.clickedDate = kdate.setHours(0,0,0,0)
+		datePicker.clickedDate = kdate
 	}
 
 	header: Kirigami.Heading {
@@ -152,11 +152,10 @@ Kirigami.OverlaySheet {
 			Layout.fillWidth: true
 			height: Kirigami.Units.gridUnit * 16
 			
-				DatePicker {
-					id: datePicker
-
-					anchors.fill: parent
-				}
+			DatePicker {
+				id: datePicker
+				anchors.fill: parent
+			}
 		}
 		// This is a button.
 		Controls.Button {
@@ -181,7 +180,7 @@ Kirigami.OverlaySheet {
 					addEditSheet.added(
 						nameField.text, 
 						descriptionField.text, 
-						new Date(datePicker.clickedDate),
+						datePicker.clickedDate,
 						colour
 					);
 				}
@@ -190,7 +189,7 @@ Kirigami.OverlaySheet {
 						index, 
 						nameField.text, 
 						descriptionField.text, 
-						new Date(datePicker.clickedDate),
+						datePicker.clickedDate,
 						colour
 					);
 				}
