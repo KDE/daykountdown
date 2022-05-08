@@ -8,7 +8,7 @@ import QtQuick.Controls 2.12 as Controls
 import QtQuick.Layouts 1.12
 
 import org.kde.kirigami 2.13 as Kirigami
-import org.kde.plasma.calendar 2.0 as PlasmaCalendar
+import org.kde.plasma.workspace.calendar 2.0 as PlasmaCalendar
 
 import org.kde.daykountdown.private 1.0
 
