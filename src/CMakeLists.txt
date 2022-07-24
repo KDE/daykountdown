@@ -11,12 +11,12 @@ add_executable(daykountdown ${daykountdown_SRCS})
 ecm_add_app_icon(DAYKOUNTDOWN_ICON ICONS ${CMAKE_SOURCE_DIR}/org.kde.daykountdown.png)
 target_sources(daykountdown PRIVATE ${DAYKOUNTDOWN_ICON})
 target_link_libraries(daykountdown 
-	Qt5::Quick
-	Qt5::QuickControls2
-	Qt5::Qml
-	Qt5::Gui
-	Qt5::Sql
-	Qt5::Svg
+	Qt::Quick
+	Qt::QuickControls2
+	Qt::Qml
+	Qt::Gui
+	Qt::Sql
+	Qt::Svg
 	KF5::Kirigami2
 	KF5::I18n
 	KF5::CoreAddons
