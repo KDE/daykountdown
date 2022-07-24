@@ -2,7 +2,7 @@ project(daykountdown)
 
 cmake_minimum_required(VERSION 3.10)
 set(KF5_MIN_VERSION "5.18.0")
-set(QT_MIN_VERSION "5.5.0")
+set(QT_MIN_VERSION "5.15.0")
 
 ################# set KDE specific information #################
 
