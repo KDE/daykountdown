@@ -83,13 +83,13 @@ int main(int argc, char *argv[])
 	 * QStandardPaths is a class that provides methods to query standard locations on the filesystem
 	 * writableLocation() returns the directory where files of QStandardPaths::DataLocation type should be written to
 	 */
-	Q_ASSERT(QDir().mkpath(QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::DataLocation))));
+	Q_ASSERT(QDir().mkpath(QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))));
 	// Creates SQLite database object instance
 	QSqlDatabase db = QSqlDatabase::addDatabase(DRIVER);
 	// The auto keyword automatically decides the type of the variable 'path' at compile time
 	// This line defines a path for our application to have a folder to save stuff in
 	// qApp macro returns a pointer to the running QApplication instance
-	const auto path = QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QStringLiteral("/") + qApp->applicationName());
+	const auto path = QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/") + qApp->applicationName());
 	db.setDatabaseName(path);
 	if (!db.open()) {
 		qCritical() << db.lastError() << "while opening database at" << path;
