@@ -36,11 +36,8 @@ set_package_properties(KF5 PROPERTIES
     PURPOSE "Basic application components"
 )
 
-################# Enable C++11 features for clang and gcc #################
-
-set(CMAKE_CXX_STANDARD 11)
-
-set(CMAKE_AUTOMOC ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 ################# build and install #################
 install(FILES org.kde.daykountdown.desktop DESTINATION ${KDE_INSTALL_APPDIR})
