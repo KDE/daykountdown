@@ -37,4 +37,4 @@ if(ANDROID)
     )
 endif()
 
-install(TARGETS daykountdown ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS daykountdown ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
