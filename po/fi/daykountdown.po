@@ -1,0 +1,295 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the daykountdown package.
+# Tommi Nieminen <translator@legisign.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: daykountdown\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-07-05 00:20+0000\n"
+"PO-Revision-Date: 2021-08-29 14:37+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Tommi Nieminen"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "translator@legisign.org"
+
+#. i18nc is useful for adding context for translators
+#: src/contents/ui/AddEditSheet.qml:43
+#, kde-format
+msgctxt "@title:window"
+msgid "Add kountdown"
+msgstr "Lisää lähtölaskenta"
+
+#: src/contents/ui/AddEditSheet.qml:44
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit kountdown"
+msgstr "Muokkaa lähtölaskentaa"
+
+#: src/contents/ui/AddEditSheet.qml:53
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr "Nimi:"
+
+#: src/contents/ui/AddEditSheet.qml:55
+#, kde-format
+msgid "Event name (required)"
+msgstr "Tapahtuman nimi (vaaditaan)"
+
+#: src/contents/ui/AddEditSheet.qml:63
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr "Kuvaus:"
+
+#: src/contents/ui/AddEditSheet.qml:64
+#, kde-format
+msgid "Optional"
+msgstr "Valinnainen"
+
+#: src/contents/ui/AddEditSheet.qml:71
+#, kde-format
+msgid "Kountdown Colour"
+msgstr "Laskurin väri"
+
+#: src/contents/ui/AddEditSheet.qml:79
+#, kde-format
+msgid "Colour:"
+msgstr "Väri:"
+
+#: src/contents/ui/AddEditSheet.qml:164
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Poista"
+
+#: src/contents/ui/AddEditSheet.qml:174
+#, kde-format
+msgctxt "@action:button"
+msgid "Done"
+msgstr "Valmis"
+
+#: src/contents/ui/DatePicker.qml:99
+#, kde-format
+msgid "Days"
+msgstr "Päivät"
+
+#: src/contents/ui/DatePicker.qml:105
+#, kde-format
+msgid "Months"
+msgstr "Kuukaudet"
+
+#: src/contents/ui/DatePicker.qml:111
+#, kde-format
+msgid "Years"
+msgstr "Vuodet"
+
+#: src/contents/ui/EventsCalendarPage.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Events"
+msgstr "Tapahtumat"
+
+#: src/contents/ui/EventsCalendarPage.qml:151
+#, kde-format
+msgid "No events on this day"
+msgstr "Ei tapahtumia tänäiseksi"
+
+#: src/contents/ui/KountdownCard.qml:53
+#, kde-format
+msgid "%1 "
+msgstr "%1 "
+
+#: src/contents/ui/KountdownsPage.qml:20
+#, kde-format
+msgctxt "@title"
+msgid "Kountdowns"
+msgstr "Lähtölaskennat"
+
+#. i18n function returns translated string
+#: src/contents/ui/KountdownsPage.qml:29
+#, kde-format
+msgctxt "@action:button"
+msgid "Add kountdown"
+msgstr "Lisää lähtölaskenta"
+
+#: src/contents/ui/KountdownsPage.qml:36
+#, kde-format
+msgctxt "@action:button"
+msgid "Sort by"
+msgstr "Lajitteluperuste"
+
+#: src/contents/ui/KountdownsPage.qml:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Creation (ascending)"
+msgstr "Luomisaika"
+
+#: src/contents/ui/KountdownsPage.qml:43
+#, kde-format
+msgctxt "@action:button"
+msgid "Creation (descending)"
+msgstr "Luomisaika (käänteinen)"
+
+#: src/contents/ui/KountdownsPage.qml:47
+#, kde-format
+msgctxt "@action:button"
+msgid "Date (ascending)"
+msgstr "Päivämäärä"
+
+#: src/contents/ui/KountdownsPage.qml:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Date (descending)"
+msgstr "Päivämäärä (käänteinen)"
+
+#: src/contents/ui/KountdownsPage.qml:55
+#, kde-format
+msgctxt "@action:button"
+msgid "Alphabetical (ascending)"
+msgstr "Aakkostus"
+
+#: src/contents/ui/KountdownsPage.qml:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Alphabetical (descending)"
+msgstr "Aakkostus (käänteinen)"
+
+#: src/contents/ui/KountdownsPage.qml:64
+#, kde-format
+msgid "Show calendar"
+msgstr "Näytä kalenteri"
+
+#: src/contents/ui/KountdownsPage.qml:90
+#, kde-format
+msgid "Today is %1"
+msgstr "Tänään on %1"
+
+#: src/contents/ui/KountdownsPage.qml:103
+#, kde-format
+msgid "Add some kountdowns!"
+msgstr "Lisää lähtölaskentoja!"
+
+#: src/contents/ui/main.qml:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Day Kountdown"
+msgstr "Lähtölaskenta päivinä"
+
+#: src/contents/ui/main.qml:40
+#, kde-format
+msgid "Import"
+msgstr "Tuo"
+
+#: src/contents/ui/main.qml:56
+#, kde-format
+msgid "Export"
+msgstr "Vie"
+
+#: src/contents/ui/main.qml:62
+#, kde-format
+msgid "Clear all kountdowns"
+msgstr "Nollaa kaikki lähtölaskennat"
+
+#: src/contents/ui/main.qml:67 src/contents/ui/main.qml:70
+#, kde-format
+msgid "Settings"
+msgstr "Asetukset"
+
+#: src/contents/ui/main.qml:73
+#, kde-format
+msgid "About DayKountdown"
+msgstr "Tietoa DayKountdownista"
+
+#: src/contents/ui/main.qml:76
+#, kde-format
+msgid "About"
+msgstr "Tietoa"
+
+#: src/contents/ui/main.qml:79
+#, kde-format
+msgid "Quit"
+msgstr "Lopeta"
+
+#: src/contents/ui/main.qml:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove all kountdowns"
+msgstr "Poista kaikki lähtölaskennat"
+
+#: src/contents/ui/main.qml:98
+#, kde-format
+msgid "Are you sure you want to delete all your kountdowns?"
+msgstr "Haluatko varmasti poistaa kaikki lähtölaskennat?"
+
+#: src/contents/ui/SettingsPage.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Settings"
+msgstr "Asetukset"
+
+#: src/contents/ui/SettingsPage.qml:30
+#, kde-format
+msgid "Calendar settings"
+msgstr "Kalenteriasetukset"
+
+#: src/importexport.cpp:43
+#, kde-format
+msgid "Save File As"
+msgstr "Tallenna tiedosto nimellä"
+
+#: src/importexport.cpp:59
+#, kde-format
+msgid "Import file"
+msgstr "Tuo tiedosto"
+
+#: src/main.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "DayKountdown"
+msgstr "DayKountdown"
+
+#: src/main.cpp:62
+#, kde-format
+msgctxt "@title"
+msgid "A day countdown application"
+msgstr "Päivälähtölaskentasovellus"
+
+#: src/main.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Claudio Cambra"
+msgstr "Claudio Cambra"
+
+#: src/main.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Creator"
+msgstr "Luoja"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr "Carl Schwan"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:credit"
+msgid "SQLite pro and code review"
+msgstr "SQLite-asiantuntija ja koodintarkistaja"

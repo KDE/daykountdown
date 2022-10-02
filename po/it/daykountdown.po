@@ -1,0 +1,295 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the daykountdown package.
+# Valter Mura <valtermura@gmail.com>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: daykountdown\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-07-05 00:20+0000\n"
+"PO-Revision-Date: 2021-10-30 20:23+0200\n"
+"Last-Translator: Valter Mura <valtermura@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.08.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Valter Mura"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "valtermura@gmail.com"
+
+#. i18nc is useful for adding context for translators
+#: src/contents/ui/AddEditSheet.qml:43
+#, kde-format
+msgctxt "@title:window"
+msgid "Add kountdown"
+msgstr "Aggiungi conto alla rovescia"
+
+#: src/contents/ui/AddEditSheet.qml:44
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit kountdown"
+msgstr "Modifica conto alla rovescia"
+
+#: src/contents/ui/AddEditSheet.qml:53
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr "Nome:"
+
+#: src/contents/ui/AddEditSheet.qml:55
+#, kde-format
+msgid "Event name (required)"
+msgstr "Nome evento (richiesto)"
+
+#: src/contents/ui/AddEditSheet.qml:63
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr "Descrizione:"
+
+#: src/contents/ui/AddEditSheet.qml:64
+#, kde-format
+msgid "Optional"
+msgstr "Opzionale"
+
+#: src/contents/ui/AddEditSheet.qml:71
+#, kde-format
+msgid "Kountdown Colour"
+msgstr "Colore del conto alla rovescia"
+
+#: src/contents/ui/AddEditSheet.qml:79
+#, kde-format
+msgid "Colour:"
+msgstr "Colore:"
+
+#: src/contents/ui/AddEditSheet.qml:164
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Elimina"
+
+#: src/contents/ui/AddEditSheet.qml:174
+#, kde-format
+msgctxt "@action:button"
+msgid "Done"
+msgstr "Fatto"
+
+#: src/contents/ui/DatePicker.qml:99
+#, kde-format
+msgid "Days"
+msgstr "Giorni"
+
+#: src/contents/ui/DatePicker.qml:105
+#, kde-format
+msgid "Months"
+msgstr "Mesi"
+
+#: src/contents/ui/DatePicker.qml:111
+#, kde-format
+msgid "Years"
+msgstr "Anni"
+
+#: src/contents/ui/EventsCalendarPage.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Events"
+msgstr "Eventi"
+
+#: src/contents/ui/EventsCalendarPage.qml:151
+#, kde-format
+msgid "No events on this day"
+msgstr "Nessun evento in questo giorno"
+
+#: src/contents/ui/KountdownCard.qml:53
+#, kde-format
+msgid "%1 "
+msgstr "%1 "
+
+#: src/contents/ui/KountdownsPage.qml:20
+#, kde-format
+msgctxt "@title"
+msgid "Kountdowns"
+msgstr "Conti alla rovescia"
+
+#. i18n function returns translated string
+#: src/contents/ui/KountdownsPage.qml:29
+#, kde-format
+msgctxt "@action:button"
+msgid "Add kountdown"
+msgstr "Aggiungi conto alla rovescia"
+
+#: src/contents/ui/KountdownsPage.qml:36
+#, kde-format
+msgctxt "@action:button"
+msgid "Sort by"
+msgstr "Ordina per"
+
+#: src/contents/ui/KountdownsPage.qml:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Creation (ascending)"
+msgstr "Creazione (crescente)"
+
+#: src/contents/ui/KountdownsPage.qml:43
+#, kde-format
+msgctxt "@action:button"
+msgid "Creation (descending)"
+msgstr "Creazione (decrescente)"
+
+#: src/contents/ui/KountdownsPage.qml:47
+#, kde-format
+msgctxt "@action:button"
+msgid "Date (ascending)"
+msgstr "Data (crescente)"
+
+#: src/contents/ui/KountdownsPage.qml:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Date (descending)"
+msgstr "Data (decrescente)"
+
+#: src/contents/ui/KountdownsPage.qml:55
+#, kde-format
+msgctxt "@action:button"
+msgid "Alphabetical (ascending)"
+msgstr "Alfabetico (crescente)"
+
+#: src/contents/ui/KountdownsPage.qml:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Alphabetical (descending)"
+msgstr "Alfabetico (decrescente)"
+
+#: src/contents/ui/KountdownsPage.qml:64
+#, kde-format
+msgid "Show calendar"
+msgstr "Mostra calendario"
+
+#: src/contents/ui/KountdownsPage.qml:90
+#, kde-format
+msgid "Today is %1"
+msgstr "Oggi è %1"
+
+#: src/contents/ui/KountdownsPage.qml:103
+#, kde-format
+msgid "Add some kountdowns!"
+msgstr "Aggiungi qualche conto alla rovescia."
+
+#: src/contents/ui/main.qml:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Day Kountdown"
+msgstr "Contro alla rovescia del giorno"
+
+#: src/contents/ui/main.qml:40
+#, kde-format
+msgid "Import"
+msgstr "Importa"
+
+#: src/contents/ui/main.qml:56
+#, kde-format
+msgid "Export"
+msgstr "Esporta"
+
+#: src/contents/ui/main.qml:62
+#, kde-format
+msgid "Clear all kountdowns"
+msgstr "Azzera tutti i conti alla rovescia"
+
+#: src/contents/ui/main.qml:67 src/contents/ui/main.qml:70
+#, kde-format
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: src/contents/ui/main.qml:73
+#, kde-format
+msgid "About DayKountdown"
+msgstr "Informazioni su DayKountdown"
+
+#: src/contents/ui/main.qml:76
+#, kde-format
+msgid "About"
+msgstr "Informazioni su"
+
+#: src/contents/ui/main.qml:79
+#, kde-format
+msgid "Quit"
+msgstr "Esci"
+
+#: src/contents/ui/main.qml:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove all kountdowns"
+msgstr "Rimuovi tutti i conti ala rovescia"
+
+#: src/contents/ui/main.qml:98
+#, kde-format
+msgid "Are you sure you want to delete all your kountdowns?"
+msgstr "Vuoi davvero eliminare tutti i conti alla rovescia?"
+
+#: src/contents/ui/SettingsPage.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: src/contents/ui/SettingsPage.qml:30
+#, kde-format
+msgid "Calendar settings"
+msgstr "Impostazioni calendario"
+
+#: src/importexport.cpp:43
+#, kde-format
+msgid "Save File As"
+msgstr "Salva file come"
+
+#: src/importexport.cpp:59
+#, kde-format
+msgid "Import file"
+msgstr "Importa file"
+
+#: src/main.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "DayKountdown"
+msgstr "DayKountdown"
+
+#: src/main.cpp:62
+#, kde-format
+msgctxt "@title"
+msgid "A day countdown application"
+msgstr "Un programma per conti alla rovescia dei giorni"
+
+#: src/main.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Claudio Cambra"
+msgstr "Claudio Cambra"
+
+#: src/main.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Creator"
+msgstr "Creatore"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr "Carl Schwan"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:credit"
+msgid "SQLite pro and code review"
+msgstr "SQLite pro e revisione del codice"

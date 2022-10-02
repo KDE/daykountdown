@@ -1,0 +1,303 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the daykountdown package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: daykountdown\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-07-05 00:20+0000\n"
+"PO-Revision-Date: 2021-07-05 11:23+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Asserhäll"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stefan.asserhall@bredband.net"
+
+#. i18nc is useful for adding context for translators
+#: src/contents/ui/AddEditSheet.qml:43
+#, kde-format
+msgctxt "@title:window"
+msgid "Add kountdown"
+msgstr "Lägg till nedräkning"
+
+#: src/contents/ui/AddEditSheet.qml:44
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit kountdown"
+msgstr "Redigera nedräkning"
+
+#: src/contents/ui/AddEditSheet.qml:53
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr "Namn:"
+
+#: src/contents/ui/AddEditSheet.qml:55
+#, kde-format
+msgid "Event name (required)"
+msgstr "Händelsenamn (nödvändigt)"
+
+#: src/contents/ui/AddEditSheet.qml:63
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr "Beskrivning:"
+
+#: src/contents/ui/AddEditSheet.qml:64
+#, kde-format
+msgid "Optional"
+msgstr "Valfri"
+
+#: src/contents/ui/AddEditSheet.qml:71
+#, kde-format
+msgid "Kountdown Colour"
+msgstr "Färg på nedräkningen"
+
+#: src/contents/ui/AddEditSheet.qml:79
+#, kde-format
+msgid "Colour:"
+msgstr "Färg:"
+
+#: src/contents/ui/AddEditSheet.qml:164
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Ta bort"
+
+#: src/contents/ui/AddEditSheet.qml:174
+#, kde-format
+msgctxt "@action:button"
+msgid "Done"
+msgstr "Klar"
+
+#: src/contents/ui/DatePicker.qml:99
+#, kde-format
+msgid "Days"
+msgstr "Dagar"
+
+#: src/contents/ui/DatePicker.qml:105
+#, kde-format
+msgid "Months"
+msgstr "Månader"
+
+#: src/contents/ui/DatePicker.qml:111
+#, kde-format
+msgid "Years"
+msgstr "År"
+
+#: src/contents/ui/EventsCalendarPage.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Events"
+msgstr "Händelser"
+
+#: src/contents/ui/EventsCalendarPage.qml:151
+#, kde-format
+msgid "No events on this day"
+msgstr "Inga händelser idag"
+
+#: src/contents/ui/KountdownCard.qml:53
+#, kde-format
+msgid "%1 "
+msgstr "%1 "
+
+#: src/contents/ui/KountdownsPage.qml:20
+#, kde-format
+msgctxt "@title"
+msgid "Kountdowns"
+msgstr "Nedräkningar"
+
+#. i18n function returns translated string
+#: src/contents/ui/KountdownsPage.qml:29
+#, kde-format
+msgctxt "@action:button"
+msgid "Add kountdown"
+msgstr "Lägg till nedräkning"
+
+#: src/contents/ui/KountdownsPage.qml:36
+#, kde-format
+msgctxt "@action:button"
+msgid "Sort by"
+msgstr "Sortera enligt"
+
+#: src/contents/ui/KountdownsPage.qml:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Creation (ascending)"
+msgstr "Skapad (stigande)"
+
+#: src/contents/ui/KountdownsPage.qml:43
+#, kde-format
+msgctxt "@action:button"
+msgid "Creation (descending)"
+msgstr "Skapad (fallande)"
+
+#: src/contents/ui/KountdownsPage.qml:47
+#, kde-format
+msgctxt "@action:button"
+msgid "Date (ascending)"
+msgstr "Datum (stigande)"
+
+#: src/contents/ui/KountdownsPage.qml:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Date (descending)"
+msgstr "Datum (fallande)"
+
+#: src/contents/ui/KountdownsPage.qml:55
+#, kde-format
+msgctxt "@action:button"
+msgid "Alphabetical (ascending)"
+msgstr "Alfabetisk (stigande)"
+
+#: src/contents/ui/KountdownsPage.qml:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Alphabetical (descending)"
+msgstr "Alfabetisk (fallande)"
+
+#: src/contents/ui/KountdownsPage.qml:64
+#, kde-format
+msgid "Show calendar"
+msgstr "Visa kalender"
+
+#: src/contents/ui/KountdownsPage.qml:90
+#, kde-format
+msgid "Today is %1"
+msgstr "Dagens datum är %1"
+
+#: src/contents/ui/KountdownsPage.qml:103
+#, kde-format
+msgid "Add some kountdowns!"
+msgstr "Lägg till några nedräkningar."
+
+#: src/contents/ui/main.qml:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Day Kountdown"
+msgstr "Dagnedräkning"
+
+#: src/contents/ui/main.qml:40
+#, kde-format
+msgid "Import"
+msgstr "Importera"
+
+#: src/contents/ui/main.qml:56
+#, kde-format
+msgid "Export"
+msgstr "Exportera"
+
+#: src/contents/ui/main.qml:62
+#, kde-format
+msgid "Clear all kountdowns"
+msgstr "Rensa alla nedräkningar"
+
+#: src/contents/ui/main.qml:67 src/contents/ui/main.qml:70
+#, kde-format
+msgid "Settings"
+msgstr "Inställningar"
+
+#: src/contents/ui/main.qml:73
+#, kde-format
+msgid "About DayKountdown"
+msgstr " Om Dagsnedräkning"
+
+#: src/contents/ui/main.qml:76
+#, kde-format
+msgid "About"
+msgstr "Om"
+
+#: src/contents/ui/main.qml:79
+#, kde-format
+msgid "Quit"
+msgstr "Avsluta"
+
+#: src/contents/ui/main.qml:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove all kountdowns"
+msgstr "Ta bort alla nedräkningar"
+
+#: src/contents/ui/main.qml:98
+#, kde-format
+msgid "Are you sure you want to delete all your kountdowns?"
+msgstr "Är du säker på att du vill ta bort alla nedräkningar?"
+
+#: src/contents/ui/SettingsPage.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Settings"
+msgstr "Inställningar"
+
+#: src/contents/ui/SettingsPage.qml:30
+#, kde-format
+msgid "Calendar settings"
+msgstr "Kalenderinställningar"
+
+#: src/importexport.cpp:43
+#, kde-format
+msgid "Save File As"
+msgstr "Spara fil som"
+
+#: src/importexport.cpp:59
+#, kde-format
+msgid "Import file"
+msgstr "Importera fil"
+
+#: src/main.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "DayKountdown"
+msgstr "Dagnedräkning"
+
+#: src/main.cpp:62
+#, kde-format
+msgctxt "@title"
+msgid "A day countdown application"
+msgstr "Ett program för dagnedräkning"
+
+#: src/main.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Claudio Cambra"
+msgstr "Claudio Cambra"
+
+#: src/main.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Creator"
+msgstr "Skapare"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr "Carl Schwan"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:credit"
+msgid "SQLite pro and code review"
+msgstr "SQLite pro och kodgranskning"
+
+#~ msgid "N/A"
+#~ msgstr "Inte tillgänglig"
+
+#~ msgid "%1 day ago"
+#~ msgid_plural "%1 days ago"
+#~ msgstr[0] "för 1 dag sedan"
+#~ msgstr[1] "för %1 dagar sedan"
