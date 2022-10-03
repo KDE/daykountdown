@@ -254,7 +254,7 @@ msgstr "Opcions de configuració del calendari"
 #: src/importexport.cpp:43
 #, kde-format
 msgid "Save File As"
-msgstr "Guarda el fitxer com a"
+msgstr "Anomeneu i guardeu el fitxer"
 
 #: src/importexport.cpp:59
 #, kde-format
