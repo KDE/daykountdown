@@ -45,4 +45,6 @@ install(FILES org.kde.daykountdown.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/h
 
 add_subdirectory(src)
 
+ki18n_install(po)
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
