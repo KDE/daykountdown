@@ -173,7 +173,7 @@ msgstr "Alfabética (descendente)"
 #: src/contents/ui/KountdownsPage.qml:64
 #, kde-format
 msgid "Show calendar"
-msgstr "Mostrar o calendario"
+msgstr "Amosar o calendario"
 
 #: src/contents/ui/KountdownsPage.qml:90
 #, kde-format
