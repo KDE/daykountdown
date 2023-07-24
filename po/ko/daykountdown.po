@@ -268,7 +268,7 @@ msgstr "DayKountdown"
 #, kde-format
 msgctxt "@title"
 msgid "A day countdown application"
-msgstr "날짜 카운트다운 프로그램"
+msgstr "날짜 카운트다운 앱"
 
 #: src/main.cpp:65
 #, kde-format
