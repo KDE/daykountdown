@@ -11,6 +11,7 @@ import QtQuick.Controls 2.15 as Controls
 import QtQuick.Layouts 1.2
 import QtQuick.Dialogs 1.3
 import org.kde.kirigami 2.13 as Kirigami
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.daykountdown.private 1.0
 
 // Base element, provides basic features needed for all kirigami applications
@@ -86,7 +87,7 @@ Kirigami.ApplicationWindow {
 	
 	Component {
         id: aboutPage
-        Kirigami.AboutPage {
+        FormCard.AboutPage {
             aboutData: AboutData.aboutData
         }
     }
