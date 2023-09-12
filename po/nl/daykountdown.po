@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-05 00:20+0000\n"
+"POT-Creation-Date: 2023-09-12 00:48+0000\n"
 "PO-Revision-Date: 2021-07-05 12:56+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -185,54 +185,54 @@ msgstr "Vandaag is %1"
 msgid "Add some kountdowns!"
 msgstr "Enige kountdowns toevoegen!"
 
-#: src/contents/ui/main.qml:22
+#: src/contents/ui/main.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
 msgstr "Dag van Kountdown"
 
-#: src/contents/ui/main.qml:40
+#: src/contents/ui/main.qml:41
 #, kde-format
 msgid "Import"
 msgstr "Importeren"
 
-#: src/contents/ui/main.qml:56
+#: src/contents/ui/main.qml:57
 #, kde-format
 msgid "Export"
 msgstr "Exporteren"
 
-#: src/contents/ui/main.qml:62
+#: src/contents/ui/main.qml:63
 #, kde-format
 msgid "Clear all kountdowns"
 msgstr "All kountdowns wissen"
 
-#: src/contents/ui/main.qml:67 src/contents/ui/main.qml:70
+#: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
 #, kde-format
 msgid "Settings"
 msgstr "Instellingen"
 
-#: src/contents/ui/main.qml:73
+#: src/contents/ui/main.qml:74
 #, kde-format
 msgid "About DayKountdown"
 msgstr "Info over DayKountdown"
 
-#: src/contents/ui/main.qml:76
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About"
 msgstr "Info over"
 
-#: src/contents/ui/main.qml:79
+#: src/contents/ui/main.qml:80
 #, kde-format
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: src/contents/ui/main.qml:96
+#: src/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
 msgstr "All kountdowns verwijderen"
 
-#: src/contents/ui/main.qml:98
+#: src/contents/ui/main.qml:99
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
 msgstr "Wilt u alle kountdowns verwijderen?"

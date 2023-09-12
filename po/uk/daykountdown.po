@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-05 00:20+0000\n"
+"POT-Creation-Date: 2023-09-12 00:48+0000\n"
 "PO-Revision-Date: 2021-07-05 08:25+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -188,54 +188,54 @@ msgstr "Сьогодні %1"
 msgid "Add some kountdowns!"
 msgstr "Додайте якийсь відлік!"
 
-#: src/contents/ui/main.qml:22
+#: src/contents/ui/main.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
 msgstr "Відлік днів"
 
-#: src/contents/ui/main.qml:40
+#: src/contents/ui/main.qml:41
 #, kde-format
 msgid "Import"
 msgstr "Імпортувати"
 
-#: src/contents/ui/main.qml:56
+#: src/contents/ui/main.qml:57
 #, kde-format
 msgid "Export"
 msgstr "Експортувати"
 
-#: src/contents/ui/main.qml:62
+#: src/contents/ui/main.qml:63
 #, kde-format
 msgid "Clear all kountdowns"
 msgstr "Вилучити всі відліки"
 
-#: src/contents/ui/main.qml:67 src/contents/ui/main.qml:70
+#: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
 
-#: src/contents/ui/main.qml:73
+#: src/contents/ui/main.qml:74
 #, kde-format
 msgid "About DayKountdown"
 msgstr "Про DayKountdown"
 
-#: src/contents/ui/main.qml:76
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About"
 msgstr "Про програму"
 
-#: src/contents/ui/main.qml:79
+#: src/contents/ui/main.qml:80
 #, kde-format
 msgid "Quit"
 msgstr "Вийти"
 
-#: src/contents/ui/main.qml:96
+#: src/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
 msgstr "Вилучення усіх відліків"
 
-#: src/contents/ui/main.qml:98
+#: src/contents/ui/main.qml:99
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
 msgstr "Ви справді хочете вилучити всі ваші відліки?"

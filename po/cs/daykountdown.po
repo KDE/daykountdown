@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-05 00:20+0000\n"
+"POT-Creation-Date: 2023-09-12 00:48+0000\n"
 "PO-Revision-Date: 2021-05-13 13:38+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -185,54 +185,54 @@ msgstr "Dnes je %1"
 msgid "Add some kountdowns!"
 msgstr ""
 
-#: src/contents/ui/main.qml:22
+#: src/contents/ui/main.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
 msgstr ""
 
-#: src/contents/ui/main.qml:40
+#: src/contents/ui/main.qml:41
 #, kde-format
 msgid "Import"
 msgstr "Importovat"
 
-#: src/contents/ui/main.qml:56
+#: src/contents/ui/main.qml:57
 #, kde-format
 msgid "Export"
 msgstr "Exportovat"
 
-#: src/contents/ui/main.qml:62
+#: src/contents/ui/main.qml:63
 #, kde-format
 msgid "Clear all kountdowns"
 msgstr ""
 
-#: src/contents/ui/main.qml:67 src/contents/ui/main.qml:70
+#: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
 #, kde-format
 msgid "Settings"
 msgstr "Nastavení"
 
-#: src/contents/ui/main.qml:73
+#: src/contents/ui/main.qml:74
 #, kde-format
 msgid "About DayKountdown"
 msgstr ""
 
-#: src/contents/ui/main.qml:76
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About"
 msgstr "O aplikaci"
 
-#: src/contents/ui/main.qml:79
+#: src/contents/ui/main.qml:80
 #, kde-format
 msgid "Quit"
 msgstr "Ukončit"
 
-#: src/contents/ui/main.qml:96
+#: src/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
 msgstr "Odstranit všechny odpočty"
 
-#: src/contents/ui/main.qml:98
+#: src/contents/ui/main.qml:99
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
 msgstr "Opravdu chcete vymazat všechny odpočty?"

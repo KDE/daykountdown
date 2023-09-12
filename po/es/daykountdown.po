@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-05 00:20+0000\n"
+"POT-Creation-Date: 2023-09-12 00:48+0000\n"
 "PO-Revision-Date: 2021-07-05 23:59+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -187,54 +187,54 @@ msgstr "Hoy es %1"
 msgid "Add some kountdowns!"
 msgstr "Añada alguna cuenta atrás"
 
-#: src/contents/ui/main.qml:22
+#: src/contents/ui/main.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
 msgstr "Cuenta atrás de días"
 
-#: src/contents/ui/main.qml:40
+#: src/contents/ui/main.qml:41
 #, kde-format
 msgid "Import"
 msgstr "Importar"
 
-#: src/contents/ui/main.qml:56
+#: src/contents/ui/main.qml:57
 #, kde-format
 msgid "Export"
 msgstr "Exportar"
 
-#: src/contents/ui/main.qml:62
+#: src/contents/ui/main.qml:63
 #, kde-format
 msgid "Clear all kountdowns"
 msgstr "Borrar todas las cuentas atrás"
 
-#: src/contents/ui/main.qml:67 src/contents/ui/main.qml:70
+#: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
 #, kde-format
 msgid "Settings"
 msgstr "Preferencias"
 
-#: src/contents/ui/main.qml:73
+#: src/contents/ui/main.qml:74
 #, kde-format
 msgid "About DayKountdown"
 msgstr "Acerca de DayKountdown"
 
-#: src/contents/ui/main.qml:76
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About"
 msgstr "Acerca de"
 
-#: src/contents/ui/main.qml:79
+#: src/contents/ui/main.qml:80
 #, kde-format
 msgid "Quit"
 msgstr "Salir"
 
-#: src/contents/ui/main.qml:96
+#: src/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
 msgstr "Eliminar todas las cuentas atrás"
 
-#: src/contents/ui/main.qml:98
+#: src/contents/ui/main.qml:99
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
 msgstr "¿Seguro que quiere borrar todas las cuentas atrás?"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-05 00:20+0000\n"
+"POT-Creation-Date: 2023-09-12 00:48+0000\n"
 "PO-Revision-Date: 2022-05-10 11:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -185,54 +185,54 @@ msgstr "Bugün %1"
 msgid "Add some kountdowns!"
 msgstr "Geri sayımlar ekleyin!"
 
-#: src/contents/ui/main.qml:22
+#: src/contents/ui/main.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
 msgstr "Gün Geri Sayımı"
 
-#: src/contents/ui/main.qml:40
+#: src/contents/ui/main.qml:41
 #, kde-format
 msgid "Import"
 msgstr "İçe Aktar"
 
-#: src/contents/ui/main.qml:56
+#: src/contents/ui/main.qml:57
 #, kde-format
 msgid "Export"
 msgstr "Dışa Aktar"
 
-#: src/contents/ui/main.qml:62
+#: src/contents/ui/main.qml:63
 #, kde-format
 msgid "Clear all kountdowns"
 msgstr "Tüm Geri Sayımları Temizle"
 
-#: src/contents/ui/main.qml:67 src/contents/ui/main.qml:70
+#: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: src/contents/ui/main.qml:73
+#: src/contents/ui/main.qml:74
 #, kde-format
 msgid "About DayKountdown"
 msgstr "DayKountdown Hakkında"
 
-#: src/contents/ui/main.qml:76
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About"
 msgstr "Hakkında"
 
-#: src/contents/ui/main.qml:79
+#: src/contents/ui/main.qml:80
 #, kde-format
 msgid "Quit"
 msgstr "Çık"
 
-#: src/contents/ui/main.qml:96
+#: src/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
 msgstr "Tüm Geri Sayımları Kaldır"
 
-#: src/contents/ui/main.qml:98
+#: src/contents/ui/main.qml:99
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
 msgstr "Tüm geri sayımlarınızı kaldırmak istediğinize emin misiniz?"
