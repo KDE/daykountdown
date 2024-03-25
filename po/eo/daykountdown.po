@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:40+0000\n"
-"PO-Revision-Date: 2024-02-26 21:30+0100\n"
+"PO-Revision-Date: 2024-03-24 10:34+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
 "Language: eo\n"
@@ -33,13 +33,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Add kountdown"
-msgstr ""
+msgstr "Aldoni kountdown"
 
 #: src/contents/ui/AddEditSheet.qml:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit kountdown"
-msgstr ""
+msgstr "Redakti kountdown"
 
 #: src/contents/ui/AddEditSheet.qml:53
 #, kde-format
@@ -50,7 +50,7 @@ msgstr "Nomo:"
 #: src/contents/ui/AddEditSheet.qml:55
 #, kde-format
 msgid "Event name (required)"
-msgstr ""
+msgstr "Nomo de evento (postulata)"
 
 #: src/contents/ui/AddEditSheet.qml:63
 #, kde-format
@@ -66,12 +66,12 @@ msgstr "Nedeviga"
 #: src/contents/ui/AddEditSheet.qml:71
 #, kde-format
 msgid "Kountdown Colour"
-msgstr ""
+msgstr "Kountdown Koloro"
 
 #: src/contents/ui/AddEditSheet.qml:79
 #, kde-format
 msgid "Colour:"
-msgstr ""
+msgstr "Koloro:"
 
 #: src/contents/ui/AddEditSheet.qml:164
 #, kde-format
@@ -109,25 +109,25 @@ msgstr "Eventoj"
 #: src/contents/ui/EventsCalendarPage.qml:151
 #, kde-format
 msgid "No events on this day"
-msgstr ""
+msgstr "Neniuj eventoj en ĉi tiu tago"
 
 #: src/contents/ui/KountdownCard.qml:53
 #, kde-format
 msgid "%1 "
-msgstr ""
+msgstr "%1"
 
 #: src/contents/ui/KountdownsPage.qml:20
 #, kde-format
 msgctxt "@title"
 msgid "Kountdowns"
-msgstr ""
+msgstr "Konkursoj"
 
 #. i18n function returns translated string
 #: src/contents/ui/KountdownsPage.qml:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Add kountdown"
-msgstr ""
+msgstr "Aldoni kountdown"
 
 #: src/contents/ui/KountdownsPage.qml:36
 #, kde-format
@@ -139,42 +139,42 @@ msgstr "Ordigi laŭ"
 #, kde-format
 msgctxt "@action:button"
 msgid "Creation (ascending)"
-msgstr ""
+msgstr "Kreado (suprenira)"
 
 #: src/contents/ui/KountdownsPage.qml:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Creation (descending)"
-msgstr ""
+msgstr "Kreado (devenanta)"
 
 #: src/contents/ui/KountdownsPage.qml:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Date (ascending)"
-msgstr ""
+msgstr "Dato (kreskanta)"
 
 #: src/contents/ui/KountdownsPage.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Date (descending)"
-msgstr ""
+msgstr "Dato (malkreskanta)"
 
 #: src/contents/ui/KountdownsPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Alphabetical (ascending)"
-msgstr ""
+msgstr "Alfabeta (kreska)"
 
 #: src/contents/ui/KountdownsPage.qml:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Alphabetical (descending)"
-msgstr ""
+msgstr "Alfabeta (malkreska)"
 
 #: src/contents/ui/KountdownsPage.qml:64
 #, kde-format
 msgid "Show calendar"
-msgstr ""
+msgstr "Montri kalendaron"
 
 #: src/contents/ui/KountdownsPage.qml:90
 #, kde-format
@@ -184,13 +184,13 @@ msgstr "Hodiaŭ estas %1"
 #: src/contents/ui/KountdownsPage.qml:103
 #, kde-format
 msgid "Add some kountdowns!"
-msgstr ""
+msgstr "Aldonu kelkajn kalkulojn!"
 
 #: src/contents/ui/main.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
-msgstr ""
+msgstr "Tago Kountdown"
 
 #: src/contents/ui/main.qml:41
 #, kde-format
@@ -205,7 +205,7 @@ msgstr "Eksporti"
 #: src/contents/ui/main.qml:63
 #, kde-format
 msgid "Clear all kountdowns"
-msgstr ""
+msgstr "Forigi ĉiujn kalkulojn"
 
 #: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
 #, kde-format
@@ -215,7 +215,7 @@ msgstr "Agordoj"
 #: src/contents/ui/main.qml:74
 #, kde-format
 msgid "About DayKountdown"
-msgstr ""
+msgstr "Pri DayKountdown"
 
 #: src/contents/ui/main.qml:77
 #, kde-format
@@ -231,12 +231,12 @@ msgstr "Forlasi"
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
-msgstr ""
+msgstr "Forigi ĉiujn kalkulojn"
 
 #: src/contents/ui/main.qml:99
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
-msgstr ""
+msgstr "Ĉu vi certas, ke vi volas forigi ĉiujn viajn kountdowns?"
 
 #: src/contents/ui/SettingsPage.qml:18
 #, kde-format
@@ -247,7 +247,7 @@ msgstr "Agordoj"
 #: src/contents/ui/SettingsPage.qml:30
 #, kde-format
 msgid "Calendar settings"
-msgstr ""
+msgstr "Kalendaraj agordoj"
 
 #: src/importexport.cpp:43
 #, kde-format
@@ -257,7 +257,7 @@ msgstr "Konservi Dosieron Kiel"
 #: src/importexport.cpp:59
 #, kde-format
 msgid "Import file"
-msgstr ""
+msgstr "Importi dosieron"
 
 #: src/main.cpp:61
 #, kde-format
@@ -269,13 +269,13 @@ msgstr "DayKountdown"
 #, kde-format
 msgctxt "@title"
 msgid "A day countdown application"
-msgstr ""
+msgstr "Taga retronombra aplikaĵo"
 
 #: src/main.cpp:65
 #, kde-format
 msgctxt "@info:credit"
 msgid "Claudio Cambra"
-msgstr ""
+msgstr "Claudio Cambra"
 
 #: src/main.cpp:65
 #, kde-format
@@ -293,4 +293,4 @@ msgstr "Carl Schwan"
 #, kde-format
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
-msgstr ""
+msgstr "SQLite pro kaj koda revizio"
