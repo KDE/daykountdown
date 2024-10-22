@@ -29,8 +29,8 @@ Kirigami.OverlaySheet {
 	property alias datePickerComponent: datePicker
 	
 	// Signals can be read an certain actions performed when these happen
-	signal added (string name, string description, var kdate)
-	signal edited(int index, string name, string description, var kdate)
+	signal added (string name, string description, var kdate, color colour)
+	signal edited(int index, string name, string description, var kdate, color colour)
 	signal removed(int index)
 
 	onKdateChanged: {
