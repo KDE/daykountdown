@@ -1,13 +1,13 @@
+cmake_minimum_required(VERSION 3.10)
+
 project(daykountdown)
 
-cmake_minimum_required(VERSION 3.10)
-set(KF5_MIN_VERSION "5.90.0")
-set(QT_MIN_VERSION "5.15.0")
-set(KDE_COMPILERSETTINGS_LEVEL "5.84.0")
+set(KF_MIN_VERSION "6.3.0")
+set(QT_MIN_VERSION "6.5.0")
 
 ################# set KDE specific information #################
 
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 
 # where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ is checked
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -24,14 +24,14 @@ include(ECMAddAppIcon)
 
 ################# Find dependencies #################
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui QuickControls2 Svg Sql)
-set_package_properties(Qt${QT_MAJOR_VERSION} PROPERTIES
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui QuickControls2 Svg Sql)
+set_package_properties(Qt6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Basic application components"
 )
 
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS KIO Kirigami2 I18n CoreAddons WidgetsAddons)
-set_package_properties(KF5 PROPERTIES
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO Kirigami I18n CoreAddons WidgetsAddons)
+set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Basic application components"
 )

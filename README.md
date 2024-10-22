@@ -1,5 +1,5 @@
 # DayKountdown
-A date countdown app written in QML/Kirigami and C++, for use with KDE Plasma on Linux.
+A date countdown app written in QML/Kirigami and C++. Tested for use with KDE Plasma on Linux, but may work on other operating systems as well. 
 
 ![](screenshots/Screenshot1.png)
 
@@ -9,7 +9,7 @@ The app counts the days towards a date of your choice.
 
 It allows you to pick a date, provide a name, and a short description for your countdowns.
 
-There is also [an additional Plasma desktop widget](https://github.com/elChupaCambra/DayKountdown-Plasmoid) available for use with DayKountdown.
+There is also [an additional Plasma desktop widget](https://invent.kde.org/clau-cambra/daykountdown-plasmoid) available for use with DayKountdown.
 
 ## Features
 
@@ -22,7 +22,7 @@ There is also [an additional Plasma desktop widget](https://github.com/elChupaCa
 ## Prerequisites
 
 - A Linux install
-- Qt5 packages from your distribution's repositories
+- Qt6 packages from your distribution's repositories
 - KDE packages (including Kirigami)
 - CMake
 - extra-cmake-modules
@@ -31,7 +31,7 @@ There is also [an additional Plasma desktop widget](https://github.com/elChupaCa
 
 First, clone this repository through the terminal by running:
 
-`git clone https://invent.kde.org/plasma-mobile/daykountdown.git`
+`git clone https://invent.kde.org/utilities/daykountdown.git`
 
 Then enter the cloned repo directory and let `cmake` configure the project to use the build folder `build`. 
 

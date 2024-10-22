@@ -17,13 +17,13 @@ target_link_libraries(daykountdown
 	Qt::Gui
 	Qt::Sql
 	Qt::Svg
-	KF5::Kirigami2
-	KF5::I18n
-	KF5::CoreAddons
-	KF5::ConfigCore
-	KF5::ConfigGui
-	KF5::WidgetsAddons
-	KF5::KIOCore)
+	KF6::Kirigami
+	KF6::I18n
+	KF6::CoreAddons
+	KF6::ConfigCore
+	KF6::ConfigGui
+	KF6::WidgetsAddons
+	KF6::KIOCore)
 kconfig_add_kcfg_files(daykountdown GENERATE_MOC daykountdownconfig.kcfgc)
 
 if(ANDROID)
