@@ -5,13 +5,13 @@
 */
 
 // Includes relevant modules used by the QML
-import QtQuick 2.6
-import QtQuick.Controls 2.3 as Controls
-import QtQuick.Layouts 1.2
-import QtQuick.Dialogs 1.3
-import org.kde.kirigami 2.13 as Kirigami
-import org.kde.plasma.calendar 2.0 as PlasmaCalendar
-import org.kde.daykountdown.private 1.0
+import QtQuick
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
+import QtQuick.Dialogs
+import org.kde.kirigami as Kirigami
+import org.kde.merkuro.calendar as PlasmaCalendar
+import org.kde.daykountdown.private
 
 // Overlay sheets appear over a part of the window
 Kirigami.OverlaySheet {

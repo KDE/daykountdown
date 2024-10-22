@@ -4,10 +4,10 @@
 * SPDX-LicenseRef: GPL-3.0-or-later
 */
 
-import QtQuick 2.6
-import QtQuick.Controls 2.0 as Controls
-import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.13 as Kirigami
+import QtQuick
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
 
 // Delegate is how the information will be presented in the ListView
 Kirigami.Card {

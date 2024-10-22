@@ -6,13 +6,14 @@
 */
 
 // Includes relevant modules used by the QML
-import QtQuick 2.6
-import QtQuick.Controls 2.15 as Controls
-import QtQuick.Layouts 1.2
-import QtQuick.Dialogs 1.3
-import org.kde.kirigami 2.13 as Kirigami
-import org.kde.kirigamiaddons.formcard 1.0 as FormCard
-import org.kde.daykountdown.private 1.0
+import QtQuick
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
+import QtQuick.Dialogs
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.daykountdown.private
 
 // Base element, provides basic features needed for all kirigami applications
 Kirigami.ApplicationWindow {
@@ -92,33 +93,35 @@ Kirigami.ApplicationWindow {
         }
     }
 	
-    MessageDialog {
+    Components.MessageDialog {
 		id: removeAllDialog
 		title: i18nc("@title:window", "Remove all kountdowns")
-		icon: StandardIcon.Warning
-		text: i18n("Are you sure you want to delete all your kountdowns?")
-		standardButtons: Dialog.Yes | Dialog.Cancel
+		dialogType: Components.MessageDialog.Warning
+		contentItem: Controls.Label {
+            text: i18n("Are you sure you want to delete all your kountdowns?")
+            wrapMode: Text.Wrap
+        }
+		standardButtons: Controls.DialogButtonBox.Yes | Controls.DialogButtonBox.Cancel
 		onAccepted: KountdownModel.removeAllKountdowns()
 	}
 	
 	// Fetches item from addEditSheet.qml and does action on signal
-	// Cool thing about signals: they expose the variables defined in them to the function that is listening to them
 	AddEditSheet { 
 		id: addEditSheet
-		onEdited: KountdownModel.editKountdown(
+		onEdited: (index, name, description, kdate, colour) => KountdownModel.editKountdown(
 			index, 
 			name, 
 			description, 
 			kdate, 
 			colour
 		);
-		onAdded: KountdownModel.addKountdown(
+		onAdded: (name, description, kdate, colour) => KountdownModel.addKountdown(
 			name, 
 			description, 
 			kdate, 
 			colour
 		);
-		onRemoved: KountdownModel.removeKountdown(index)
+		onRemoved: index => KountdownModel.removeKountdown(index)
 	}
 
 	SystemPalette { id: palette; colorGroup: SystemPalette.Active }
