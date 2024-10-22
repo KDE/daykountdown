@@ -140,7 +140,7 @@ bool KountdownModel::removeKountdown(int index)
 bool KountdownModel::removeAllKountdowns()
 {
 	QSqlQuery query;
-	bool result = query.exec("DELETE FROM KountdownModel");
+	bool result = query.exec(QStringLiteral("DELETE FROM KountdownModel"));
 	result &= submitAll();
 	return result;
 }
@@ -173,7 +173,7 @@ void KountdownModel::sortModel(int sort_by) {
 	select();
 
 	auto config = DayKountdownConfig::self();
-    config->setCurrentGroup("KountdownSorting");
+    config->setCurrentGroup(QStringLiteral("KountdownSorting"));
     config->setSortMode(sort_by);
     config->save();
 }

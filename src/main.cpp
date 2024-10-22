@@ -41,8 +41,8 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char *argv[])
 {
-	// Enable HiDPI scaling
-	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	// Explicitly initialize
+	//QtWebEngineQuick::initialize();
 	
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
