@@ -10,7 +10,6 @@ import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
-import org.kde.merkuro.calendar as PlasmaCalendar
 import org.kde.daykountdown.private
 
 // Overlay sheets appear over a part of the window

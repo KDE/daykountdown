@@ -59,12 +59,14 @@ Kirigami.ScrollablePage {
 				text: i18nc("@action:button", "Alphabetical (descending)")
 				onTriggered: KountdownModel.sortModel(KountdownModel.AlphabeticalDesc)
 			}
-		},
+		}/* TODO FIXME
+		,
 		Kirigami.Action {
 			tooltip: i18n("Show calendar")
 			icon.name: "view-calendar"
 			onTriggered: showCalendar()
 		}
+		*/
 	]
 
 	Component.onCompleted: {
