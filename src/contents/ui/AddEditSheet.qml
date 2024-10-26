@@ -15,6 +15,9 @@ import org.kde.daykountdown.private
 // Overlay sheets appear over a part of the window
 Kirigami.OverlaySheet {
 	id: addEditSheet
+
+	// Fix a binding loop caused by the FormLayout
+	implicitHeight: header.implicitHeight + formLayout.implicitHeight + Kirigami.Units.gridUnit * 2
 	
 	// Sheet mode
 	property string mode: "add"
@@ -142,21 +145,15 @@ Kirigami.OverlaySheet {
 			Layout.fillWidth: true
 			height: 20
 		}
-		Kirigami.Separator {
-			// Stops the rectangle being eaten into by the PlasmaCalendar
-			visible: formLayout.wideMode
-		}
 		// This singleton is bringing in a component defined in DatePicker.qml
 		ColumnLayout {
 			Layout.fillWidth: true
-			height: Kirigami.Units.gridUnit * 16
 			
 			DatePicker {
 				id: datePicker
-				anchors.fill: parent
+				height: Kirigami.Units.gridUnit * 16
 			}
 		}
-		// This is a button.
 		Controls.Button {
 			id: deleteButton
 			Layout.fillWidth: true

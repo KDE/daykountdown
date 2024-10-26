@@ -51,6 +51,7 @@ Item {
         RowLayout {
             id: headingRow
             Layout.fillWidth: true
+            Layout.topMargin: 20
 
             Kirigami.Heading {
                 id: monthLabel
