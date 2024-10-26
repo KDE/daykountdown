@@ -68,11 +68,25 @@ Kirigami.OverlaySheet {
 			onAccepted: datePicker.forceActiveFocus()
 		}
 		// Advanced colourpicker widget
-		ColorDialog {
-			id: colorDialog
-			title: i18n("Kountdown Colour")
-			onAccepted: {
-				colour = colorDialog.color;
+		Window {
+			id: colorDialogWindow
+			color: palette.window
+			maximumWidth: 350
+			maximumHeight: 600
+			width: 350
+			height: 600
+			modality: Qt.ApplicationModal
+			flags: Qt.Window | Qt.WindowStaysOnTopHint
+			ColorDialog {
+				id: colorDialog
+				visible: true
+				flags: Qt.FramelessWindowHint
+				title: i18n("Kountdown Colour")
+				onAccepted: {
+					colour = colorDialog.selectedColor;
+					colorDialogWindow.close()
+				}
+				onRejected: colorDialogWindow.close()
 			}
 		}
 		// Horizontally display kountdown colour buttons
@@ -135,7 +149,7 @@ Kirigami.OverlaySheet {
 			}
 			Controls.Button {
 				id: openColourDialog
-				onClicked: colorDialog.open()
+				onClicked: colorDialogWindow.show()
 				text: "More"
 				Layout.fillWidth: true
 			}
