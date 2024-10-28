@@ -23,8 +23,8 @@ Kirigami.OverlaySheet {
 	property string mode: "add"
 	
 	property int index: -1
-	property string name: ""
-	property string description: ""
+	property alias name: nameField.text
+	property alias description: descriptionField.text
 	property date kdate: nowDate
 	property color colour: palette.text;
 
@@ -57,14 +57,12 @@ Kirigami.OverlaySheet {
 			placeholderText: i18n("Event name (required)")
 			// What to do after input is accepted (i.e. pressed enter)
 			// In this case, it moves the focus to the next field
-			text: name
 			onAccepted: descriptionField.forceActiveFocus()
 		}
 		Controls.TextField {
 			id: descriptionField
 			Kirigami.FormData.label: i18nc("@label:textbox", "Description:")
 			placeholderText: i18n("Optional")
-			text: description
 			onAccepted: datePicker.forceActiveFocus()
 		}
 		// Advanced colourpicker widget
@@ -183,13 +181,13 @@ Kirigami.OverlaySheet {
 			Layout.fillWidth: true
 			text: i18nc("@action:button", "Done")
 			// Button is only enabled if the user has entered something into the nameField
-			enabled: nameField.text.length > 0
+			enabled: name.length > 0
 			onClicked: {
 				// Add a listelement to the kountdownModel ListModel
 				if(mode === "add") {
 					addEditSheet.added(
-						nameField.text, 
-						descriptionField.text, 
+						name, 
+						description, 
 						datePicker.clickedDate,
 						colour
 					);
@@ -197,8 +195,8 @@ Kirigami.OverlaySheet {
 				else {
 					addEditSheet.edited(
 						index, 
-						nameField.text, 
-						descriptionField.text, 
+						name, 
+						description, 
 						datePicker.clickedDate,
 						colour
 					);
