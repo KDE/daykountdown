@@ -1,36 +1,36 @@
 /*
-* SPDX-FileCopyrightText: (C) 2021 Claudio Cambra <claudio.cambra@gmail.com>
-* 
-* SPDX-LicenseRef: GPL-3.0-or-later
-*/
+ * SPDX-FileCopyrightText: (C) 2021 Claudio Cambra <claudio.cambra@gmail.com>
+ *
+ * SPDX-LicenseRef: GPL-3.0-or-later
+ */
 
 #pragma once
 
 #include <KIO/Job>
-#include <KMessageBox>
 #include <KLocalizedString>
-#include <QSaveFile>
+#include <KMessageBox>
 #include <QFileDialog>
 #include <QQmlApplicationEngine>
-#include <QtQml>
+#include <QSaveFile>
 #include <QUrl>
+#include <QtQml>
 
 // This kountdown struct eases the process of importing parsed kountdowns
 // Contains the relevant properties for QML code to read
 typedef struct kountdown {
-	Q_GADGET
-	Q_PROPERTY(int index MEMBER index);
-	Q_PROPERTY(QString name MEMBER name);
-	Q_PROPERTY(QString description MEMBER description);
-	Q_PROPERTY(QString date MEMBER date);
-	Q_PROPERTY(QString colour MEMBER colour);
-	
-	public:
-		int index;
-		QString name;
-		QString description;
-		QString date;
-		QString colour;
+    Q_GADGET
+    Q_PROPERTY(int index MEMBER index);
+    Q_PROPERTY(QString name MEMBER name);
+    Q_PROPERTY(QString description MEMBER description);
+    Q_PROPERTY(QString date MEMBER date);
+    Q_PROPERTY(QString colour MEMBER colour);
+
+public:
+    int index;
+    QString name;
+    QString description;
+    QString date;
+    QString colour;
 } kountdown;
 
 class ImportExport : public QObject
@@ -41,15 +41,15 @@ class ImportExport : public QObject
     Q_PROPERTY(QVariantList Kountdowns READ kountdownPopulator)
 
 public:
-	explicit ImportExport(QObject *parent = nullptr);
-	virtual ~ImportExport() override = default;
-	QVariantList Kountdowns;
-	QVariantList kountdownPopulator();
-	Q_INVOKABLE void fetchKountdowns();
-	Q_INVOKABLE void exportFile();
-	
+    explicit ImportExport(QObject *parent = nullptr);
+    virtual ~ImportExport() override = default;
+    QVariantList Kountdowns;
+    QVariantList kountdownPopulator();
+    Q_INVOKABLE void fetchKountdowns();
+    Q_INVOKABLE void exportFile();
+
 private:
-	//QVectors are dynamic arrays which can store data structures of your choosing
-	QVector<kountdown> _kountdownArray;
-	QJsonDocument _createJson();
+    // QVectors are dynamic arrays which can store data structures of your choosing
+    QVector<kountdown> _kountdownArray;
+    QJsonDocument _createJson();
 };

@@ -11,50 +11,50 @@
 #include <QSqlTableModel>
 
 /**
-* @brief Store all the kountdowns.
-*/
-class KountdownModel : public  QSqlTableModel
+ * @brief Store all the kountdowns.
+ */
+class KountdownModel : public QSqlTableModel
 {
-	// Macro that enables wide-ranging object functionality provided by Qt
-	Q_OBJECT
+    // Macro that enables wide-ranging object functionality provided by Qt
+    Q_OBJECT
 
 public:
-	enum Roles {
-		NameRole = Qt::UserRole + 1,
-		DescriptionRole,
-		DateRole,
-		DateInMsRole,
-		ColourRole,
-	};
-	
-	// Used for more semantic arguments to model sorting function
-	enum SortTypes {
-		CreationAsc,
-		CreationDesc,
-		AlphabeticalAsc,
-		AlphabeticalDesc,
-		DateAsc,
-		DateDesc,
-	};
-	Q_ENUMS(SortTypes);
+    enum Roles {
+        IdRole = Qt::UserRole + 1,
+        NameRole,
+        DescriptionRole,
+        DateRole,
+        ColourRole,
+    };
+
+    // Used for more semantic arguments to model sorting function
+    enum SortTypes {
+        CreationAsc,
+        CreationDesc,
+        AlphabeticalAsc,
+        AlphabeticalDesc,
+        DateAsc,
+        DateDesc,
+    };
+    Q_ENUMS(SortTypes);
 
 public:
-	// Constructor function
-	KountdownModel(QObject *parent = nullptr);
+    // Constructor function
+    KountdownModel(QObject *parent = nullptr);
 
-	// Destructor function
-	virtual ~KountdownModel() override = default;
+    // Destructor function
+    virtual ~KountdownModel() override = default;
 
-	QHash<int, QByteArray> roleNames() const override;
-	QVariant data(const QModelIndex &index, int role) const override;
+    QHash<int, QByteArray> roleNames() const override;
+    QVariant data(const QModelIndex &index, int role) const override;
 
-	// Q_INVOKABLE methods can be called within the QML
-	Q_INVOKABLE bool addKountdown(const QString& name, const QString& description, const QDateTime& date, QString colour);
-	Q_INVOKABLE bool editKountdown(int index, const QString& name, const QString& description, const QDateTime& date, QString colour);
-	Q_INVOKABLE bool removeKountdown(int index);
-	Q_INVOKABLE bool removeAllKountdowns();
-	Q_INVOKABLE void sortModel(int sort_by);
+    // Q_INVOKABLE methods can be called within the QML
+    Q_INVOKABLE bool addKountdown(const QString &name, const QString &description, const QDateTime &date, QString colour);
+    Q_INVOKABLE bool editKountdown(int index, const QString &name, const QString &description, const QDateTime &date, QString colour);
+    Q_INVOKABLE bool removeKountdown(int index);
+    Q_INVOKABLE bool removeAllKountdowns();
+    Q_INVOKABLE void sortModel(int sort_by);
 
 private:
-	QSqlDatabase m_db;
+    QSqlDatabase m_db;
 };
