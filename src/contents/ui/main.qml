@@ -104,7 +104,12 @@ Kirigami.ApplicationWindow {
             wrapMode: Text.Wrap
         }
 		standardButtons: Controls.DialogButtonBox.Yes | Controls.DialogButtonBox.Cancel
-		onAccepted: KountdownModel.removeAllKountdowns()
+		
+		onAccepted: {
+			KountdownModel.removeAllKountdowns()
+			removeAllDialog.close()
+		}
+		onRejected: removeAllDialog.close()
 	}
 	
 	// Fetches item from addEditSheet.qml and does action on signal
