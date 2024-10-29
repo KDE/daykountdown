@@ -36,6 +36,8 @@ set_package_properties(KF6 PROPERTIES
     PURPOSE "Basic application components"
 )
 
+find_package(KF6KirigamiAddons 1.4.0 REQUIRED)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 

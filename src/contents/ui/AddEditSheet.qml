@@ -10,6 +10,7 @@ import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.dateandtime
 import org.kde.daykountdown.private
 
 // Overlay sheets appear over a part of the window
@@ -28,16 +29,13 @@ Kirigami.OverlaySheet {
 	property date kdate: nowDate
 	property color colour: palette.text;
 
-	property alias datePickerComponent: datePicker
-	
 	// Signals can be read an certain actions performed when these happen
 	signal added (string name, string description, var kdate, color colour)
 	signal edited(int index, string name, string description, var kdate, color colour)
 	signal removed(int index)
 
 	onKdateChanged: {
-		datePicker.selectedDate = kdate
-		datePicker.clickedDate = kdate
+		datePicker.value = kdate
 	}
 
 	header: Kirigami.Heading {
@@ -87,83 +85,100 @@ Kirigami.OverlaySheet {
 				onRejected: colorDialogWindow.close()
 			}
 		}
-		// Horizontally display kountdown colour buttons
-		RowLayout {
-			Layout.fillWidth: true
-			Kirigami.FormData.label: i18n("Colour:")
-			Controls.RoundButton {
-				contentItem: Text {
-					text: "\u2B24"
-					color: "crimson"
-					horizontalAlignment: Text.AlignHCenter
-					verticalAlignment: Text.AlignVCenter
-				}
-				onClicked: colour = "crimson"
-			}
-			Controls.RoundButton {
-				contentItem: Text {
-					text: "\u2B24"
-					color: "coral"
-					horizontalAlignment: Text.AlignHCenter
-					verticalAlignment: Text.AlignVCenter
-				}
-				onClicked: colour = "coral"
-			}
-			Controls.RoundButton {
-				contentItem: Text {
-					text: "\u2B24"
-					color: "goldenrod"
-					horizontalAlignment: Text.AlignHCenter
-					verticalAlignment: Text.AlignVCenter
-				}
-				onClicked: colour = "goldenrod"
-			}
-			Controls.RoundButton {
-				contentItem: Text {
-					text: "\u2B24"
-					color: "lightseagreen"
-					horizontalAlignment: Text.AlignHCenter
-					verticalAlignment: Text.AlignVCenter
-				}
-				onClicked: colour = "lightseagreen"
-			}
-			Controls.RoundButton {
-				contentItem: Text {
-					text: "\u2B24"
-					color: "deepskyblue"
-					horizontalAlignment: Text.AlignHCenter
-					verticalAlignment: Text.AlignVCenter
-				}
-				onClicked: colour = "deepskyblue"
-			}
-			Controls.RoundButton {
-				contentItem: Text {
-					text: "\u2B24"
-					color: "hotpink"
-					horizontalAlignment: Text.AlignHCenter
-					verticalAlignment: Text.AlignVCenter
-				}
-				onClicked: colour = "hotpink"
-			}
-			Controls.Button {
-				id: openColourDialog
-				onClicked: colorDialogWindow.show()
-				text: "More"
-				Layout.fillWidth: true
-			}
-		}
-		Rectangle {
-			color: colour
-			Layout.fillWidth: true
-			height: 20
-		}
-		// This singleton is bringing in a component defined in DatePicker.qml
 		ColumnLayout {
 			Layout.fillWidth: true
-			
-			DatePicker {
+
+			// Horizontally display kountdown colour buttons
+			RowLayout {
+				Layout.fillWidth: true
+				Kirigami.FormData.label: i18n("Colour:")
+				Controls.RoundButton {
+					contentItem: Text {
+						text: "\u2B24"
+						color: "crimson"
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+					}
+					onClicked: colour = "crimson"
+				}
+				Controls.RoundButton {
+					contentItem: Text {
+						text: "\u2B24"
+						color: "coral"
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+					}
+					onClicked: colour = "coral"
+				}
+				Controls.RoundButton {
+					contentItem: Text {
+						text: "\u2B24"
+						color: "goldenrod"
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+					}
+					onClicked: colour = "goldenrod"
+				}
+				Controls.RoundButton {
+					contentItem: Text {
+						text: "\u2B24"
+						color: "lightseagreen"
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+					}
+					onClicked: colour = "lightseagreen"
+				}
+				Controls.RoundButton {
+					contentItem: Text {
+						text: "\u2B24"
+						color: "deepskyblue"
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+					}
+					onClicked: colour = "deepskyblue"
+				}
+				Controls.RoundButton {
+					contentItem: Text {
+						text: "\u2B24"
+						color: "hotpink"
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+					}
+					onClicked: colour = "hotpink"
+				}
+				Controls.Button {
+					id: openColourDialog
+					onClicked: colorDialogWindow.show()
+					text: "More"
+					Layout.fillWidth: true
+				}
+			}
+			Rectangle {
+				color: colour
+				Layout.fillWidth: true
+				height: 20
+			}
+		}
+		RowLayout {
+			Layout.fillWidth: true
+
+			Kirigami.Heading {
+				text: `${i18n("Date")}: ${Qt.formatDate(kdate, Qt.DefaultLocaleLongDate)}`
+			}
+			// Spacer item
+			Item {
+				Layout.fillWidth: true
+			}
+			Controls.Button {
+				onClicked: datePicker.open()
+				text: i18nc("@action:button", "Change")
+			}
+
+			DatePopup {
 				id: datePicker
-				height: Kirigami.Units.gridUnit * 16
+				onAccepted: {
+					kdate = value
+				}
 			}
 		}
 		Controls.Button {
@@ -188,7 +203,7 @@ Kirigami.OverlaySheet {
 					addEditSheet.added(
 						name, 
 						description, 
-						datePicker.clickedDate,
+						kdate,
 						colour
 					);
 				}
@@ -197,7 +212,7 @@ Kirigami.OverlaySheet {
 						index, 
 						name, 
 						description, 
-						datePicker.clickedDate,
+						kdate,
 						colour
 					);
 				}
