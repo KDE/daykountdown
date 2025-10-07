@@ -1,0 +1,296 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the daykountdown package.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: daykountdown\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-05 12:40+0000\n"
+"PO-Revision-Date: 2025-10-06 18:59+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "زايد السعيدي"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zayed.alsaidi@gmail.com"
+
+#. i18nc is useful for adding context for translators
+#: src/contents/ui/AddEditSheet.qml:43
+#, kde-format
+msgctxt "@title:window"
+msgid "Add kountdown"
+msgstr "أضف عدادًا"
+
+#: src/contents/ui/AddEditSheet.qml:44
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit kountdown"
+msgstr "حرّر العداد"
+
+#: src/contents/ui/AddEditSheet.qml:53
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr "الاسم:"
+
+#: src/contents/ui/AddEditSheet.qml:55
+#, kde-format
+msgid "Event name (required)"
+msgstr "اسم الحدث (مطلوب)"
+
+#: src/contents/ui/AddEditSheet.qml:63
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr "الوصف:"
+
+#: src/contents/ui/AddEditSheet.qml:64
+#, kde-format
+msgid "Optional"
+msgstr "اختياري"
+
+#: src/contents/ui/AddEditSheet.qml:71
+#, kde-format
+msgid "Kountdown Colour"
+msgstr "لون العداد"
+
+#: src/contents/ui/AddEditSheet.qml:79
+#, kde-format
+msgid "Colour:"
+msgstr "اللون:"
+
+#: src/contents/ui/AddEditSheet.qml:164
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "احذف"
+
+#: src/contents/ui/AddEditSheet.qml:174
+#, kde-format
+msgctxt "@action:button"
+msgid "Done"
+msgstr "انتهِ"
+
+#: src/contents/ui/DatePicker.qml:99
+#, kde-format
+msgid "Days"
+msgstr "أيام"
+
+#: src/contents/ui/DatePicker.qml:105
+#, kde-format
+msgid "Months"
+msgstr "أشهر"
+
+#: src/contents/ui/DatePicker.qml:111
+#, kde-format
+msgid "Years"
+msgstr "سنوات"
+
+#: src/contents/ui/EventsCalendarPage.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Events"
+msgstr "أحداث"
+
+#: src/contents/ui/EventsCalendarPage.qml:151
+#, kde-format
+msgid "No events on this day"
+msgstr "لا أحداث في هذا اليوم"
+
+#: src/contents/ui/KountdownCard.qml:53
+#, kde-format
+msgid "%1 "
+msgstr " %1"
+
+#: src/contents/ui/KountdownsPage.qml:20
+#, kde-format
+msgctxt "@title"
+msgid "Kountdowns"
+msgstr "العدادات"
+
+#. i18n function returns translated string
+#: src/contents/ui/KountdownsPage.qml:29
+#, kde-format
+msgctxt "@action:button"
+msgid "Add kountdown"
+msgstr "أضف عدادًا"
+
+#: src/contents/ui/KountdownsPage.qml:36
+#, kde-format
+msgctxt "@action:button"
+msgid "Sort by"
+msgstr "رتب حسب"
+
+#: src/contents/ui/KountdownsPage.qml:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Creation (ascending)"
+msgstr "الإنشاء (تصاعدي)"
+
+#: src/contents/ui/KountdownsPage.qml:43
+#, kde-format
+msgctxt "@action:button"
+msgid "Creation (descending)"
+msgstr "الإنشاء (تنازلي)"
+
+#: src/contents/ui/KountdownsPage.qml:47
+#, kde-format
+msgctxt "@action:button"
+msgid "Date (ascending)"
+msgstr "التاريخ (تصاعدي)"
+
+#: src/contents/ui/KountdownsPage.qml:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Date (descending)"
+msgstr "التاريخ (تنازلي)"
+
+#: src/contents/ui/KountdownsPage.qml:55
+#, kde-format
+msgctxt "@action:button"
+msgid "Alphabetical (ascending)"
+msgstr "أبجدي (تصاعدي)"
+
+#: src/contents/ui/KountdownsPage.qml:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Alphabetical (descending)"
+msgstr "أبجدي (تنازلي)"
+
+#: src/contents/ui/KountdownsPage.qml:64
+#, kde-format
+msgid "Show calendar"
+msgstr "أظهر التقويم"
+
+#: src/contents/ui/KountdownsPage.qml:90
+#, kde-format
+msgid "Today is %1"
+msgstr "اليوم هو %1"
+
+#: src/contents/ui/KountdownsPage.qml:103
+#, kde-format
+msgid "Add some kountdowns!"
+msgstr "أضف بعض العدادات!"
+
+#: src/contents/ui/main.qml:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Day Kountdown"
+msgstr "العد التنازلي للأيام"
+
+#: src/contents/ui/main.qml:41
+#, kde-format
+msgid "Import"
+msgstr "استورد"
+
+#: src/contents/ui/main.qml:57
+#, kde-format
+msgid "Export"
+msgstr "صدّر"
+
+#: src/contents/ui/main.qml:63
+#, kde-format
+msgid "Clear all kountdowns"
+msgstr "أزل كل العدادات"
+
+#: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
+#, kde-format
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: src/contents/ui/main.qml:74
+#, kde-format
+msgid "About DayKountdown"
+msgstr "عن العد التنازلي للأيام"
+
+#: src/contents/ui/main.qml:77
+#, kde-format
+msgid "About"
+msgstr "عن"
+
+#: src/contents/ui/main.qml:80
+#, kde-format
+msgid "Quit"
+msgstr "أقلع"
+
+#: src/contents/ui/main.qml:97
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove all kountdowns"
+msgstr "أزل كل العدادات"
+
+#: src/contents/ui/main.qml:99
+#, kde-format
+msgid "Are you sure you want to delete all your kountdowns?"
+msgstr "هل أنت متأكد أنك تريد حذف كل عداداتك؟"
+
+#: src/contents/ui/SettingsPage.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: src/contents/ui/SettingsPage.qml:30
+#, kde-format
+msgid "Calendar settings"
+msgstr "إعدادات التقويم"
+
+#: src/importexport.cpp:43
+#, kde-format
+msgid "Save File As"
+msgstr "احفظ الملف باسم"
+
+#: src/importexport.cpp:59
+#, kde-format
+msgid "Import file"
+msgstr "استورد ملفًا"
+
+#: src/main.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "DayKountdown"
+msgstr "العد التنازلي للأيام"
+
+#: src/main.cpp:62
+#, kde-format
+msgctxt "@title"
+msgid "A day countdown application"
+msgstr "تطبيق للعد التنازلي للأيام"
+
+#: src/main.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Claudio Cambra"
+msgstr "كلوديو كامبرا"
+
+#: src/main.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Creator"
+msgstr "المُنشئ"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr "كارل شوان"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:credit"
+msgid "SQLite pro and code review"
+msgstr "محترف SQLite ومراجعة الكود"
