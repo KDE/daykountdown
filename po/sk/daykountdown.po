@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -85,17 +85,17 @@ msgstr "Hotovo"
 #: src/contents/ui/DatePicker.qml:99
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "Dni"
 
 #: src/contents/ui/DatePicker.qml:105
 #, kde-format
 msgid "Months"
-msgstr ""
+msgstr "Mesiace"
 
 #: src/contents/ui/DatePicker.qml:111
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "Roky"
 
 #: src/contents/ui/EventsCalendarPage.qml:18
 #, kde-format
@@ -109,9 +109,7 @@ msgid "No events on this day"
 msgstr ""
 
 #: src/contents/ui/KountdownCard.qml:53
-#, fuzzy, kde-format
-#| msgid "%1 day"
-#| msgid_plural "%1 days"
+#, kde-format
 msgid "%1 "
 msgstr "%1 deň"
 
@@ -178,7 +176,7 @@ msgstr "Zobraziť kalendár"
 #: src/contents/ui/KountdownsPage.qml:90
 #, kde-format
 msgid "Today is %1"
-msgstr ""
+msgstr "Dnes je %1"
 
 #: src/contents/ui/KountdownsPage.qml:103
 #, kde-format
