@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:01+0000\n"
-"PO-Revision-Date: 2021-04-01 20:03+0200\n"
+"PO-Revision-Date: 2026-04-10 12:00+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
@@ -30,13 +30,13 @@ msgstr "wizzardsk@gmail.com"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add kountdown"
-msgstr ""
+msgstr "Pridať odpočet"
 
 #: src/contents/ui/AddEditSheet.qml:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit kountdown"
-msgstr ""
+msgstr "Upraviť odpočet"
 
 #: src/contents/ui/AddEditSheet.qml:53
 #, kde-format
@@ -47,7 +47,7 @@ msgstr "Názov:"
 #: src/contents/ui/AddEditSheet.qml:55
 #, kde-format
 msgid "Event name (required)"
-msgstr ""
+msgstr "Názov udalosti (povinné)"
 
 #: src/contents/ui/AddEditSheet.qml:63
 #, kde-format
@@ -63,7 +63,7 @@ msgstr "Voliteľné"
 #: src/contents/ui/AddEditSheet.qml:71
 #, kde-format
 msgid "Kountdown Colour"
-msgstr ""
+msgstr "Farba odpočtu"
 
 #: src/contents/ui/AddEditSheet.qml:79
 #, kde-format
@@ -106,7 +106,7 @@ msgstr "Udalosti"
 #: src/contents/ui/EventsCalendarPage.qml:151
 #, kde-format
 msgid "No events on this day"
-msgstr ""
+msgstr "V tento deň nie sú žiadne udalosti"
 
 #: src/contents/ui/KountdownCard.qml:53
 #, kde-format
@@ -117,14 +117,14 @@ msgstr "%1 deň"
 #, kde-format
 msgctxt "@title"
 msgid "Kountdowns"
-msgstr ""
+msgstr "Odpočty"
 
 #. i18n function returns translated string
 #: src/contents/ui/KountdownsPage.qml:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Add kountdown"
-msgstr ""
+msgstr "Pridať odpočet"
 
 #: src/contents/ui/KountdownsPage.qml:36
 #, kde-format
@@ -136,37 +136,37 @@ msgstr "Triediť podľa"
 #, kde-format
 msgctxt "@action:button"
 msgid "Creation (ascending)"
-msgstr ""
+msgstr "Vytvorenie (vzostupne)"
 
 #: src/contents/ui/KountdownsPage.qml:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Creation (descending)"
-msgstr ""
+msgstr "Vytvorenie (zostupne)"
 
 #: src/contents/ui/KountdownsPage.qml:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Date (ascending)"
-msgstr ""
+msgstr "Dátum (vzostupne)"
 
 #: src/contents/ui/KountdownsPage.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Date (descending)"
-msgstr ""
+msgstr "Dátum (zostupne)"
 
 #: src/contents/ui/KountdownsPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Alphabetical (ascending)"
-msgstr ""
+msgstr "Abecedne (vzostupne)"
 
 #: src/contents/ui/KountdownsPage.qml:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Alphabetical (descending)"
-msgstr ""
+msgstr "Abecedne (zostupne)"
 
 #: src/contents/ui/KountdownsPage.qml:64
 #, kde-format
@@ -181,13 +181,13 @@ msgstr "Dnes je %1"
 #: src/contents/ui/KountdownsPage.qml:103
 #, kde-format
 msgid "Add some kountdowns!"
-msgstr ""
+msgstr "Pridajte nejaké odpočty!"
 
 #: src/contents/ui/main.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
-msgstr ""
+msgstr "Day Kountdown"
 
 #: src/contents/ui/main.qml:41
 #, kde-format
@@ -202,7 +202,7 @@ msgstr "Exportovať"
 #: src/contents/ui/main.qml:63
 #, kde-format
 msgid "Clear all kountdowns"
-msgstr ""
+msgstr "Vymazať všetky odpočty"
 
 #: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
 #, kde-format
@@ -212,7 +212,7 @@ msgstr "Nastavenia"
 #: src/contents/ui/main.qml:74
 #, kde-format
 msgid "About DayKountdown"
-msgstr ""
+msgstr "O aplikácii DayKountdown"
 
 #: src/contents/ui/main.qml:77
 #, kde-format
@@ -228,12 +228,12 @@ msgstr "Ukončiť"
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
-msgstr ""
+msgstr "Odstrániť všetky odpočty"
 
 #: src/contents/ui/main.qml:99
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
-msgstr ""
+msgstr "Naozaj chcete vymazať všetky vaše odpočty?"
 
 #: src/contents/ui/SettingsPage.qml:18
 #, kde-format
@@ -244,7 +244,7 @@ msgstr "Nastavenia"
 #: src/contents/ui/SettingsPage.qml:30
 #, kde-format
 msgid "Calendar settings"
-msgstr ""
+msgstr "Nastavenia kalendára"
 
 #: src/importexport.cpp:43
 #, kde-format
@@ -266,13 +266,13 @@ msgstr "DayKountdown"
 #, kde-format
 msgctxt "@title"
 msgid "A day countdown application"
-msgstr ""
+msgstr "Aplikácia na odpočítavanie dní"
 
 #: src/main.cpp:65
 #, kde-format
 msgctxt "@info:credit"
 msgid "Claudio Cambra"
-msgstr ""
+msgstr "Claudio Cambra"
 
 #: src/main.cpp:65
 #, kde-format
@@ -290,7 +290,7 @@ msgstr "Carl Schwan"
 #, kde-format
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
-msgstr ""
+msgstr "SQLite expert a revízia kódu"
 
 #~ msgid "N/A"
 #~ msgstr "N/A"
