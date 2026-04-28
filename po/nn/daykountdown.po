@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:01+0000\n"
-"PO-Revision-Date: 2024-09-25 19:34+0200\n"
+"PO-Revision-Date: 2026-04-27 21:49+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 26.04.0\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -33,13 +33,13 @@ msgstr "karl@huftis.org"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add kountdown"
-msgstr ""
+msgstr "Legg til kountdown"
 
 #: src/contents/ui/AddEditSheet.qml:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit kountdown"
-msgstr ""
+msgstr "Rediger kountdown"
 
 #: src/contents/ui/AddEditSheet.qml:53
 #, kde-format
@@ -50,7 +50,7 @@ msgstr "Namn:"
 #: src/contents/ui/AddEditSheet.qml:55
 #, kde-format
 msgid "Event name (required)"
-msgstr ""
+msgstr "Hendingsnamn (obligatorisk)"
 
 #: src/contents/ui/AddEditSheet.qml:63
 #, kde-format
@@ -66,7 +66,7 @@ msgstr "Valfritt"
 #: src/contents/ui/AddEditSheet.qml:71
 #, kde-format
 msgid "Kountdown Colour"
-msgstr ""
+msgstr "Kountdown-farge"
 
 #: src/contents/ui/AddEditSheet.qml:79
 #, kde-format
@@ -120,14 +120,14 @@ msgstr "%1 "
 #, kde-format
 msgctxt "@title"
 msgid "Kountdowns"
-msgstr ""
+msgstr "Kountdown-ar"
 
 #. i18n function returns translated string
 #: src/contents/ui/KountdownsPage.qml:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Add kountdown"
-msgstr ""
+msgstr "Legg til kountdown"
 
 #: src/contents/ui/KountdownsPage.qml:36
 #, kde-format
@@ -139,37 +139,37 @@ msgstr "Sorter etter"
 #, kde-format
 msgctxt "@action:button"
 msgid "Creation (ascending)"
-msgstr ""
+msgstr "Opprettingsdato (eldste først)"
 
 #: src/contents/ui/KountdownsPage.qml:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Creation (descending)"
-msgstr ""
+msgstr "Opprettingsdato (nyaste først)"
 
 #: src/contents/ui/KountdownsPage.qml:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Date (ascending)"
-msgstr ""
+msgstr "Dato (eldste først)"
 
 #: src/contents/ui/KountdownsPage.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Date (descending)"
-msgstr ""
+msgstr "Dato (nyaste først)"
 
 #: src/contents/ui/KountdownsPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Alphabetical (ascending)"
-msgstr ""
+msgstr "Alfabetisk (a til å)"
 
 #: src/contents/ui/KountdownsPage.qml:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Alphabetical (descending)"
-msgstr ""
+msgstr "Alfabetisk (å til a)"
 
 #: src/contents/ui/KountdownsPage.qml:64
 #, kde-format
@@ -184,13 +184,13 @@ msgstr "I dag er %1"
 #: src/contents/ui/KountdownsPage.qml:103
 #, kde-format
 msgid "Add some kountdowns!"
-msgstr ""
+msgstr "Legg til kountdown-ar!"
 
 #: src/contents/ui/main.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
-msgstr ""
+msgstr "DayKountdown"
 
 #: src/contents/ui/main.qml:41
 #, kde-format
@@ -205,7 +205,7 @@ msgstr "Eksporter"
 #: src/contents/ui/main.qml:63
 #, kde-format
 msgid "Clear all kountdowns"
-msgstr ""
+msgstr "Fjern alle kountdown-ar"
 
 #: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
 #, kde-format
@@ -231,12 +231,12 @@ msgstr "Avslutt"
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
-msgstr ""
+msgstr "Fjern alle kountdown-ar"
 
 #: src/contents/ui/main.qml:99
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
-msgstr ""
+msgstr "Er du sikker på at du vil sletta alle kountdown-ane?"
 
 #: src/contents/ui/SettingsPage.qml:18
 #, kde-format
@@ -263,13 +263,13 @@ msgstr "Importer fil"
 #, kde-format
 msgctxt "@title"
 msgid "DayKountdown"
-msgstr ""
+msgstr "DayKountdown"
 
 #: src/main.cpp:62
 #, kde-format
 msgctxt "@title"
 msgid "A day countdown application"
-msgstr ""
+msgstr "Eit program for datonedteljing"
 
 #: src/main.cpp:65
 #, kde-format
@@ -293,4 +293,4 @@ msgstr "Carl Schwan"
 #, kde-format
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
-msgstr ""
+msgstr "SQLite-proff og kodegjennomgang"
