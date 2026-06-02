@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-06-02 03:22+0000\n"
 "PO-Revision-Date: 2021-07-18 12:54+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -51,53 +51,49 @@ msgstr "이름:"
 msgid "Event name (required)"
 msgstr "이벤트 이름(필수)"
 
-#: src/contents/ui/AddEditSheet.qml:63
+#: src/contents/ui/AddEditSheet.qml:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
 msgstr "설명:"
 
-#: src/contents/ui/AddEditSheet.qml:64
+#: src/contents/ui/AddEditSheet.qml:63
 #, kde-format
 msgid "Optional"
 msgstr "선택 사항"
 
-#: src/contents/ui/AddEditSheet.qml:71
+#: src/contents/ui/AddEditSheet.qml:80
 #, kde-format
 msgid "Kountdown Colour"
 msgstr "카운트다운 색상"
 
-#: src/contents/ui/AddEditSheet.qml:79
+#: src/contents/ui/AddEditSheet.qml:94
 #, kde-format
 msgid "Colour:"
 msgstr "색상:"
 
-#: src/contents/ui/AddEditSheet.qml:164
+#: src/contents/ui/AddEditSheet.qml:166
+#, kde-format
+msgid "Date"
+msgstr ""
+
+#: src/contents/ui/AddEditSheet.qml:174
+#, kde-format
+msgctxt "@action:button"
+msgid "Change"
+msgstr ""
+
+#: src/contents/ui/AddEditSheet.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "삭제"
 
-#: src/contents/ui/AddEditSheet.qml:174
+#: src/contents/ui/AddEditSheet.qml:197
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "완료"
-
-#: src/contents/ui/DatePicker.qml:99
-#, kde-format
-msgid "Days"
-msgstr "일"
-
-#: src/contents/ui/DatePicker.qml:105
-#, kde-format
-msgid "Months"
-msgstr "개월"
-
-#: src/contents/ui/DatePicker.qml:111
-#, kde-format
-msgid "Years"
-msgstr "년"
 
 #: src/contents/ui/EventsCalendarPage.qml:18
 #, kde-format
@@ -110,7 +106,7 @@ msgstr "이벤트"
 msgid "No events on this day"
 msgstr "해당하는 날짜의 이벤트 없음"
 
-#: src/contents/ui/KountdownCard.qml:53
+#: src/contents/ui/KountdownCard.qml:38
 #, kde-format
 msgid "%1 "
 msgstr "%1 "
@@ -170,69 +166,59 @@ msgctxt "@action:button"
 msgid "Alphabetical (descending)"
 msgstr "가나다 역순"
 
-#: src/contents/ui/KountdownsPage.qml:64
-#, kde-format
-msgid "Show calendar"
-msgstr "달력 표시"
-
-#: src/contents/ui/KountdownsPage.qml:90
+#: src/contents/ui/KountdownsPage.qml:92
 #, kde-format
 msgid "Today is %1"
 msgstr "오늘: %1"
 
-#: src/contents/ui/KountdownsPage.qml:103
+#: src/contents/ui/KountdownsPage.qml:105
 #, kde-format
 msgid "Add some kountdowns!"
 msgstr "카운트다운을 추가하십시오!"
 
-#: src/contents/ui/main.qml:23
+#: src/contents/ui/main.qml:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
 msgstr "날짜 카운트다운"
 
-#: src/contents/ui/main.qml:41
+#: src/contents/ui/main.qml:42
 #, kde-format
 msgid "Import"
 msgstr "가져오기"
 
-#: src/contents/ui/main.qml:57
+#: src/contents/ui/main.qml:58
 #, kde-format
 msgid "Export"
 msgstr "내보내기"
 
-#: src/contents/ui/main.qml:63
+#: src/contents/ui/main.qml:64
 #, kde-format
 msgid "Clear all kountdowns"
 msgstr "모든 카운트다운 지우기"
 
-#: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
-#, kde-format
-msgid "Settings"
-msgstr "설정"
-
-#: src/contents/ui/main.qml:74
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About DayKountdown"
 msgstr "DayKountdown 정보"
 
-#: src/contents/ui/main.qml:77
+#: src/contents/ui/main.qml:80
 #, kde-format
 msgid "About"
 msgstr "정보"
 
-#: src/contents/ui/main.qml:80
+#: src/contents/ui/main.qml:83
 #, kde-format
 msgid "Quit"
 msgstr "끝내기"
 
-#: src/contents/ui/main.qml:97
+#: src/contents/ui/main.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
 msgstr "모든 카운트다운 삭제"
 
-#: src/contents/ui/main.qml:99
+#: src/contents/ui/main.qml:103
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
 msgstr "모든 카운트다운을 삭제하시겠습니까?"
@@ -253,7 +239,7 @@ msgstr "달력 설정"
 msgid "Save File As"
 msgstr "파일 다른 이름으로 저장"
 
-#: src/importexport.cpp:59
+#: src/importexport.cpp:60
 #, kde-format
 msgid "Import file"
 msgstr "파일 가져오기"
@@ -293,3 +279,18 @@ msgstr "Carl Schwan"
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
 msgstr "SQLite 프로와 코드 리뷰"
+
+#~ msgid "Days"
+#~ msgstr "일"
+
+#~ msgid "Months"
+#~ msgstr "개월"
+
+#~ msgid "Years"
+#~ msgstr "년"
+
+#~ msgid "Show calendar"
+#~ msgstr "달력 표시"
+
+#~ msgid "Settings"
+#~ msgstr "설정"

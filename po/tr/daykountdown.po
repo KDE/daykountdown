@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-06-02 03:22+0000\n"
 "PO-Revision-Date: 2024-03-22 16:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -51,53 +51,49 @@ msgstr "Ad:"
 msgid "Event name (required)"
 msgstr "Etkinlik adı (zorunlu)"
 
-#: src/contents/ui/AddEditSheet.qml:63
+#: src/contents/ui/AddEditSheet.qml:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
 msgstr "Açıklama:"
 
-#: src/contents/ui/AddEditSheet.qml:64
+#: src/contents/ui/AddEditSheet.qml:63
 #, kde-format
 msgid "Optional"
 msgstr "İsteğe bağlı"
 
-#: src/contents/ui/AddEditSheet.qml:71
+#: src/contents/ui/AddEditSheet.qml:80
 #, kde-format
 msgid "Kountdown Colour"
 msgstr "Geri Sayım Rengi"
 
-#: src/contents/ui/AddEditSheet.qml:79
+#: src/contents/ui/AddEditSheet.qml:94
 #, kde-format
 msgid "Colour:"
 msgstr "Renk:"
 
-#: src/contents/ui/AddEditSheet.qml:164
+#: src/contents/ui/AddEditSheet.qml:166
+#, kde-format
+msgid "Date"
+msgstr ""
+
+#: src/contents/ui/AddEditSheet.qml:174
+#, kde-format
+msgctxt "@action:button"
+msgid "Change"
+msgstr ""
+
+#: src/contents/ui/AddEditSheet.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Sil"
 
-#: src/contents/ui/AddEditSheet.qml:174
+#: src/contents/ui/AddEditSheet.qml:197
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Bitti"
-
-#: src/contents/ui/DatePicker.qml:99
-#, kde-format
-msgid "Days"
-msgstr "Gün"
-
-#: src/contents/ui/DatePicker.qml:105
-#, kde-format
-msgid "Months"
-msgstr "Ay"
-
-#: src/contents/ui/DatePicker.qml:111
-#, kde-format
-msgid "Years"
-msgstr "Yıl"
 
 #: src/contents/ui/EventsCalendarPage.qml:18
 #, kde-format
@@ -110,7 +106,7 @@ msgstr "Etkinlikler"
 msgid "No events on this day"
 msgstr "Bu günde bir etkinlik yok"
 
-#: src/contents/ui/KountdownCard.qml:53
+#: src/contents/ui/KountdownCard.qml:38
 #, kde-format
 msgid "%1 "
 msgstr "%1"
@@ -170,69 +166,59 @@ msgctxt "@action:button"
 msgid "Alphabetical (descending)"
 msgstr "Abecesel (azalan)"
 
-#: src/contents/ui/KountdownsPage.qml:64
-#, kde-format
-msgid "Show calendar"
-msgstr "Takvimi göster"
-
-#: src/contents/ui/KountdownsPage.qml:90
+#: src/contents/ui/KountdownsPage.qml:92
 #, kde-format
 msgid "Today is %1"
 msgstr "Bugün %1"
 
-#: src/contents/ui/KountdownsPage.qml:103
+#: src/contents/ui/KountdownsPage.qml:105
 #, kde-format
 msgid "Add some kountdowns!"
 msgstr "Geri sayımlar ekleyin!"
 
-#: src/contents/ui/main.qml:23
+#: src/contents/ui/main.qml:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
 msgstr "Gün Geri Sayımı"
 
-#: src/contents/ui/main.qml:41
+#: src/contents/ui/main.qml:42
 #, kde-format
 msgid "Import"
 msgstr "İçe Aktar"
 
-#: src/contents/ui/main.qml:57
+#: src/contents/ui/main.qml:58
 #, kde-format
 msgid "Export"
 msgstr "Dışa Aktar"
 
-#: src/contents/ui/main.qml:63
+#: src/contents/ui/main.qml:64
 #, kde-format
 msgid "Clear all kountdowns"
 msgstr "Tüm Geri Sayımları Temizle"
 
-#: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
-#, kde-format
-msgid "Settings"
-msgstr "Ayarlar"
-
-#: src/contents/ui/main.qml:74
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About DayKountdown"
 msgstr "DayKountdown Hakkında"
 
-#: src/contents/ui/main.qml:77
+#: src/contents/ui/main.qml:80
 #, kde-format
 msgid "About"
 msgstr "Hakkında"
 
-#: src/contents/ui/main.qml:80
+#: src/contents/ui/main.qml:83
 #, kde-format
 msgid "Quit"
 msgstr "Çık"
 
-#: src/contents/ui/main.qml:97
+#: src/contents/ui/main.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
 msgstr "Tüm Geri Sayımları Kaldır"
 
-#: src/contents/ui/main.qml:99
+#: src/contents/ui/main.qml:103
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
 msgstr "Tüm geri sayımlarınızı kaldırmak istediğinizden emin misiniz?"
@@ -253,7 +239,7 @@ msgstr "Takvim ayarları"
 msgid "Save File As"
 msgstr "Dosyayı Farklı Kaydet"
 
-#: src/importexport.cpp:59
+#: src/importexport.cpp:60
 #, kde-format
 msgid "Import file"
 msgstr "Dosya İçe Aktar"
@@ -293,3 +279,18 @@ msgstr "Carl Schwan"
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
 msgstr "SQLite pro ve kod gözden geçirmesi"
+
+#~ msgid "Days"
+#~ msgstr "Gün"
+
+#~ msgid "Months"
+#~ msgstr "Ay"
+
+#~ msgid "Years"
+#~ msgstr "Yıl"
+
+#~ msgid "Show calendar"
+#~ msgstr "Takvimi göster"
+
+#~ msgid "Settings"
+#~ msgstr "Ayarlar"

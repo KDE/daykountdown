@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-06-02 03:22+0000\n"
 "PO-Revision-Date: 2024-05-29 23:46+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
@@ -52,53 +52,49 @@ msgstr "Nomo:"
 msgid "Event name (required)"
 msgstr "Nomo de evento (postulata)"
 
-#: src/contents/ui/AddEditSheet.qml:63
+#: src/contents/ui/AddEditSheet.qml:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
 msgstr "Priskribo:"
 
-#: src/contents/ui/AddEditSheet.qml:64
+#: src/contents/ui/AddEditSheet.qml:63
 #, kde-format
 msgid "Optional"
 msgstr "Nedeviga"
 
-#: src/contents/ui/AddEditSheet.qml:71
+#: src/contents/ui/AddEditSheet.qml:80
 #, kde-format
 msgid "Kountdown Colour"
 msgstr "Kountdown Koloro"
 
-#: src/contents/ui/AddEditSheet.qml:79
+#: src/contents/ui/AddEditSheet.qml:94
 #, kde-format
 msgid "Colour:"
 msgstr "Koloro:"
 
-#: src/contents/ui/AddEditSheet.qml:164
+#: src/contents/ui/AddEditSheet.qml:166
+#, kde-format
+msgid "Date"
+msgstr ""
+
+#: src/contents/ui/AddEditSheet.qml:174
+#, kde-format
+msgctxt "@action:button"
+msgid "Change"
+msgstr ""
+
+#: src/contents/ui/AddEditSheet.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Forigi"
 
-#: src/contents/ui/AddEditSheet.qml:174
+#: src/contents/ui/AddEditSheet.qml:197
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Preta"
-
-#: src/contents/ui/DatePicker.qml:99
-#, kde-format
-msgid "Days"
-msgstr "Tagoj"
-
-#: src/contents/ui/DatePicker.qml:105
-#, kde-format
-msgid "Months"
-msgstr "Monatoj"
-
-#: src/contents/ui/DatePicker.qml:111
-#, kde-format
-msgid "Years"
-msgstr "Jaroj"
 
 #: src/contents/ui/EventsCalendarPage.qml:18
 #, kde-format
@@ -111,7 +107,7 @@ msgstr "Eventoj"
 msgid "No events on this day"
 msgstr "Neniuj eventoj en ĉi tiu tago"
 
-#: src/contents/ui/KountdownCard.qml:53
+#: src/contents/ui/KountdownCard.qml:38
 #, kde-format
 msgid "%1 "
 msgstr "%1"
@@ -171,69 +167,59 @@ msgctxt "@action:button"
 msgid "Alphabetical (descending)"
 msgstr "Alfabeta (malkreska)"
 
-#: src/contents/ui/KountdownsPage.qml:64
-#, kde-format
-msgid "Show calendar"
-msgstr "Montri kalendaron"
-
-#: src/contents/ui/KountdownsPage.qml:90
+#: src/contents/ui/KountdownsPage.qml:92
 #, kde-format
 msgid "Today is %1"
 msgstr "Hodiaŭ estas %1"
 
-#: src/contents/ui/KountdownsPage.qml:103
+#: src/contents/ui/KountdownsPage.qml:105
 #, kde-format
 msgid "Add some kountdowns!"
 msgstr "Aldonu kelkajn kalkulojn!"
 
-#: src/contents/ui/main.qml:23
+#: src/contents/ui/main.qml:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
 msgstr "Tago Kountdown"
 
-#: src/contents/ui/main.qml:41
+#: src/contents/ui/main.qml:42
 #, kde-format
 msgid "Import"
 msgstr "Importi"
 
-#: src/contents/ui/main.qml:57
+#: src/contents/ui/main.qml:58
 #, kde-format
 msgid "Export"
 msgstr "Eksporti"
 
-#: src/contents/ui/main.qml:63
+#: src/contents/ui/main.qml:64
 #, kde-format
 msgid "Clear all kountdowns"
 msgstr "Forigi ĉiujn kalkulojn"
 
-#: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
-#, kde-format
-msgid "Settings"
-msgstr "Agordoj"
-
-#: src/contents/ui/main.qml:74
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About DayKountdown"
 msgstr "Pri DayKountdown"
 
-#: src/contents/ui/main.qml:77
+#: src/contents/ui/main.qml:80
 #, kde-format
 msgid "About"
 msgstr "Pri"
 
-#: src/contents/ui/main.qml:80
+#: src/contents/ui/main.qml:83
 #, kde-format
 msgid "Quit"
 msgstr "Forlasi"
 
-#: src/contents/ui/main.qml:97
+#: src/contents/ui/main.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
 msgstr "Forigi ĉiujn kalkulojn"
 
-#: src/contents/ui/main.qml:99
+#: src/contents/ui/main.qml:103
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
 msgstr "Ĉu vi certas, ke vi volas forigi ĉiujn viajn kountdowns?"
@@ -254,7 +240,7 @@ msgstr "Kalendaraj agordoj"
 msgid "Save File As"
 msgstr "Konservi Dosieron Kiel"
 
-#: src/importexport.cpp:59
+#: src/importexport.cpp:60
 #, kde-format
 msgid "Import file"
 msgstr "Importi dosieron"
@@ -294,3 +280,18 @@ msgstr "Carl Schwan"
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
 msgstr "SQLite pro kaj koda revizio"
+
+#~ msgid "Days"
+#~ msgstr "Tagoj"
+
+#~ msgid "Months"
+#~ msgstr "Monatoj"
+
+#~ msgid "Years"
+#~ msgstr "Jaroj"
+
+#~ msgid "Show calendar"
+#~ msgstr "Montri kalendaron"
+
+#~ msgid "Settings"
+#~ msgstr "Agordoj"

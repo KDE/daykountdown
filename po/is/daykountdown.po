@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-06-02 03:22+0000\n"
 "PO-Revision-Date: 2024-12-05 15:45+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -51,53 +51,49 @@ msgstr "Heiti:"
 msgid "Event name (required)"
 msgstr "Heiti atburðar (nauðsynlegt)"
 
-#: src/contents/ui/AddEditSheet.qml:63
+#: src/contents/ui/AddEditSheet.qml:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
 msgstr "Lýsing:"
 
-#: src/contents/ui/AddEditSheet.qml:64
+#: src/contents/ui/AddEditSheet.qml:63
 #, kde-format
 msgid "Optional"
 msgstr "Valfrjálst"
 
-#: src/contents/ui/AddEditSheet.qml:71
+#: src/contents/ui/AddEditSheet.qml:80
 #, kde-format
 msgid "Kountdown Colour"
 msgstr "Litur niðurtalningar"
 
-#: src/contents/ui/AddEditSheet.qml:79
+#: src/contents/ui/AddEditSheet.qml:94
 #, kde-format
 msgid "Colour:"
 msgstr "Litur:"
 
-#: src/contents/ui/AddEditSheet.qml:164
+#: src/contents/ui/AddEditSheet.qml:166
+#, kde-format
+msgid "Date"
+msgstr ""
+
+#: src/contents/ui/AddEditSheet.qml:174
+#, kde-format
+msgctxt "@action:button"
+msgid "Change"
+msgstr ""
+
+#: src/contents/ui/AddEditSheet.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Eyða"
 
-#: src/contents/ui/AddEditSheet.qml:174
+#: src/contents/ui/AddEditSheet.qml:197
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Lokið"
-
-#: src/contents/ui/DatePicker.qml:99
-#, kde-format
-msgid "Days"
-msgstr "dagar"
-
-#: src/contents/ui/DatePicker.qml:105
-#, kde-format
-msgid "Months"
-msgstr "mánuðir"
-
-#: src/contents/ui/DatePicker.qml:111
-#, kde-format
-msgid "Years"
-msgstr "ár"
 
 #: src/contents/ui/EventsCalendarPage.qml:18
 #, kde-format
@@ -110,7 +106,7 @@ msgstr "Atburðir"
 msgid "No events on this day"
 msgstr "Engir atburðir á þessum degi"
 
-#: src/contents/ui/KountdownCard.qml:53
+#: src/contents/ui/KountdownCard.qml:38
 #, kde-format
 msgid "%1 "
 msgstr "%1 "
@@ -170,69 +166,59 @@ msgctxt "@action:button"
 msgid "Alphabetical (descending)"
 msgstr "Stafrófsröð (lækkandi)"
 
-#: src/contents/ui/KountdownsPage.qml:64
-#, kde-format
-msgid "Show calendar"
-msgstr "Birta dagatal"
-
-#: src/contents/ui/KountdownsPage.qml:90
+#: src/contents/ui/KountdownsPage.qml:92
 #, kde-format
 msgid "Today is %1"
 msgstr "Í dag er %1"
 
-#: src/contents/ui/KountdownsPage.qml:103
+#: src/contents/ui/KountdownsPage.qml:105
 #, kde-format
 msgid "Add some kountdowns!"
 msgstr "Bættu við einhverjum niðurtalningum!"
 
-#: src/contents/ui/main.qml:23
+#: src/contents/ui/main.qml:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
 msgstr "Niðurtalning daga"
 
-#: src/contents/ui/main.qml:41
+#: src/contents/ui/main.qml:42
 #, kde-format
 msgid "Import"
 msgstr "Flytja inn"
 
-#: src/contents/ui/main.qml:57
+#: src/contents/ui/main.qml:58
 #, kde-format
 msgid "Export"
 msgstr "Flytja út"
 
-#: src/contents/ui/main.qml:63
+#: src/contents/ui/main.qml:64
 #, kde-format
 msgid "Clear all kountdowns"
 msgstr "Hreinsa allar niðurtalningar"
 
-#: src/contents/ui/main.qml:68 src/contents/ui/main.qml:71
-#, kde-format
-msgid "Settings"
-msgstr "Stillingar"
-
-#: src/contents/ui/main.qml:74
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About DayKountdown"
 msgstr "Um DayKountdown"
 
-#: src/contents/ui/main.qml:77
+#: src/contents/ui/main.qml:80
 #, kde-format
 msgid "About"
 msgstr "Um hugbúnaðinn"
 
-#: src/contents/ui/main.qml:80
+#: src/contents/ui/main.qml:83
 #, kde-format
 msgid "Quit"
 msgstr "Hætta"
 
-#: src/contents/ui/main.qml:97
+#: src/contents/ui/main.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
 msgstr "Fjarlægja allar niðurtalningar"
 
-#: src/contents/ui/main.qml:99
+#: src/contents/ui/main.qml:103
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
 msgstr "Ertu viss um að þú viljir eyða öllum niðurtalningunum þínum?"
@@ -253,7 +239,7 @@ msgstr "Stillingar dagatals"
 msgid "Save File As"
 msgstr "Vista skrá sem"
 
-#: src/importexport.cpp:59
+#: src/importexport.cpp:60
 #, kde-format
 msgid "Import file"
 msgstr "Flytja inn skrá"
@@ -293,3 +279,18 @@ msgstr "Carl Schwan"
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
 msgstr "SQLite pro og yfirferð kóða"
+
+#~ msgid "Days"
+#~ msgstr "dagar"
+
+#~ msgid "Months"
+#~ msgstr "mánuðir"
+
+#~ msgid "Years"
+#~ msgstr "ár"
+
+#~ msgid "Show calendar"
+#~ msgstr "Birta dagatal"
+
+#~ msgid "Settings"
+#~ msgstr "Stillingar"
