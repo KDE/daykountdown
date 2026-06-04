@@ -279,18 +279,3 @@ msgstr "Carl Schwan"
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
 msgstr "SQLite 专家、代码审查"
-
-#~ msgid "Days"
-#~ msgstr "日"
-
-#~ msgid "Months"
-#~ msgstr "月"
-
-#~ msgid "Years"
-#~ msgstr "年"
-
-#~ msgid "Show calendar"
-#~ msgstr "显示日历"
-
-#~ msgid "Settings"
-#~ msgstr "设置"
