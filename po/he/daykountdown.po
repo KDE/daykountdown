@@ -1,21 +1,20 @@
-# Copyright (C) 2025 This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the daykountdown package.
 #
-# SPDX-FileCopyrightText: 2024, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-02 03:22+0000\n"
-"PO-Revision-Date: 2026-06-03 08:01+0300\n"
+"PO-Revision-Date: 2026-06-04 22:56+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
-"n % 10 == 0) ? 2 : 3));\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 26.04.1\n"
 
 #, kde-format
@@ -280,18 +279,3 @@ msgstr "קארל שוואן"
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
 msgstr "מומחה SQLite וסקירת קוד"
-
-#~ msgid "Days"
-#~ msgstr "ימים"
-
-#~ msgid "Months"
-#~ msgstr "חודשים"
-
-#~ msgid "Years"
-#~ msgstr "שנים"
-
-#~ msgid "Show calendar"
-#~ msgstr "הצגת לוח שנה"
-
-#~ msgid "Settings"
-#~ msgstr "הגדרות"
