@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-02 03:22+0000\n"
-"PO-Revision-Date: 2021-07-05 00:20+0000\n"
+"PO-Revision-Date: 2026-06-07 22:27+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,266 +17,267 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Moo"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "<>"
 
 #. i18nc is useful for adding context for translators
 #: src/contents/ui/AddEditSheet.qml:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Add kountdown"
-msgstr ""
+msgstr "Pridėti atvirkštinį skaičiavimą"
 
 #: src/contents/ui/AddEditSheet.qml:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit kountdown"
-msgstr ""
+msgstr "Taisyti atvirkštinį skaičiavimą"
 
 #: src/contents/ui/AddEditSheet.qml:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr ""
+msgstr "Pavadinimas:"
 
 #: src/contents/ui/AddEditSheet.qml:55
 #, kde-format
 msgid "Event name (required)"
-msgstr ""
+msgstr "Įvykio pavadinimas (būtinas)"
 
 #: src/contents/ui/AddEditSheet.qml:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
-msgstr ""
+msgstr "Aprašas:"
 
 #: src/contents/ui/AddEditSheet.qml:63
 #, kde-format
 msgid "Optional"
-msgstr ""
+msgstr "Nebūtinas"
 
 #: src/contents/ui/AddEditSheet.qml:80
 #, kde-format
 msgid "Kountdown Colour"
-msgstr ""
+msgstr "Atvirkštinio skaičiavimo spalva"
 
 #: src/contents/ui/AddEditSheet.qml:94
 #, kde-format
 msgid "Colour:"
-msgstr ""
+msgstr "Spalva:"
 
 #: src/contents/ui/AddEditSheet.qml:166
 #, kde-format
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #: src/contents/ui/AddEditSheet.qml:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Change"
-msgstr ""
+msgstr "Keisti"
 
 #: src/contents/ui/AddEditSheet.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
-msgstr ""
+msgstr "Ištrinti"
 
 #: src/contents/ui/AddEditSheet.qml:197
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr ""
+msgstr "Atlikta"
 
 #: src/contents/ui/EventsCalendarPage.qml:18
 #, kde-format
 msgctxt "@title"
 msgid "Events"
-msgstr ""
+msgstr "Įvykiai"
 
 #: src/contents/ui/EventsCalendarPage.qml:151
 #, kde-format
 msgid "No events on this day"
-msgstr ""
+msgstr "Šią dieną įvykių nėra"
 
 #: src/contents/ui/KountdownCard.qml:38
 #, kde-format
 msgid "%1 "
-msgstr ""
+msgstr "%1 "
 
 #: src/contents/ui/KountdownsPage.qml:20
 #, kde-format
 msgctxt "@title"
 msgid "Kountdowns"
-msgstr ""
+msgstr "Atvirkštiniai skaičiavimai"
 
 #. i18n function returns translated string
 #: src/contents/ui/KountdownsPage.qml:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Add kountdown"
-msgstr ""
+msgstr "Pridėti atvirkštinį skaičiavimą"
 
 #: src/contents/ui/KountdownsPage.qml:36
 #, kde-format
 msgctxt "@action:button"
 msgid "Sort by"
-msgstr ""
+msgstr "Rikiuoti pagal"
 
 #: src/contents/ui/KountdownsPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Creation (ascending)"
-msgstr ""
+msgstr "Sukūrimas (didėjančiai)"
 
 #: src/contents/ui/KountdownsPage.qml:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Creation (descending)"
-msgstr ""
+msgstr "Sukūrimas (mažėjančiai)"
 
 #: src/contents/ui/KountdownsPage.qml:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Date (ascending)"
-msgstr ""
+msgstr "Data (didėjančiai)"
 
 #: src/contents/ui/KountdownsPage.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Date (descending)"
-msgstr ""
+msgstr "Data (mažėjančiai)"
 
 #: src/contents/ui/KountdownsPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Alphabetical (ascending)"
-msgstr ""
+msgstr "Abėcėlė (didėjančiai)"
 
 #: src/contents/ui/KountdownsPage.qml:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Alphabetical (descending)"
-msgstr ""
+msgstr "Abėcėlė (mažėjančiai)"
 
 #: src/contents/ui/KountdownsPage.qml:92
 #, kde-format
 msgid "Today is %1"
-msgstr ""
+msgstr "Šiandien yra %1"
 
 #: src/contents/ui/KountdownsPage.qml:105
 #, kde-format
 msgid "Add some kountdowns!"
-msgstr ""
+msgstr "Pridėkite atvirkštinių skaičiavimų!"
 
 #: src/contents/ui/main.qml:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
-msgstr ""
+msgstr "Atvirkštinis dienų skaičiavimas"
 
 #: src/contents/ui/main.qml:42
 #, kde-format
 msgid "Import"
-msgstr ""
+msgstr "Importuoti"
 
 #: src/contents/ui/main.qml:58
 #, kde-format
 msgid "Export"
-msgstr ""
+msgstr "Eksportuoti"
 
 #: src/contents/ui/main.qml:64
 #, kde-format
 msgid "Clear all kountdowns"
-msgstr ""
+msgstr "Išvalyti visus atvirkštinius skaičiavimus"
 
 #: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About DayKountdown"
-msgstr ""
+msgstr "Apie DayKountdown"
 
 #: src/contents/ui/main.qml:80
 #, kde-format
 msgid "About"
-msgstr ""
+msgstr "Apie"
 
 #: src/contents/ui/main.qml:83
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Išjungti"
 
 #: src/contents/ui/main.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
-msgstr ""
+msgstr "Šalinti visus atvirkštinius skaičiavimus"
 
 #: src/contents/ui/main.qml:103
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
-msgstr ""
+msgstr "Ar tikrai norite ištrinti visus atvirkštinius skaičiavimus?"
 
 #: src/contents/ui/SettingsPage.qml:18
 #, kde-format
 msgctxt "@title"
 msgid "Settings"
-msgstr ""
+msgstr "Nuostatos"
 
 #: src/contents/ui/SettingsPage.qml:30
 #, kde-format
 msgid "Calendar settings"
-msgstr ""
+msgstr "Kalendoriaus nuostatos"
 
 #: src/importexport.cpp:43
 #, kde-format
 msgid "Save File As"
-msgstr ""
+msgstr "Įrašyti failą kaip"
 
 #: src/importexport.cpp:60
 #, kde-format
 msgid "Import file"
-msgstr ""
+msgstr "Importuoti failą"
 
 #: src/main.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "DayKountdown"
-msgstr ""
+msgstr "DayKountdown"
 
 #: src/main.cpp:62
 #, kde-format
 msgctxt "@title"
 msgid "A day countdown application"
-msgstr ""
+msgstr "Atvirkštinio dienų skaičiavimo programa"
 
 #: src/main.cpp:65
 #, kde-format
 msgctxt "@info:credit"
 msgid "Claudio Cambra"
-msgstr ""
+msgstr "Claudio Cambra"
 
 #: src/main.cpp:65
 #, kde-format
 msgctxt "@info:credit"
 msgid "Creator"
-msgstr ""
+msgstr "Kūrėjas"
 
 #: src/main.cpp:67
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:67
 #, kde-format
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
-msgstr ""
+msgstr "SQLite profesionalas, tikrino kodą"
