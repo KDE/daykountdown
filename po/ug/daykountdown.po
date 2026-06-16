@@ -1,297 +1,280 @@
-# Copyright (C) 2026 This file is copyright:
+# Uyghur translation for daykountdown.
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the daykountdown package.
-# SPDX-FileCopyrightText: 2024, 2026 Sergiu Bivol <sergiu@cip.md>
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-02 03:22+0000\n"
-"PO-Revision-Date: 2026-06-15 13:15+0100\n"
-"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
-"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
-"Language: ro\n"
+"PO-Revision-Date: 2026-06-15 17:04+0900\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
+"Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sergiu Bivol"
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sergiu@cip.md"
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #. i18nc is useful for adding context for translators
 #: src/contents/ui/AddEditSheet.qml:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Add kountdown"
-msgstr "Adaugă numărătoare inversă"
+msgstr ""
 
 #: src/contents/ui/AddEditSheet.qml:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit kountdown"
-msgstr "Modifică numărătoarea inversă"
+msgstr ""
 
 #: src/contents/ui/AddEditSheet.qml:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr "Denumire:"
+msgstr "ئاتى:"
 
 #: src/contents/ui/AddEditSheet.qml:55
 #, kde-format
 msgid "Event name (required)"
-msgstr "Denumire eveniment (obligatoriu)"
+msgstr ""
 
 #: src/contents/ui/AddEditSheet.qml:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
-msgstr "Descriere:"
+msgstr "چۈشەندۈرۈش:"
 
 #: src/contents/ui/AddEditSheet.qml:63
 #, kde-format
 msgid "Optional"
-msgstr "Opțional"
+msgstr "تاللاشچان"
 
 #: src/contents/ui/AddEditSheet.qml:80
 #, kde-format
 msgid "Kountdown Colour"
-msgstr "Culoarea numărătorii inverse"
+msgstr ""
 
 #: src/contents/ui/AddEditSheet.qml:94
 #, kde-format
 msgid "Colour:"
-msgstr "Culoare:"
+msgstr ""
 
 #: src/contents/ui/AddEditSheet.qml:166
 #, kde-format
 msgid "Date"
-msgstr "Dată"
+msgstr "چېسلا"
 
 #: src/contents/ui/AddEditSheet.qml:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Change"
-msgstr "Schimbă"
+msgstr "ئۆزگەرت"
 
 #: src/contents/ui/AddEditSheet.qml:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
-msgstr "Șterge"
+msgstr "ئۆچۈر"
 
 #: src/contents/ui/AddEditSheet.qml:197
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr "Gata"
+msgstr "تامام"
 
 #: src/contents/ui/EventsCalendarPage.qml:18
 #, kde-format
 msgctxt "@title"
 msgid "Events"
-msgstr "Evenimente"
+msgstr "ھادىسە"
 
 #: src/contents/ui/EventsCalendarPage.qml:151
 #, kde-format
 msgid "No events on this day"
-msgstr "Niciun eveniment în această zi"
+msgstr ""
 
 #: src/contents/ui/KountdownCard.qml:38
 #, kde-format
 msgid "%1 "
-msgstr "%1 "
+msgstr ""
 
 #: src/contents/ui/KountdownsPage.qml:20
 #, kde-format
 msgctxt "@title"
 msgid "Kountdowns"
-msgstr "Numărători inverse"
+msgstr ""
 
 #. i18n function returns translated string
 #: src/contents/ui/KountdownsPage.qml:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Add kountdown"
-msgstr "Adaugă numărătoare inversă"
+msgstr ""
 
 #: src/contents/ui/KountdownsPage.qml:36
 #, kde-format
 msgctxt "@action:button"
 msgid "Sort by"
-msgstr "Sortează după"
+msgstr ""
 
 #: src/contents/ui/KountdownsPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Creation (ascending)"
-msgstr "Creare (crescător)"
+msgstr ""
 
 #: src/contents/ui/KountdownsPage.qml:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Creation (descending)"
-msgstr "Creare (descrescător)"
+msgstr ""
 
 #: src/contents/ui/KountdownsPage.qml:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Date (ascending)"
-msgstr "Dată (crescător)"
+msgstr ""
 
 #: src/contents/ui/KountdownsPage.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Date (descending)"
-msgstr "Dată (descrescător)"
+msgstr ""
 
 #: src/contents/ui/KountdownsPage.qml:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Alphabetical (ascending)"
-msgstr "Alfabetic (crescător)"
+msgstr ""
 
 #: src/contents/ui/KountdownsPage.qml:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Alphabetical (descending)"
-msgstr "Alfabetic (descrescător)"
+msgstr ""
 
 #: src/contents/ui/KountdownsPage.qml:92
 #, kde-format
 msgid "Today is %1"
-msgstr "Azi e %1"
+msgstr ""
 
 #: src/contents/ui/KountdownsPage.qml:105
 #, kde-format
 msgid "Add some kountdowns!"
-msgstr "Adăugați numărători inverse!"
+msgstr ""
 
 #: src/contents/ui/main.qml:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Day Kountdown"
-msgstr "Day Kountdown"
+msgstr ""
 
 #: src/contents/ui/main.qml:42
 #, kde-format
 msgid "Import"
-msgstr "Importă"
+msgstr "ئەكىر"
 
 #: src/contents/ui/main.qml:58
 #, kde-format
 msgid "Export"
-msgstr "Exportă"
+msgstr "چىقار"
 
 #: src/contents/ui/main.qml:64
 #, kde-format
 msgid "Clear all kountdowns"
-msgstr "Șterge toate numărătorile inverse"
+msgstr ""
 
 #: src/contents/ui/main.qml:77
 #, kde-format
 msgid "About DayKountdown"
-msgstr "Despre DayKountdown"
+msgstr ""
 
 #: src/contents/ui/main.qml:80
 #, kde-format
 msgid "About"
-msgstr "Despre"
+msgstr "ھەققىدە"
 
 #: src/contents/ui/main.qml:83
 #, kde-format
 msgid "Quit"
-msgstr "Termină"
+msgstr "چىكىن"
 
 #: src/contents/ui/main.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove all kountdowns"
-msgstr "Elimină toate numărătorile inverse"
+msgstr ""
 
 #: src/contents/ui/main.qml:103
 #, kde-format
 msgid "Are you sure you want to delete all your kountdowns?"
-msgstr "Sigur doriți să ștergeți toate numărătorile inverse?"
+msgstr ""
 
 #: src/contents/ui/SettingsPage.qml:18
 #, kde-format
 msgctxt "@title"
 msgid "Settings"
-msgstr "Configurări"
+msgstr "تەڭشەك"
 
 #: src/contents/ui/SettingsPage.qml:30
 #, kde-format
 msgid "Calendar settings"
-msgstr "Opțiuni calendar"
+msgstr "كالېندار تەڭشىكى"
 
 #: src/importexport.cpp:43
 #, kde-format
 msgid "Save File As"
-msgstr "Salvează fișierul ca"
+msgstr ""
 
 #: src/importexport.cpp:60
 #, kde-format
 msgid "Import file"
-msgstr "Importă fișier"
+msgstr "ھۆججەت ئەكىر"
 
 #: src/main.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "DayKountdown"
-msgstr "DayKountdown"
+msgstr ""
 
 #: src/main.cpp:62
 #, kde-format
 msgctxt "@title"
 msgid "A day countdown application"
-msgstr "Aplicație pentru numărarea inversă a zilelor"
+msgstr ""
 
 #: src/main.cpp:65
 #, kde-format
 msgctxt "@info:credit"
 msgid "Claudio Cambra"
-msgstr "Claudio Cambra"
+msgstr ""
 
 #: src/main.cpp:65
 #, kde-format
 msgctxt "@info:credit"
 msgid "Creator"
-msgstr "Creator"
+msgstr "تۈزگۈچى"
 
 #: src/main.cpp:67
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr "Carl Schwan"
+msgstr ""
 
 #: src/main.cpp:67
 #, kde-format
 msgctxt "@info:credit"
 msgid "SQLite pro and code review"
-msgstr "Expert SQLite și revizuirea codului"
-
-#~ msgid "Days"
-#~ msgstr "Zile"
-
-#~ msgid "Months"
-#~ msgstr "Luni"
-
-#~ msgid "Years"
-#~ msgstr "Ani"
-
-#~ msgid "Show calendar"
-#~ msgstr "Arată calendarul"
-
-#~ msgid "Settings"
-#~ msgstr "Configurări"
+msgstr ""
