@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: daykountdown\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-02 03:22+0000\n"
-"PO-Revision-Date: 2026-06-15 17:04+0900\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -169,7 +169,7 @@ msgstr ""
 #: src/contents/ui/KountdownsPage.qml:92
 #, kde-format
 msgid "Today is %1"
-msgstr ""
+msgstr "بۈگۈن %1"
 
 #: src/contents/ui/KountdownsPage.qml:105
 #, kde-format
