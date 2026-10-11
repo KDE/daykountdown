@@ -1,0 +1,281 @@
+# Translation of daykountdown into Russian.
+# This file is distributed under the same license as the daykountdown package.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: daykountdown\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-06-02 03:22+0000\n"
+"PO-Revision-Date: 2026-10-10 13:01+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Александр Яворский"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kekcuha@gmail.com"
+
+#. i18nc is useful for adding context for translators
+#: src/contents/ui/AddEditSheet.qml:43
+#, kde-format
+msgctxt "@title:window"
+msgid "Add kountdown"
+msgstr "Добавление обратного отсчёта"
+
+#: src/contents/ui/AddEditSheet.qml:44
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit kountdown"
+msgstr "Изменение обратного отсчёта"
+
+#: src/contents/ui/AddEditSheet.qml:53
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr "Название:"
+
+#: src/contents/ui/AddEditSheet.qml:55
+#, kde-format
+msgid "Event name (required)"
+msgstr "Название события (обязательно)"
+
+#: src/contents/ui/AddEditSheet.qml:62
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr "Описание:"
+
+#: src/contents/ui/AddEditSheet.qml:63
+#, kde-format
+msgid "Optional"
+msgstr "Необязательно"
+
+#: src/contents/ui/AddEditSheet.qml:80
+#, kde-format
+msgid "Kountdown Colour"
+msgstr "Цвет обратного отсчёта"
+
+#: src/contents/ui/AddEditSheet.qml:94
+#, kde-format
+msgid "Colour:"
+msgstr "Цвет:"
+
+#: src/contents/ui/AddEditSheet.qml:166
+#, kde-format
+msgid "Date"
+msgstr "Дата"
+
+#: src/contents/ui/AddEditSheet.qml:174
+#, kde-format
+msgctxt "@action:button"
+msgid "Change"
+msgstr "Изменить"
+
+#: src/contents/ui/AddEditSheet.qml:187
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Удалить"
+
+#: src/contents/ui/AddEditSheet.qml:197
+#, kde-format
+msgctxt "@action:button"
+msgid "Done"
+msgstr "Готово"
+
+#: src/contents/ui/EventsCalendarPage.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Events"
+msgstr "События"
+
+#: src/contents/ui/EventsCalendarPage.qml:151
+#, kde-format
+msgid "No events on this day"
+msgstr "В этот день нет событий"
+
+#: src/contents/ui/KountdownCard.qml:38
+#, kde-format
+msgid "%1 "
+msgstr "%1 "
+
+#: src/contents/ui/KountdownsPage.qml:20
+#, kde-format
+msgctxt "@title"
+msgid "Kountdowns"
+msgstr "Обратные отсчёты"
+
+#. i18n function returns translated string
+#: src/contents/ui/KountdownsPage.qml:29
+#, kde-format
+msgctxt "@action:button"
+msgid "Add kountdown"
+msgstr "Добавить обратный отсчёт"
+
+#: src/contents/ui/KountdownsPage.qml:36
+#, kde-format
+msgctxt "@action:button"
+msgid "Sort by"
+msgstr "Сортировать по"
+
+#: src/contents/ui/KountdownsPage.qml:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Creation (ascending)"
+msgstr "По дате создания (по возрастанию)"
+
+#: src/contents/ui/KountdownsPage.qml:43
+#, kde-format
+msgctxt "@action:button"
+msgid "Creation (descending)"
+msgstr "По дате создания (по убыванию)"
+
+#: src/contents/ui/KountdownsPage.qml:47
+#, kde-format
+msgctxt "@action:button"
+msgid "Date (ascending)"
+msgstr "По дате (по возрастанию)"
+
+#: src/contents/ui/KountdownsPage.qml:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Date (descending)"
+msgstr "По дате (по убыванию)"
+
+#: src/contents/ui/KountdownsPage.qml:55
+#, kde-format
+msgctxt "@action:button"
+msgid "Alphabetical (ascending)"
+msgstr "По алфавиту (по возрастанию)"
+
+#: src/contents/ui/KountdownsPage.qml:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Alphabetical (descending)"
+msgstr "По алфавиту (по убыванию)"
+
+#: src/contents/ui/KountdownsPage.qml:92
+#, kde-format
+msgid "Today is %1"
+msgstr "Сегодня %1"
+
+#: src/contents/ui/KountdownsPage.qml:105
+#, kde-format
+msgid "Add some kountdowns!"
+msgstr "Добавьте обратные отсчёты."
+
+#: src/contents/ui/main.qml:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Day Kountdown"
+msgstr "DayKountdown"
+
+#: src/contents/ui/main.qml:42
+#, kde-format
+msgid "Import"
+msgstr "Импорт"
+
+#: src/contents/ui/main.qml:58
+#, kde-format
+msgid "Export"
+msgstr "Экспорт"
+
+#: src/contents/ui/main.qml:64
+#, kde-format
+msgid "Clear all kountdowns"
+msgstr "Очистить все обратные отсчёты"
+
+#: src/contents/ui/main.qml:77
+#, kde-format
+msgid "About DayKountdown"
+msgstr "О программе DayKountdown"
+
+#: src/contents/ui/main.qml:80
+#, kde-format
+msgid "About"
+msgstr "О программе"
+
+#: src/contents/ui/main.qml:83
+#, kde-format
+msgid "Quit"
+msgstr "Выход"
+
+#: src/contents/ui/main.qml:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove all kountdowns"
+msgstr "Удаление всех обратных отсчётов"
+
+#: src/contents/ui/main.qml:103
+#, kde-format
+msgid "Are you sure you want to delete all your kountdowns?"
+msgstr "Удалить все обратные отсчёты?"
+
+#: src/contents/ui/SettingsPage.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Settings"
+msgstr "Параметры"
+
+#: src/contents/ui/SettingsPage.qml:30
+#, kde-format
+msgid "Calendar settings"
+msgstr "Параметры календаря"
+
+#: src/importexport.cpp:43
+#, kde-format
+msgid "Save File As"
+msgstr "Сохранение файла"
+
+#: src/importexport.cpp:60
+#, kde-format
+msgid "Import file"
+msgstr "Импорт файла"
+
+#: src/main.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "DayKountdown"
+msgstr "DayKountdown"
+
+#: src/main.cpp:62
+#, kde-format
+msgctxt "@title"
+msgid "A day countdown application"
+msgstr "Приложение для обратного отсчёта дней"
+
+#: src/main.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Claudio Cambra"
+msgstr "Claudio Cambra"
+
+#: src/main.cpp:65
+#, kde-format
+msgctxt "@info:credit"
+msgid "Creator"
+msgstr "Автор"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr "Carl Schwan"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:credit"
+msgid "SQLite pro and code review"
+msgstr "Специалист по SQLite и проверка кода"
